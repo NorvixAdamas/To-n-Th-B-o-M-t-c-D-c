@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Tổng quan tri thức — Bách Khoa Bảo Mật &amp; Độc Học 2.0</title>
+  <meta name="description" content="Trung tâm tri thức số về an ninh mạng, độc học, an toàn thực phẩm, pháp y và an toàn đời sống.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/v2.css">
+  <script src="js/static-auth.js"></script>
+</head>
+<body class="v2" data-page="dashboard">
+  <header class="v2-topbar" data-topbar></header>
+
+  <section class="v2-hero">
+    <div class="v2-container">
+      <span class="v2-eyebrow">Knowledge Intelligence · Phiên bản 2.0</span>
+      <h1>Trung tâm tri thức <em>đa lĩnh vực</em> cho phòng thủ và an toàn</h1>
+      <p>
+        Bách khoa toàn thư kết hợp thư viện học thuật với cơ sở dữ liệu tra cứu: lỗ hổng phần mềm,
+        hồ sơ hóa chất, độc tố, thu hồi thực phẩm, văn bản pháp luật và quy trình sơ cứu.
+      </p>
+      <form class="v2-search" id="global-search" role="search" action="/search.html" method="get">
+        <label class="v2-sr-only" for="global-q">Tìm kiếm toàn hệ thống</label>
+        <input id="global-q" name="q" type="search" placeholder="Ví dụ: CVE-2021-44228, methanol, ngộ độc, GHS, T1190…" autocomplete="off">
+        <button type="submit">Tra cứu</button>
+      </form>
+      <div class="v2-search__hint">Tìm không phân biệt dấu tiếng Việt, trên toàn bộ bài viết, thuật ngữ, hóa chất, CVE và tài liệu.</div>
+      <div class="v2-hero__meta">
+        <span>295 thuật ngữ</span><span>32 nguồn dữ liệu</span><span>Tra cứu CVE · CVSS · EPSS · KEV</span><span>Hồ sơ hóa chất có nguồn</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="v2-main">
+    <div class="v2-container">
+      <div class="v2-stats" id="stats-grid" aria-live="polite">
+        <div class="v2-stat v2-stat--accent"><div class="v2-stat__label">Thuật ngữ</div><div class="v2-stat__value">295</div><div class="v2-stat__note">Bốn chuyên ngành</div></div>
+        <div class="v2-stat"><div class="v2-stat__label">Hồ sơ hóa chất</div><div class="v2-stat__value">—</div><div class="v2-stat__note">Đang tải</div></div>
+        <div class="v2-stat"><div class="v2-stat__label">Lỗ hổng theo dõi</div><div class="v2-stat__value">—</div><div class="v2-stat__note">NVD · KEV</div></div>
+        <div class="v2-stat"><div class="v2-stat__label">Nguồn đã đồng bộ</div><div class="v2-stat__value">—</div><div class="v2-stat__note">32 nguồn</div></div>
+        <div class="v2-stat"><div class="v2-stat__label">Nghiên cứu &amp; pháp lý</div><div class="v2-stat__value">—</div><div class="v2-stat__note">PubMed · VBPL</div></div>
+      </div>
+
+      <section class="v2-section">
+        <div class="v2-grid-2">
+          <div>
+            <div class="v2-section__head">
+              <div>
+                <h2>Bản đồ tri thức</h2>
+                <p>Năm phân khu chuyên môn của thư viện, mỗi phân khu có mục lục và tra cứu riêng.</p>
+              </div>
+              <a class="v2-section__link" href="/index.html">Mở thư viện →</a>
+            </div>
+            <div class="v2-portals">
+              <a class="v2-portal" href="/cybersecurity.html">
+                <div class="v2-portal__top"><span class="v2-portal__icon">🛡</span><h3>An ninh mạng</h3></div>
+                <p>Case study xâm nhập, OWASP Top 10, mật mã, phòng thủ nhiều lớp và ứng phó sự cố.</p>
+                <span class="v2-portal__meta">Cyber Intelligence</span>
+              </a>
+              <a class="v2-portal" href="/toxicology.html">
+                <div class="v2-portal__top"><span class="v2-portal__icon">🧪</span><h3>Độc học &amp; An toàn thực phẩm</h3></div>
+                <p>Độc tố tự nhiên, hóa chất gia dụng, tương tác thuốc – thực phẩm, thuốc giải và độc học pháp y.</p>
+                <span class="v2-portal__meta">Toxicology Database</span>
+              </a>
+              <a class="v2-portal" href="/weapons.html">
+                <div class="v2-portal__top"><span class="v2-portal__icon">⚔</span><h3>Chống vũ khí &amp; đồ cấm</h3></div>
+                <p>Khung pháp lý, nhận diện vũ khí, xử lý vật thể khả nghi và bảo quản chứng cứ.</p>
+                <span class="v2-portal__meta">Recognition &amp; Legal</span>
+              </a>
+              <a class="v2-portal" href="/safety.html">
+                <div class="v2-portal__top"><span class="v2-portal__icon">🏠</span><h3>An toàn đời sống</h3></div>
+                <p>PCCC, an toàn hóa chất, CPR, sơ cứu và hiểm họa theo mùa.</p>
+                <span class="v2-portal__meta">Emergency Response</span>
+              </a>
+              <a class="v2-portal" href="/glossary.html">
+                <div class="v2-portal__top"><span class="v2-portal__icon">📚</span><h3>Thuật ngữ chuyên ngành</h3></div>
+                <p>295 khái niệm, tra cứu tức thời, không phân biệt dấu tiếng Việt.</p>
+                <span class="v2-portal__meta">Scientific Glossary</span>
+              </a>
+              <a class="v2-portal" href="/sources.html">
+                <div class="v2-portal__top"><span class="v2-portal__icon">🔗</span><h3>Nguồn dữ liệu quốc tế</h3></div>
+                <p>NVD, CISA KEV, MITRE, PubChem, openFDA, PubMed và các nguồn tham chiếu có kiểm soát.</p>
+                <span class="v2-portal__meta">Source Registry</span>
+              </a>
+            </div>
+          </div>
+
+          <aside>
+            <div class="v2-card">
+              <div class="v2-card__head"><h3>Tình trạng nguồn dữ liệu</h3><a class="v2-section__link" href="/sources.html">Chi tiết</a></div>
+              <div class="v2-card__body" id="source-summary">
+                <p class="v2-muted v2-small">Đang tải trạng thái…</p>
+              </div>
+              <div class="v2-card__foot" id="source-foot">API công khai và nguồn tham chiếu được ghi rõ.</div>
+            </div>
+
+            <div class="v2-card" style="margin-top:16px">
+              <div class="v2-card__head"><h3>Tra cứu nhanh</h3></div>
+              <div class="v2-card__body">
+                <form id="quick-cve" class="v2-field">
+                  <label for="cve-input">Mã CVE</label>
+                  <div style="display:flex;gap:8px">
+                    <input id="cve-input" name="cve" placeholder="CVE-2021-44228" autocomplete="off">
+                    <button class="v2-btn v2-btn--primary" type="submit">Mở</button>
+                  </div>
+                </form>
+                <form id="quick-cas" class="v2-field" style="margin-bottom:0">
+                  <label for="cas-input">CAS / tên hóa chất</label>
+                  <div style="display:flex;gap:8px">
+                    <input id="cas-input" name="cas" placeholder="67-56-1 hoặc Methanol" autocomplete="off">
+                    <button class="v2-btn" type="submit">Mở</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="v2-section">
+        <div class="v2-grid-2">
+          <div class="v2-card">
+            <div class="v2-card__head"><h3>Lỗ hổng theo mức độ nghiêm trọng</h3><span class="v2-badge v2-badge--neutral">CVSS</span></div>
+            <div class="v2-card__body" id="severity-list"><p class="v2-muted v2-small">Đang tải…</p></div>
+          </div>
+          <div class="v2-card">
+            <div class="v2-card__head"><h3>Hoạt động đồng bộ gần đây</h3><a class="v2-section__link" href="/sources.html">Nhật ký</a></div>
+            <div class="v2-card__body" id="recent-sync"><p class="v2-muted v2-small">Đang tải…</p></div>
+          </div>
+        </div>
+      </section>
+
+      <p class="v2-disclaimer">
+        Dữ liệu động được đồng bộ từ nguồn công khai và có thể chưa đầy đủ. Trạng thái “đã đồng bộ” chỉ phản ánh lần chạy thành công gần nhất,
+        không bảo đảm nguồn luôn sẵn sàng. Nội dung y tế/pháp lý chỉ mang tính tham khảo.
+      </p>
+    </div>
+  </main>
+
+  <footer class="v2-footer" data-footer></footer>
+
+  <script src="js/core.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

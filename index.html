@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Bách Khoa Toàn Thư về Bảo Mật và Khoa Học Độc Học</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/static-auth.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="site-logo">
+        <span class="icon-cyber">🛡</span>
+        <span class="icon-tox">🧪</span>
+        Bách Khoa Bảo Mật & Độc Học
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Trang chủ</a></li>
+          <li><a href="cybersecurity.html">An ninh mạng</a></li>
+          <li><a href="toxicology.html">Độc học & ATTP</a></li>
+          <li><a href="weapons.html">Chống vũ khí & đồ cấm</a></li>
+          <li><a href="safety.html">An toàn đời sống</a></li>
+          <li><a href="glossary.html">Thuật ngữ</a></li>
+        </ul>
+      </nav>
+      <div class="version-switch" role="group" aria-label="Chọn phiên bản giao diện">
+        <span class="version-switch__item is-active" aria-current="page">1.0</span>
+        <a class="version-switch__item" href="dashboard.html" title="Chuyển sang giao diện 2.0">2.0</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Bật chế độ tối" title="Bật/tắt chế độ tối">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Bách Khoa Toàn Thư về Bảo Mật và Khoa Học Độc Học</h1>
+      <p class="subtitle">
+Học liệu dành cho sinh viên chuyên ngành <strong>An ninh mạng</strong>, <strong>Hóa sinh</strong> và <strong>thực thi pháp luật</strong> —
+        thư viện số học thuật về phòng thủ hệ thống, độc tính học an toàn và chống vũ khí, đồ bất hợp pháp.
+      </p>
+      <div class="hero-badges">
+        <span>An ninh mạng</span>
+        <span>Penetration Testing</span>
+        <span>OWASP</span>
+        <span>Độc học</span>
+        <span>An toàn thực phẩm</span>
+        <span>Thuốc giải</span>
+        <span>Vũ khí & đồ cấm</span>
+        <span>Thuật ngữ</span>
+        <span>An toàn đời sống</span>
+      </div>
+    </section>
+
+    <div class="main-content">
+      <h2 class="visually-hidden">Các phân khu chính</h2>
+      <div class="portals">
+        <a href="cybersecurity.html" class="portal-card portal-cyber">
+          <span class="section-tag cyber">Lab</span>
+          <h2>🛡 Phân khu An ninh mạng (Cybersecurity Lab)</h2>
+          <p>
+            Lịch sử và phân tích các phương thức xâm nhập (case studies), kiểm thử xâm nhập theo chuẩn đạo đức, 
+            OWASP Top 10 và cách vá lỗi. Chỉ giải thích cơ chế để xây dựng phòng thủ, không cung cấp mã độc.
+          </p>
+          <span class="portal-meta">Chuyên ngành: An ninh mạng</span>
+        </a>
+        <a href="toxicology.html" class="portal-card portal-tox">
+          <span class="section-tag tox">Khoa học</span>
+          <h2>🧪 Phân khu Khoa học Độc học & An toàn thực phẩm</h2>
+          <p>
+            Độc tính học, hợp chất có hại trong tự nhiên và thực phẩm (tương tác thuốc–thực phẩm), 
+            lịch sử chất độc và thuốc giải, nhận biết và phòng tránh độc tố trong đời sống.
+          </p>
+          <span class="portal-meta">Chuyên ngành: Hóa sinh, Y khoa</span>
+        </a>
+        <a href="weapons.html" class="portal-card portal-weapon">
+          <span class="section-tag weapon">Pháp luật</span>
+          <h2>⚔ Phân khu Chống vũ khí và đồ bất hợp pháp</h2>
+          <p>
+            Nhận diện, phân loại vũ khí và đồ cấm; khung pháp lý cơ bản; quy trình an toàn khi phát hiện, bảo quản chứng cứ và bàn giao chuyên trách. Không hướng dẫn chế tạo hay sử dụng.
+          </p>
+          <span class="portal-meta">Chuyên ngành: Thực thi pháp luật, Cảnh sát</span>
+        </a>
+        <a href="glossary.html" class="portal-card portal-glossary">
+          <span class="section-tag glossary">Tra cứu</span>
+          <h2>📚 Bảng thuật ngữ chuyên ngành</h2>
+          <p>
+            Tra cứu nhanh gần 300 khái niệm cốt lõi của cả bốn phân khu — an ninh mạng, độc học & an toàn thực phẩm, chống vũ khí & đồ cấm, và an toàn đời sống — với ô tìm kiếm theo thời gian thực.
+          </p>
+          <span class="portal-meta">Dành cho: mọi chuyên ngành</span>
+        </a>
+        <a href="safety.html" class="portal-card portal-safety">
+          <span class="section-tag safety">Đời sống</span>
+          <h2>🏠 Phân khu An toàn đời sống & Sơ cấp cứu</h2>
+          <p>
+            Phòng cháy chữa cháy & thoát hiểm, an toàn lao động & hóa chất, sơ cấp cứu (CPR, cầm máu, bỏng), an toàn thực phẩm, bảo vệ trẻ em và hiểm họa theo mùa.
+          </p>
+          <span class="portal-meta">Dành cho: mọi người, gia đình, nhà trường</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <strong>Bách Khoa Toàn Thư về Bảo Mật và Khoa Học Độc Học</strong> — Học liệu giáo dục. 
+      Chỉ phục vụ mục đích giảng dạy và nghiên cứu.
+    </p>
+  </footer>
+<script src="js/app.js"></script>
+</body>
+</html>

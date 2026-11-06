@@ -1,0 +1,18 @@
+# Bí mật & cấu hình cục bộ
+.env
+.env.*
+!.env.example
+.freebuff/
+
+# Cơ sở dữ liệu & bản sao lưu
+data/*.db
+data/*.db-wal
+data/*.db-shm
+backups/*.db
+backups/*.zip
+
+# Phụ thuộc & log
+node_modules/
+npm-debug.log*
+*.log
+tmp/

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>An ninh mạng (Cybersecurity Lab) — Bách Khoa Bảo Mật & Độc Học</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/static-auth.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="site-logo">
+        <span class="icon-cyber">🛡</span>
+        <span class="icon-tox">🧪</span>
+        Bách Khoa Bảo Mật & Độc Học
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="cybersecurity.html" aria-current="page">An ninh mạng</a></li>
+          <li><a href="toxicology.html">Độc học & ATTP</a></li>
+          <li><a href="weapons.html">Chống vũ khí & đồ cấm</a></li>
+          <li><a href="safety.html">An toàn đời sống</a></li>
+          <li><a href="glossary.html">Thuật ngữ</a></li>
+        </ul>
+      </nav>
+      <div class="version-switch" role="group" aria-label="Chọn phiên bản giao diện">
+        <span class="version-switch__item is-active" aria-current="page">1.0</span>
+        <a class="version-switch__item" href="dashboard.html" title="Chuyển sang giao diện 2.0">2.0</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Bật chế độ tối" title="Bật/tắt chế độ tối">🌙</button>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <header class="page-header">
+      <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> → An ninh mạng
+      </div>
+      <h1>Phân khu An ninh mạng (Cybersecurity Lab)</h1>
+      <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
+        Học liệu về lịch sử xâm nhập, kiểm thử đạo đức, OWASP và phòng thủ hệ thống.
+      </p>
+    </header>
+
+    <div class="wiki-layout">
+      <aside class="sidebar-toc">
+        <h3>Mục lục</h3>
+        <ul>
+          <li><a href="#intro">Giới thiệu</a></li>
+          <li><a href="#history">Lịch sử & Case studies</a></li>
+          <li><a href="#pentest">Penetration Testing</a></li>
+          <li><a href="#owasp">OWASP Top 10</a></li>
+          <li><a href="#detail-sqli">Chi tiết: SQL Injection</a></li>
+          <li><a href="#detail-xss">Chi tiết: XSS</a></li>
+          <li><a href="#detail-phishing">Chi tiết: Phishing</a></li>
+          <li><a href="#detail-ransomware">Chi tiết: Ransomware</a></li>
+          <li><a href="#real-cases">Case study tấn công đời thật</a></li>
+          <li><a href="#real-other">Loại hình khác & Checklist</a></li>
+          <li><a href="#advanced-cases">Vụ án khó — Kỹ thuật ít phổ biến</a></li>
+          <li><a href="#crypto">Mật mã học cơ bản</a></li>
+          <li><a href="#network-defense">Hạ tầng phòng thủ mạng</a></li>
+          <li><a href="#ir-lifecycle">Quy trình ứng phó sự cố</a></li>
+          <li><a href="#defense">Xây dựng phòng thủ</a></li>
+        </ul>
+      </aside>
+
+      <article class="article-body">
+        <section id="intro">
+          <h2>Giới thiệu</h2>
+          <p>
+            Phân khu này tập trung vào <strong>giáo dục phòng thủ</strong>: hiểu cách kẻ tấn công suy nghĩ và hành động 
+            giúp xây dựng hệ thống an toàn hơn. Mọi nội dung chỉ mang tính mô tả cơ chế và phân tích case study, 
+            không cung cấp công cụ hay mã thực thi gây hại.
+          </p>
+          <div class="callout callout-ethical">
+            <h4>Nguyên tắc đạo đức</h4>
+            <p>Kiểm thử xâm nhập chỉ được thực hiện trên hệ thống mà bạn có quyền kiểm tra (authorization). 
+            Sử dụng kiến thức để bảo vệ, không tấn công.</p>
+          </div>
+        </section>
+
+        <section id="history">
+          <h2>Lịch sử và Case studies xâm nhập</h2>
+          <p>
+            Nghiên cứu các sự cố bảo mật trong lịch sử giúp rút ra bài học về lỗ hổng thiết kế, 
+            quy trình và con người — từ đó cải thiện phòng thủ.
+          </p>
+          <h3>Một số case study điển hình (phân tích giáo dục)</h3>
+          <ul>
+            <li><strong>Lỗ hổng do injection (SQL, OS, LDAP):</strong> Dữ liệu người dùng không được kiểm soát, 
+            đưa vào truy vấn hoặc lệnh hệ thống → dẫn đến thực thi mã từ xa hoặc lộ dữ liệu. 
+            Bài học: luôn validate/sanitize input, dùng parameterized queries, principle of least privilege.</li>
+            <li><strong>Ransomware (WannaCry, NotPetya):</strong> Khai thác lỗ hổng đã biết (ví dụ EternalBlue), 
+            lan truyền trong mạng nội bộ khi bản vá chưa được áp dụng. 
+            Bài học: patch management, segmentation mạng, backup offline, awareness.</li>
+            <li><strong>Social engineering và phishing:</strong> Con người là điểm yếu — email/website giả mạo 
+            để lấy thông tin đăng nhập hoặc cài mã độc. 
+            Bài học: đào tạo nhận thức, xác thực hai yếu tố, chính sách email an toàn.</li>
+          </ul>
+          <p>
+            Các case study chi tiết nên được giảng trong khung chương trình có kiểm soát, với tài liệu 
+            từ nguồn chính thống (CERT, CISA, vendor advisories).
+          </p>
+        </section>
+
+        <section id="pentest">
+          <h2>Kiểm thử xâm nhập (Penetration Testing) theo chuẩn đạo đức</h2>
+          <p>
+            Penetration testing là hoạt động <strong>được ủy quyền</strong> nhằm mô phỏng tấn công để tìm lỗ hổng 
+            trước khi kẻ tấn công thực sự khai thác. Chuẩn đạo đức và pháp lý là bắt buộc.
+          </p>
+          <h3>Nguyên tắc cơ bản</h3>
+          <ul>
+            <li><strong>Authorization (ủy quyền):</strong> Chỉ kiểm thử trên phạm vi và thời gian được văn bản cho phép.</li>
+            <li><strong>Scope (phạm vi):</strong> Tuân thủ danh sách hệ thống/URL/IP được phép test; không vượt scope.</li>
+            <li><strong>Confidentiality:</strong> Bảo mật mọi dữ liệu thu thập được trong quá trình test.</li>
+            <li><strong>Reporting:</strong> Báo cáo rõ ràng lỗ hổng và khuyến nghị vá lỗi, không phát tán chi tiết khai thác.</li>
+          </ul>
+          <h3>Quy trình tổng quan (mô tả)</h3>
+          <ol>
+            <li><strong>Reconnaissance:</strong> Thu thập thông tin công khai (OSINT) về mục tiêu trong phạm vi cho phép.</li>
+            <li><strong>Scanning:</strong> Xác định dịch vụ, cổng mở, phiên bản phần mềm — để đối chiếu với CVE và bản vá.</li>
+            <li><strong>Gaining access:</strong> Trong phạm vi hợp pháp, thử các vectơ tấn công đã biết (không tự tạo mã độc mới).</li>
+            <li><strong>Maintaining access / Analysis:</strong> Phân tích mức độ ảnh hưởng, không mở rộng quyền trái phép.</li>
+            <li><strong>Reporting & Remediation:</strong> Ghi nhận từng bước, khuyến nghị vá lỗi và hardening.</li>
+          </ol>
+          <div class="callout callout-warning">
+            <h4>Lưu ý</h4>
+            <p>Không cung cấp mã độc thực thi. Học liệu chỉ giải thích cơ chế (ví dụ: buffer overflow là gì, 
+            tại sao input validation quan trọng) để sinh viên hiểu và xây dựng phòng thủ.</p>
+          </div>
+        </section>
+
+        <section id="owasp">
+          <h2>OWASP Top 10 — Cấu trúc lỗ hổng và cách vá</h2>
+          <p>
+            OWASP Top 10 là danh sách mười nhóm lỗ hổng bảo mật ứng dụng web phổ biến nhất, 
+            được cập nhật định kỳ. Hiểu cấu trúc từng loại giúp thiết kế và code an toàn hơn.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nhóm lỗ hổng</th>
+                  <th>Mô tả ngắn</th>
+                  <th>Hướng phòng thủ / vá lỗi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Broken Access Control</td>
+                  <td>Người dùng truy cập tài nguyên hoặc chức năng không được phép.</td>
+                  <td>Kiểm tra quyền mọi request; principle of least privilege; không tin client.</td>
+                </tr>
+                <tr>
+                  <td>Cryptographic Failures</td>
+                  <td>Dữ liệu nhạy cảm không mã hóa hoặc dùng thuật toán/implementation yếu.</td>
+                  <td>Mã hóa at-rest và in-transit; dùng chuẩn mạnh (TLS, AES); quản lý key đúng.</td>
+                </tr>
+                <tr>
+                  <td>Injection</td>
+                  <td>Input độc hại được đưa vào interpreter (SQL, OS, LDAP, template…).</td>
+                  <td>Parameterized queries / prepared statements; validate & sanitize input; WAF.</td>
+                </tr>
+                <tr>
+                  <td>Insecure Design</td>
+                  <td>Thiết kế thiếu cơ chế bảo mật (threat modeling chưa đủ).</td>
+                  <td>Threat modeling từ giai đoạn thiết kế; security requirements; secure SDLC.</td>
+                </tr>
+                <tr>
+                  <td>Security Misconfiguration</td>
+                  <td>Cấu hình mặc định, thông báo lỗi chi tiết, dịch vụ thừa.</td>
+                  <td>Hardening checklist; tắt debug; cập nhật dependency; review config.</td>
+                </tr>
+                <tr>
+                  <td>Vulnerable Components</td>
+                  <td>Thư viện/package có lỗ hổng đã biết (CVE).</td>
+                  <td>Quản lý dependency; scan CVE; cập nhật và vá kịp thời.</td>
+                </tr>
+                <tr>
+                  <td>Auth & Session Failures</td>
+                  <td>Xác thực/yêu cầu đăng xuất/session ID yếu.</td>
+                  <td>Mật khẩu mạnh, MFA; session secure, timeout; logout đúng cách.</td>
+                </tr>
+                <tr>
+                  <td>Software & Data Integrity</td>
+                  <td>CI/CD hoặc dữ liệu không xác minh tính toàn vẹn.</td>
+                  <td>Ký mã, supply chain security; verify integrity (checksum, signature).</td>
+                </tr>
+                <tr>
+                  <td>Logging & Monitoring</td>
+                  <td>Thiếu log hoặc không phát hiện xâm nhập.</td>
+                  <td>Log đủ sự kiện bảo mật; giám sát và cảnh báo; incident response.</td>
+                </tr>
+                <tr>
+                  <td>SSRF</td>
+                  <td>Ứng dụng gọi tới URL/tài nguyên do attacker chỉ định.</td>
+                  <td>Whitelist URL/resource; không dùng input user trực tiếp; network segmentation.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Sinh viên nên tham khảo trực tiếp <a href="https://owasp.org/Top10/" target="_blank" rel="noopener noreferrer">OWASP Top 10</a> 
+            và tài liệu vá lỗi từ nhà cung cấp framework (VD: OWASP Cheat Sheet Series) để áp dụng vào dự án thực tế.
+          </p>
+
+          <h3 id="detail-sqli">Chi tiết: SQL Injection</h3>
+          <div class="type-detail">
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Cơ chế hoạt động</h4>
+              <p>Ứng dụng ghép trực tiếp dữ liệu người dùng (form, query string) vào câu lệnh SQL. Kẻ tấn công chèn các ký tự đặc biệt (dấu nháy, gạch ngang, từ khóa như <code>UNION</code>, <code>SELECT</code>) để “đóng” câu lệnh gốc và thêm câu lệnh mới. Hệ quả: đọc/sửa/xóa dữ liệu, bypass đăng nhập, trong một số trường hợp thực thi lệnh trên hệ điều hành nếu DB có quyền.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Đặc điểm nhận dạng</h4>
+              <ul>
+                <li><strong>Trong code:</strong> Chuỗi SQL được nối bằng concatenation với biến từ request (ví dụ <code>"... WHERE id = " + userInput</code>). Không dùng parameterized query / prepared statement.</li>
+                <li><strong>Trong log:</strong> Request chứa payload đặc trưng: dấu nháy đơn, <code>--</code>, <code>OR 1=1</code>, <code>UNION SELECT</code>, <code>SLEEP(</code>, comment SQL. Lỗi DB (syntax error, số cột không khớp) trả về ra response hoặc log.</li>
+                <li><strong>Hành vi:</strong> Truy vấn bất thường từ một IP/user; thời gian phản hồi kéo dài khi dùng time-based payload.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Cách ngăn chặn</h4>
+              <ul>
+                <li>Luôn dùng <strong>parameterized queries / prepared statements</strong>; không ghép input trực tiếp vào SQL.</li>
+                <li>Validate và whitelist input (kiểu dữ liệu, độ dài, ký tự cho phép).</li>
+                <li>Nguyên tắc least privilege: tài khoản DB chỉ có quyền cần thiết; không dùng quyền admin cho ứng dụng.</li>
+                <li>WAF có thể chặn payload phổ biến; không thay thế sửa code đúng cách.</li>
+                <li>Ẩn thông báo lỗi chi tiết của DB với người dùng; log đầy đủ cho bên vận hành.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 id="detail-xss">Chi tiết: Cross-Site Scripting (XSS)</h3>
+          <div class="type-detail">
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Cơ chế hoạt động</h4>
+              <p>Ứng dụng hiển thị nội dung do người dùng nhập (comment, tên, profile) mà không lọc/ký tự hóa. Trình duyệt coi nội dung đó là HTML/JavaScript và thực thi. Kẻ tấn công gửi payload chứa thẻ <code>&lt;script&gt;</code> hoặc sự kiện như <code>onerror=</code>; khi nạn nhân mở trang, script chạy trong ngữ cảnh phiên đăng nhập → đánh cắp cookie, session, hoặc thao tác thay user (Stored XSS). Reflected XSS: payload nằm trong URL/response một lần.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Đặc điểm nhận dạng</h4>
+              <ul>
+                <li><strong>Trong code:</strong> Dữ liệu user được ghi trực tiếp vào HTML (innerHTML, document.write, template không escape). Không có encoding theo context (HTML, attribute, JavaScript, URL).</li>
+                <li><strong>Trong request/response:</strong> Input hoặc URL chứa <code>&lt;script&gt;</code>, <code>javascript:</code>, <code>onerror=</code>, <code>onload=</code>, <code>&lt;img src=x onerror=</code>. Response trả về nguyên payload trong body.</li>
+                <li><strong>Hành vi:</strong> Nạn nhân báo mất session, đăng nhập lạ; log truy cập từ cùng session đến domain do attacker kiểm soát.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Cách ngăn chặn</h4>
+              <ul>
+                <li><strong>Output encoding</strong> theo ngữ cảnh: HTML entity cho nội dung HTML, encoding cho attribute/JS/URL. Dùng thư viện/framework đã có sẵn (VD escape cho HTML).</li>
+                <li>Content Security Policy (CSP): hạn chế nguồn script, tắt inline script nếu có thể; giảm thiệt hại khi vẫn lỗi XSS.</li>
+                <li>Cookie session đặt <code>HttpOnly</code>, <code>Secure</code>; xem xét <code>SameSite</code> để giảm đánh cắp qua request chéo.</li>
+                <li>Validate input: whitelist định dạng cho phép (ví dụ không cho thẻ HTML trong tên); sanitize nếu cần cho phép một phần HTML (dùng thư viện an toàn).</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 id="detail-phishing">Chi tiết: Phishing & Social Engineering</h3>
+          <div class="type-detail">
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Cơ chế hoạt động</h4>
+              <p>Kẻ tấn công giả mạo thực thể đáng tin (ngân hàng, công ty, sếp) qua email, tin nhắn, website giả để lừa nạn nhân cung cấp thông tin đăng nhập, chạy file đính kèm, hoặc chuyển tiền. Không dựa vào lỗ hổng kỹ thuật thuần túy mà khai thác tâm lý: gấp gáp, sợ hãi, tin vào uy tín thương hiệu. Có thể kết hợp với lỗ hổng (ví dụ link tới trang lừa đảo có lỗi hoặc tải mã độc).</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Đặc điểm nhận dạng</h4>
+              <ul>
+                <li><strong>Email/tin nhắn:</strong> Địa chỉ gửi không khớp tên (display name vs domain); domain giống nhưng sai chính tả (ví dụ <code>paypa1.com</code>). Nội dung yêu cầu hành động gấp, “xác minh tài khoản”, mở file đính kèm, click link. File đính kèm .exe, .scr, macro trong Office.</li>
+                <li><strong>Website giả:</strong> URL khác domain chính thống; giao diện bắt chước; form thu thập mật khẩu/OTP. Không có HTTPS hoặc chứng chỉ không đúng.</li>
+                <li><strong>Hành vi:</strong> Nhiều user cùng báo email lạ; đăng nhập từ IP/thiết bị lạ sau khi user click link; tài khoản bị takeover.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Cách ngăn chặn</h4>
+              <ul>
+                <li>Đào tạo nhận thức: không click link/ mở file từ nguồn không chắc chắn; kiểm tra URL và domain trước khi nhập thông tin.</li>
+                <li>Bật MFA (2FA) để giảm thiệt hại khi lộ mật khẩu; ưu tiên phương thức không dựa vào SMS (phishing có thể chuyển hướng SMS).</li>
+                <li>Chính sách email: lọc/quarantine đính kèm nguy hiểm; cảnh báo link ngoài; DMARC/SPF/DKIM để giảm giả mạo domain.</li>
+                <li>Báo cáo nhanh khi nghi ngờ; có quy trình thu hồi quyền và đổi mật khẩu khi tài khoản bị xâm phạm.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 id="detail-ransomware">Chi tiết: Ransomware</h3>
+          <div class="type-detail">
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Cơ chế hoạt động</h4>
+              <p>Mã độc mã hóa dữ liệu trên máy/mạng (hoặc khóa màn hình) và yêu cầu tiền chuộc để (được hứa) trả key giải mã. Thường xâm nhập qua: email đính kèm, link, khai thác lỗ hổng dịch vụ (RDP, SMB). Sau khi vào một máy, có thể lan truyền trong mạng nội bộ (worm-like). Mã hóa file theo danh sách phần mở rộng; có thể xóa shadow copy để chặn khôi phục.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Đặc điểm nhận dạng</h4>
+              <ul>
+                <li><strong>Trước khi bùng phát:</strong> Các file bị đổi tên/extension hàng loạt; process lạ (mã hóa nhiều file); truy cập mạng bất thường (lan truyền); cảnh báo EDR/AV. CVE đã biết (VD EternalBlue) chưa vá trên dịch vụ mở.</li>
+                <li><strong>Sau khi phát tán:</strong> File không mở được; xuất hiện file readme/ransom note; màn hình lock với thông báo chuộc. Log: nhiều truy cập SMB/RDP từ một nguồn; tạo/xóa volume shadow.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Cách ngăn chặn</h4>
+              <ul>
+                <li>Patch management: vá lỗ hổng dịch vụ (RDP, SMB, VPN, web) theo CVE; tắt dịch vụ không cần thiết.</li>
+                <li>Phân đoạn mạng: hạn chế lan truyền; quyền truy cập tối thiểu.</li>
+                <li>Backup offline/air-gapped, kiểm tra restore định kỳ; không chỉ dựa vào một bản backup trên cùng mạng.</li>
+                <li>Đào tạo chống phishing; chặn macro/đính kèm nguy hiểm; EDR và AV cập nhật.</li>
+                <li>Kế hoạch incident response và recovery; không đảm bảo trả tiền sẽ nhận key — ưu tiên khôi phục từ backup và báo cáo cơ quan chức năng.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="real-cases">
+          <h2>Các loại hình tấn công thực tế và case study đời thật</h2>
+          <p>
+            Phần này liệt kê các loại hình tấn công <strong>đã xảy ra trong thực tế</strong> — từ phổ biến (lừa đảo, trộm thẻ) đến chuyên nghiệp (APT, ransomware quy mô lớn) — để sinh viên và cán bộ điều tra nhận diện dấu hiệu, thu thập chứng cứ và phòng ngừa. Nội dung chỉ mô tả sự việc đã xảy ra và cách phòng thủ, không cung cấp công cụ hay mã tấn công.
+          </p>
+
+          <h3>Từ thường gặp đến chuyên nghiệp</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mức độ</th>
+                  <th>Loại hình</th>
+                  <th>Ví dụ thực tế / Case study</th>
+                  <th>Điều tra & phòng ngừa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Thường gặp</td>
+                  <td>Lừa đảo qua email / SMS (phishing, vishing)</td>
+                  <td>Email/SMS giả ngân hàng, bưu điện, thuế; link đăng nhập giả; nạn nhân nhập mật khẩu/OTP → mất tiền. Rất phổ biến tại Việt Nam và toàn cầu.</td>
+                  <td>Thu thập email/SMS, URL, IP log; điều tra tài khoản nhận tiền; hợp tác ngân hàng/viễn thông. Phòng ngừa: cảnh báo người dân, MFA, lọc SMS/email lừa đảo.</td>
+                </tr>
+                <tr>
+                  <td>Thường gặp</td>
+                  <td>Trộm thẻ (card skimming, shimming)</td>
+                  <td>Thiết bị gắn vào ATM hoặc máy thanh toán để đọc dải từ/thẻ chip; camera hoặc keypad giả ghi PIN. Dữ liệu bị bán hoặc clone thẻ.</td>
+                  <td>Kiểm tra ATM/máy trước khi giao dịch (khe lạ, keypad lỏng); báo ngân hàng khi nghi ngờ. Điều tra: camera an ninh, thiết bị thu giữ, chuỗi giao dịch thẻ clone.</td>
+                </tr>
+                <tr>
+                  <td>Thường gặp</td>
+                  <td>Lừa đảo CEO / BEC (Business Email Compromise)</td>
+                  <td>Email giả mạo lãnh đạo/yêu cầu chuyển tiền gấp; kế toán/chuyển khoản vào tài khoản đối tượng. Thiệt hại lớn cho doanh nghiệp vừa và nhỏ.</td>
+                  <td>Xác minh chuyển khoản qua kênh khác (điện thoại, gặp mặt); quy trình duyệt chuyển tiền nhiều bước. Điều tra: header email, IP, tài khoản nhận tiền, chuỗi rửa tiền.</td>
+                </tr>
+                <tr>
+                  <td>Trung bình</td>
+                  <td>Ransomware doanh nghiệp</td>
+                  <td><strong>Colonial Pipeline (2021):</strong> Ransomware (DarkSide) tấn công hệ thống IT → tạm ngừng vận hành đường ống xăng Mỹ, trả tiền chuộc. <strong>WannaCry (2017):</strong> Khai thác EternalBlue (SMB), lan toàn cầu; bệnh viện, doanh nghiệp bị mã hóa.</td>
+                  <td>Bảo quản ổ cứng/máy bị nhiễm; không tắt đột ngột; ghi log mạng, process. Phòng ngừa: vá SMB/RDP, backup offline, phân đoạn mạng.</td>
+                </tr>
+                <tr>
+                  <td>Trung bình</td>
+                  <td>Rò rỉ dữ liệu (data breach)</td>
+                  <td>Hack cơ sở dữ liệu khách hàng (tên, CMND, số thẻ, SĐT) rồi bán trên dark web. Ví dụ: nhiều vụ rò rỉ từ website/API thiếu bảo mật hoặc nhân viên bị lừa cấp quyền.</td>
+                  <td>Điều tra: log đăng nhập, truy cập DB, IP bất thường; forensics máy chủ. Phòng ngừa: mã hóa dữ liệu nhạy cảm, kiểm soát quyền, audit log.</td>
+                </tr>
+                <tr>
+                  <td>Chuyên nghiệp</td>
+                  <td>APT (Advanced Persistent Threat)</td>
+                  <td>Nhóm tấn công có tổ chức, mục tiêu dài hạn (trộm bí mật công nghiệp, gián điệp). Ví dụ: nhóm liên quan nation-state đánh cắp dữ liệu từ hạ tầng, doanh nghiệp qua spear-phishing, lỗ hổng zero-day.</td>
+                  <td>Phát hiện: hành vi bất thường (traffic ra ngoài, tài khoản leo thang quyền); EDR, SIEM, threat intel. Điều tra phối hợp chuyên gia forensics, không xóa log.</td>
+                </tr>
+                <tr>
+                  <td>Chuyên nghiệp</td>
+                  <td>DDoS (tấn công từ chối dịch vụ)</td>
+                  <td>Flood traffic từ botnet làm sập website/dịch vụ. Dùng để tống tiền hoặc gây gián đoạn. Ví dụ: các sàn giao dịch, ngân hàng, cơ quan nhà nước từng bị DDoS.</td>
+                  <td>Phân tích traffic (IP nguồn, pattern); hợp tác ISP/CDN để lọc. Phòng ngừa: dịch vụ chống DDoS, đa vùng, quy trình ứng phó.</td>
+                </tr>
+                <tr>
+                  <td>Chuyên nghiệp</td>
+                  <td>Tấn công hạ tầng quan trọng (OT/ICS)</td>
+                  <td>Mã độc nhắm vào hệ thống điều khiển công nghiệp (điện, nước, nhà máy). Ví dụ: Stuxnet (Iran); các vụ tấn công vào lưới điện. Mục đích: gián đoạn, phá hoại.</td>
+                  <td>Điều tra chuyên ngành OT/ICS; tách mạng IT và OT; kiểm soát thiết bị ngoại vi. Phòng ngừa: segment mạng, whitelist, cập nhật bản vá khi có.</td>
+                </tr>
+                <tr>
+                  <td>Thường gặp</td>
+                  <td>SIM swap / chiếm số điện thoại</td>
+                  <td>Đối tượng lừa nhà mạng chuyển số của nạn nhân sang SIM mới (bằng giả mạo hoặc nhân viên nội gián) → nhận OTP, đăng nhập ngân hàng/ví, mất tiền.</td>
+                  <td>Điều tra: log nhà mạng (ai yêu cầu đổi SIM, cửa hàng nào); camera; tài khoản nhận tiền. Phòng ngừa: bảo vệ thông tin cá nhân với nhà mạng; dùng 2FA không chỉ SMS.</td>
+                </tr>
+                <tr>
+                  <td>Thường gặp</td>
+                  <td>Trojan ngân hàng / mã độc đánh cắp tài khoản</td>
+                  <td>App/ file giả (cài từ link lạ, APK không rõ nguồn) chứa mã độc; khi nạn nhân đăng nhập ngân hàng, mã độc chuyển hướng hoặc đọc OTP → chuyển tiền.</td>
+                  <td>Điều tra: forensics điện thoại/máy tính; app cài đặt, quyền đã cấp; log giao dịch, IP. Phòng ngừa: chỉ cài app từ store chính thống; không nhập thông tin ngân hàng vào link lạ.</td>
+                </tr>
+                <tr>
+                  <td>Trung bình</td>
+                  <td>Trộm tiền mã hóa (crypto theft)</td>
+                  <td>Đánh cắp private key / seed phrase từ ví; hack sàn giao dịch; hoặc lừa chuyển tiền vào ví đối tượng (scam). Giao dịch trên blockchain có thể truy vết nhưng ví ẩn danh.</td>
+                  <td>Điều tra: địa chỉ ví nhận; chuỗi giao dịch blockchain; sàn rút tiền (KYC nếu có); email/device nạn nhân. Phòng ngừa: ví lạnh cho lượng lớn; không chia sẻ seed phrase.</td>
+                </tr>
+                <tr>
+                  <td>Trung bình</td>
+                  <td>Tấn công chuỗi cung ứng (supply chain)</td>
+                  <td>Xâm nhập qua nhà cung cấp phần mềm/hardware (cập nhật bị can thiệp). Ví dụ: SolarWinds (2020) — cập nhật phần mềm Orion bị chèn mã độc, ảnh hưởng nhiều cơ quan Mỹ.</td>
+                  <td>Điều tra: nguồn cập nhật, hash file; log triển khai; so sánh với bản gốc. Phòng ngừa: ký mã, verify integrity; kiểm soát nhà cung cấp; segment mạng.</td>
+                </tr>
+                <tr>
+                  <td>Trung bình</td>
+                  <td>Nội gián (insider threat)</td>
+                  <td>Nhân viên (hoặc tài khoản bị chiếm) đánh cắp dữ liệu, cài backdoor, hoặc cố ý gây sự cố. Có thể kết hợp với lừa đảo (phishing) để lấy quyền.</td>
+                  <td>Điều tra: audit log truy cập (ai, khi nào, dữ liệu gì); hành vi bất thường (tải hàng loạt, gửi ra ngoài); phỏng vấn, camera. Phòng ngừa: phân quyền tối thiểu, DLP, đào tạo.</td>
+                </tr>
+                <tr>
+                  <td>Chuyên nghiệp</td>
+                  <td>NotPetya (2017) — ransomware phá hoại</td>
+                  <td>Lan qua cập nhật phần mềm kế toán Ukraine (MeDoc) và EternalBlue. Mã hóa ổ cứng nhưng không có cách trả tiền thật → mục đích phá hoại. Thiệt hại lớn cho Maersk, FedEx, nhiều doanh nghiệp.</td>
+                  <td>Điều tra: nguồn cập nhật MeDoc; pattern tương tự WannaCry nhưng không có recovery. Phòng ngừa: verify nguồn cập nhật; vá SMB; backup offline.</td>
+                </tr>
+                <tr>
+                  <td>Thường gặp</td>
+                  <td>Keylogger / phần mềm theo dõi</td>
+                  <td>Phần mềm hoặc phần cứng ghi lại phím gõ (mật khẩu, tin nhắn). Cài qua file đính kèm, USB, hoặc truy cập vật lý. Dùng để đánh cắp tài khoản, thông tin nhạy cảm.</td>
+                  <td>Điều tra: forensics máy; process lạ, driver/startup; thiết bị USB lạ gắn sau bàn phím. Phòng ngừa: AV/EDR; không cắm USB lạ; kiểm tra phần cứng định kỳ.</td>
+                </tr>
+                <tr>
+                  <td>Thường gặp</td>
+                  <td>Lừa đảo tình cảm (romance scam) + chuyển tiền</td>
+                  <td>Đối tượng giả mạo quan hệ tình cảm qua mạng, sau đó xin tiền (khẩn cấp, đầu tư, mua quà). Nạn nhân chuyển nhiều lần qua tài khoản/western union/crypto.</td>
+                  <td>Điều tra: chat log, ảnh (có thể deepfake); tài khoản nhận tiền; IP/địa chỉ rút. Phòng ngừa: cảnh báo không chuyển tiền cho người chưa gặp; kiểm tra ảnh ngược (reverse image).</td>
+                </tr>
+                <tr>
+                  <td>Thường gặp</td>
+                  <td>Vishing (phishing qua điện thoại)</td>
+                  <td>Gọi điện giả mạo ngân hàng, công an, thuế; yêu cầu cung cấp OTP, thông tin thẻ, hoặc cài app “bảo mật” → đánh cắp tài khoản.</td>
+                  <td>Điều tra: số gọi, log nhà mạng; thuê bao ảo. Phòng ngừa: ngân hàng/công an không bao giờ gọi xin OTP; gọi lại số chính thống trên website.</td>
+                </tr>
+                <tr>
+                  <td>Trung bình</td>
+                  <td>Cryptojacking (đào coin trộm)</td>
+                  <td>Mã độc dùng CPU/GPU của máy nạn nhân để đào tiền mã hóa; vào qua web (script trên trang bị hack) hoặc malware. Máy chậm, quạt chạy mạnh, hóa đơn điện tăng.</td>
+                  <td>Điều tra: process dùng CPU cao bất thường; kết nối đến pool đào; extension/script trên trình duyệt. Phòng ngừa: chặn script đào trên web; EDR; cập nhật trình duyệt.</td>
+                </tr>
+                <tr>
+                  <td>Trung bình</td>
+                  <td>Watering hole attack</td>
+                  <td>Hack website mà nhóm mục tiêu thường truy cập (ngành, địa phương); chèn mã độc. Khi nạn nhân vào trang, máy bị nhiễm. Dùng trong APT, gián điệp.</td>
+                  <td>Điều tra: nạn nhân truy cập trang nào trước khi nhiễm; so sánh file trang với bản gốc; C2 traffic. Phòng ngừa: cập nhật phần mềm; sandbox; kiểm tra integrity website nội bộ.</td>
+                </tr>
+                <tr>
+                  <td>Trung bình</td>
+                  <td>IoT botnet (Mirai và biến thể)</td>
+                  <td>Mã độc lây sang camera, router, thiết bị IoT mật khẩu mặc định yếu; tạo botnet để DDoS hoặc gửi spam. Ví dụ: Mirai (2016) làm sập nhiều dịch vụ.</td>
+                  <td>Điều tra: traffic từ thiết bị IoT; scan cổng Telnet/SSH; mẫu malware. Phòng ngừa: đổi mật khẩu mặc định; tắt dịch vụ không cần; segment mạng IoT.</td>
+                </tr>
+                <tr>
+                  <td>Trung bình</td>
+                  <td>Lừa đảo đầu tư / Ponzi (crypto, forex, đa cấp giả)</td>
+                  <td>Website/app giả hứa lãi cao; nạn nhân nạp tiền, ban đầu có “lãi” rút được, sau đó không rút được hoặc platform biến mất.</td>
+                  <td>Điều tra: domain, server hosting; tài khoản nhận tiền; ví crypto; nạn nhân cùng nền tảng. Phòng ngừa: cảnh báo đầu tư lãi cao; kiểm tra giấy phép công ty.</td>
+                </tr>
+                <tr>
+                  <td>Chuyên nghiệp</td>
+                  <td>Zero-day exploit</td>
+                  <td>Khai thác lỗ hổng chưa được công bố (chưa có bản vá). APT và nhóm tấn công có ngân sách mua/phát triển exploit. Rất khó phát hiện bằng signature.</td>
+                  <td>Điều tra: hành vi bất thường (EDR, network); so sánh với threat intel; phân tích mẫu. Phòng ngừa: segment, least privilege; giảm bề mặt tấn công; threat hunting.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="real-other">Các loại hình tấn công khác (tóm tắt)</h3>
+          <ul>
+            <li><strong>QR code phishing:</strong> Mã QR dẫn đến trang lừa đảo hoặc tải app độc. Điều tra: URL đích, app tải về; phòng ngừa: không quét QR không rõ nguồn.</li>
+            <li><strong>Smishing:</strong> Phishing qua SMS; link rút gọn, giả mạo ngân hàng/bưu điện. Điều tra: số gửi, URL; phòng ngừa: không click link trong SMS lạ.</li>
+            <li><strong>Fake app / clone app:</strong> App giả bắt chước ngân hàng, ví; cài từ link ngoài store. Điều tra: forensics điện thoại, package name, certificate; phòng ngừa: chỉ tải từ store chính thống.</li>
+            <li><strong>Credential stuffing:</strong> Dùng tài khoản/mật khẩu đã rò rỉ từ vụ breach khác để thử đăng nhập hàng loạt. Điều tra: log đăng nhập thất bại từ nhiều IP; phòng ngừa: MFA, không dùng lại mật khẩu cũ.</li>
+            <li><strong>Man-in-the-middle (MITM):</strong> Chặn/chỉnh sửa traffic giữa nạn nhân và server (WiFi công cộng, DNS poisoning). Điều tra: log kết nối, chứng chỉ; phòng ngừa: VPN, HTTPS, tránh WiFi công cộng cho giao dịch.</li>
+            <li><strong>Account takeover (ATO):</strong> Chiếm tài khoản mạng xã hội/email để lừa bạn bè hoặc đăng nội dung giả. Điều tra: log đăng nhập, IP, thiết bị; phòng ngừa: MFA, cảnh báo đăng nhập lạ.</li>
+          </ul>
+
+          <h3>Checklist thu thập chứng cứ khi điều tra sự cố</h3>
+          <ul>
+            <li><strong>Máy tính:</strong> Không tắt đột ngột; chụp ảnh màn hình nếu đang bật; ghi log process, kết nối mạng (nếu có thể); tạo image ổ cứng đúng chuẩn forensics trước khi phân tích.</li>
+            <li><strong>Điện thoại:</strong> Bật chế độ máy bay để chặn xóa từ xa; không mở khóa thêm; thu thập bằng công cụ forensics chuyên dụng; bảo quản trong túi chống tĩnh điện.</li>
+            <li><strong>Log:</strong> Firewall, proxy, mail server, VPN, đăng nhập ứng dụng; lưu với timestamp; bảo toàn bản gốc.</li>
+            <li><strong>Email:</strong> Lưu full header; file đính kèm (hash, không mở tùy tiện); không reply/forward làm thay đổi metadata.</li>
+            <li><strong>Tài chính:</strong> Sao kê ngân hàng, log giao dịch; địa chỉ ví crypto, chuỗi giao dịch blockchain; hợp tác ngân hàng/sàn theo pháp luật.</li>
+            <li><strong>Hiện trường:</strong> Camera an ninh, thời gian; thiết bị USB, ổ cứng ngoài; ghi chép người tiếp cận, thời gian thu giữ.</li>
+          </ul>
+
+          <h3>Case study chi tiết (mô tả sự việc, áp dụng điều tra)</h3>
+
+          <div class="type-detail">
+            <h3 style="margin-top: 0;">1. Ransomware WannaCry (2017)</h3>
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Diễn biến thực tế</h4>
+              <p>Mã độc WannaCry lan truyền qua lỗ hổng EternalBlue (SMB, Windows). Máy bị nhiễm tự quét và lây sang máy khác trong mạng. Hàng trăm nghìn máy toàn cầu bị mã hóa; bệnh viện, cơ quan nhà nước, doanh nghiệp tê liệt. Không cần nạn nhân mở file — chỉ cần mạng có cổng SMB mở và chưa vá.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Dấu hiệu điều tra</h4>
+              <ul>
+                <li>File bị đổi extension (ví dụ .wncry); file README yêu cầu Bitcoin; traffic đến domain kill-switch (có thể đã bị sinkhole).</li>
+                <li>Log: kết nối SMB từ IP lạ; process lsass, mssecsvc; tạo/xóa volume shadow.</li>
+                <li>Thời điểm: đợt bùng phát 5/2017; các biến thể sau đó có pattern tương tự.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Bài học phòng ngừa</h4>
+              <p>Vá Windows và tắt SMBv1 khi không cần; phân đoạn mạng; backup offline. Khi sự cố xảy ra: cách ly máy nhiễm, không trả tiền chuộc tùy tiện, báo cơ quan chức năng.</p>
+            </div>
+          </div>
+
+          <div class="type-detail">
+            <h3 style="margin-top: 0;">2. Colonial Pipeline ransomware (2021)</h3>
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Diễn biến thực tế</h4>
+              <p>Nhóm DarkSide tấn công hệ thống IT của Colonial Pipeline (Mỹ), mã hóa dữ liệu. Công ty tạm dừng vận hành đường ống dẫn xăng để ngăn lây lan sang hệ thống điều khiển. Gây thiếu xăng khu vực, giá tăng. Công ty trả tiền chuộc; FBI sau đó thu hồi được một phần tiền từ ví Bitcoin.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Dấu hiệu điều tra</h4>
+              <ul>
+                <li>Ransomware-as-a-Service (RaaS): nhóm cung cấp công cụ, chia sẻ lợi nhuận. Thường vào qua RDP yếu hoặc credential bị lộ.</li>
+                <li>Điều tra: log RDP, VPN; wallet Bitcoin nhận tiền; dark web forum liên quan nhóm.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Bài học phòng ngừa</h4>
+              <p>Bảo vệ mạng IT và tách biệt với OT; MFA cho RDP/VPN; giám sát bất thường; kế hoạch khôi phục không phụ thuộc trả tiền chuộc.</p>
+            </div>
+          </div>
+
+          <div class="type-detail">
+            <h3 style="margin-top: 0;">3. Lừa đảo BEC / giả mạo lãnh đạo</h3>
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Diễn biến thực tế</h4>
+              <p>Đối tượng giả mạo email lãnh đạo (CEO, giám đốc) hoặc đối tác, yêu cầu kế toán/chuyển tiền gấp vào tài khoản “đối tác mới”. Nạn nhân chuyển xong mới phát hiện email giả. Thiệt hại có thể rất lớn (hàng tỷ đồng). Thường kết hợp với nghiên cứu trước (social media, website công ty) để tăng độ tin cậy.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Dấu hiệu điều tra</h4>
+              <ul>
+                <li>Header email: địa chỉ gửi thật (Reply-To có thể khác); domain giả (gần giống tên công ty).</li>
+                <li>Tài khoản nhận tiền: thường mở mới, chuyển đi nhanh; chuỗi chuyển qua nhiều tài khoản (rửa tiền).</li>
+                <li>Thu thập: email đầy đủ (header), log chuyển khoản, camera ATM/ngân hàng nếu rút tiền mặt.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Bài học phòng ngừa</h4>
+              <p>Quy định xác minh chuyển khoản lớn qua kênh khác (gọi điện, gặp mặt); không chỉ dựa vào email. DMARC/SPF/DKIM giảm giả mạo domain; đào tạo nhân sự nhận diện BEC.</p>
+            </div>
+          </div>
+
+          <div class="type-detail">
+            <h3 style="margin-top: 0;">4. Trộm thẻ / skimming tại ATM</h3>
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Diễn biến thực tế</h4>
+              <p>Thiết bị skimmer gắn vào khe đọc thẻ ATM (hoặc shimmer bên trong khe) đọc dải từ/chip; camera nhỏ hoặc keypad giả ghi lại PIN. Dữ liệu được dùng để tạo thẻ clone hoặc giao dịch trực tuyến. Thường gặp tại ATM vắng, ít camera.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Dấu hiệu điều tra & nhận diện</h4>
+              <ul>
+                <li>Người dùng: khe thẻ lỏng, khác màu; keypad dày bất thường; camera hướng vào bàn phím.</li>
+                <li>Điều tra: camera ATM, thời điểm gắn thiết bị; chuỗi giao dịch thẻ bị clone (thời gian, địa điểm); thu giữ skimmer, thiết bị lưu dữ liệu.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Bài học phòng ngừa</h4>
+              <p>Ngân hàng: bảo trì ATM định kỳ, camera góc rộng; thẻ chip + PIN an toàn hơn. Người dân: che tay khi nhập PIN; báo ngân hàng khi nghi ngờ.</p>
+            </div>
+          </div>
+
+          <div class="type-detail">
+            <h3 style="margin-top: 0;">5. Equifax data breach (2017)</h3>
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Diễn biến thực tế</h4>
+              <p>Công ty tín dụng Equifax (Mỹ) bị xâm nhập qua lỗ hổng chưa vá trên Apache Struts. Kẻ tấn công đánh cắp dữ liệu khoảng 147 triệu người (tên, SSN, ngày sinh, số thẻ, bằng lái). Dữ liệu bị bán/ rò rỉ trên dark web; dẫn đến nguy cơ trộm cắp danh tính, mở thẻ tín dụng giả.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Dấu hiệu điều tra</h4>
+              <ul>
+                <li>Log web server: request bất thường khai thác CVE Struts; truy cập DB từ ứng dụng web.</li>
+                <li>Điều tra: timeline patch; ai có quyền truy cập; dữ liệu nào bị xuất; IP và tài khoản liên quan.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Bài học phòng ngừa</h4>
+              <p>Patch management nghiêm ngặt (đặc biệt framework web); segment mạng; mã hóa dữ liệu nhạy cảm; giảm quyền truy cập DB từ ứng dụng.</p>
+            </div>
+          </div>
+
+          <div class="type-detail">
+            <h3 style="margin-top: 0;">6. Target breach (2013) — qua nhà cung cấp</h3>
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Diễn biến thực tế</h4>
+              <p>Kẻ tấn công vào mạng Target qua tài khoản của nhà cung cấp HVAC (điều hòa). Từ đó cài malware trên máy thanh toán (POS) để đánh cắp dữ liệu thẻ khi khách quẹt. Hàng chục triệu thẻ bị lộ.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Dấu hiệu điều tra</h4>
+              <ul>
+                <li>Kết nối từ bên thứ ba (HVAC) vào mạng nội bộ; malware trên POS; traffic gửi dữ liệu thẻ ra ngoài.</li>
+                <li>Điều tra: danh sách nhà cung cấp có VPN/ truy cập; log POS; chuỗi thẻ bị clone sau sự cố.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Bài học phòng ngừa</h4>
+              <p>Tách mạng nhà cung cấp (không cho VPN vào toàn bộ mạng); segment POS; giám sát traffic bất thường; kiểm tra quyền truy cập định kỳ.</p>
+            </div>
+          </div>
+
+          <div class="type-detail">
+            <h3 style="margin-top: 0;">7. SolarWinds supply chain attack (2020)</h3>
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Diễn biến thực tế</h4>
+              <p>Nhóm APT xâm nhập SolarWinds, chèn mã độc vào bản cập nhật phần mềm Orion (dùng để giám sát mạng). Khách hàng cập nhật Orion vô tình cài mã độc → kẻ tấn công truy cập được nhiều cơ quan chính phủ và doanh nghiệp Mỹ. Mục đích: gián điệp, đánh cắp thư tín, dữ liệu.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Dấu hiệu điều tra</h4>
+              <ul>
+                <li>File cập nhật Orion bị thay đổi (hash khác bản gốc); process/DLL lạ; traffic đến C2 (command & control) từ máy có cài Orion.</li>
+                <li>Điều tra: so sánh file với bản gốc; timeline triển khai; log truy cập bất thường sau khi cập nhật.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Bài học phòng ngừa</h4>
+              <p>Ký mã và verify integrity trước khi triển khai; kiểm soát nhà cung cấp phần mềm; zero-trust; giám sát traffic ra ngoài và hành vi bất thường.</p>
+            </div>
+          </div>
+
+          <div class="type-detail">
+            <h3 style="margin-top: 0;">8. NotPetya (2017) — ransomware phá hoại</h3>
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Diễn biến thực tế</h4>
+              <p>Mã độc lan qua cập nhật phần mềm kế toán MeDoc (Ukraine) và lỗ hổng EternalBlue. Giả dạng Petya (ransomware) nhưng không có cơ chế trả tiền thật — mục đích phá hoại hạ tầng. Công ty Maersk, FedEx, Merck và nhiều doanh nghiệp toàn cầu bị ảnh hưởng nặng.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Dấu hiệu điều tra</h4>
+              <ul>
+                <li>Triển khai qua MeDoc update; sau đó lan SMB tương tự WannaCry; mã hóa MBR/ổ cứng; email “trả tiền” không thực sự phục hồi được.</li>
+                <li>Điều tra: nguồn cập nhật MeDoc; mẫu malware; mối liên hệ với nhóm APT.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Bài học phòng ngừa</h4>
+              <p>Xác minh nguồn và tính toàn vẹn mọi bản cập nhật; vá SMB; phân đoạn mạng; backup offline và kế hoạch khôi phục không phụ thuộc attacker.</p>
+            </div>
+          </div>
+
+          <div class="type-detail">
+            <h3 style="margin-top: 0;">9. Yahoo data breach (2013–2014)</h3>
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Diễn biến thực tế</h4>
+              <p>Hàng tỷ tài khoản Yahoo bị xâm nhập qua cookie forgery và lỗ hổng; kẻ tấn công đánh cắp tên, email, mật khẩu (hash), SĐT. Sự cố chỉ được công bố sau nhiều năm; ảnh hưởng thương vụ bán Yahoo cho Verizon.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Dấu hiệu điều tra</h4>
+              <ul>
+                <li>Audit log truy cập DB; cookie/session bất thường; dữ liệu bị xuất hàng loạt. Điều tra: timeline, ai có quyền, hash mật khẩu có bị crack không.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Bài học phòng ngừa</h4>
+              <p>Bảo vệ session/cookie; mã hóa dữ liệu nhạy cảm; phát hiện truy cập bất thường sớm; thông báo sự cố đúng quy định.</p>
+            </div>
+          </div>
+
+          <div class="type-detail">
+            <h3 style="margin-top: 0;">10. Lừa đảo “công an, viện kiểm sát” (Việt Nam)</h3>
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Diễn biến thực tế</h4>
+              <p>Đối tượng gọi điện giả mạo công an, viện kiểm sát; báo nạn nhân “dính án”, yêu cầu chuyển tiền để “bảo lãnh” hoặc “xử lý hồ sơ”. Nạn nhân chuyển tiền nhiều lần qua tài khoản đối tượng. Rất phổ biến tại Việt Nam.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Dấu hiệu điều tra</h4>
+              <ul>
+                <li>Số gọi (thường ẩn hoặc mạo danh); thuê bao ảo; tài khoản nhận tiền (mở mới, rút nhanh); camera ATM; chuỗi chuyển qua nhiều tài khoản.</li>
+                <li>Công an/viện kiểm sát thật không bao giờ gọi xin chuyển tiền qua tài khoản cá nhân.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Bài học phòng ngừa</h4>
+              <p>Cảnh báo người dân: cơ quan nhà nước không gọi xin tiền; gọi lại số chính thống (trang web cơ quan) để xác minh; báo công an khi nghi ngờ.</p>
+            </div>
+          </div>
+
+          <div class="callout callout-ethical">
+            <h4>Áp dụng trong điều tra</h4>
+            <p>Khi điều tra sự cố: bảo toàn chứng cứ (không tắt máy đột ngột nếu đang chạy; chụp ảnh, ghi log trước khi tháo thiết bị); ghi nhận thời gian, người tiếp cận; hợp tác với đơn vị kỹ thuật/forensics khi cần. Tham khảo quy định pháp luật về thu thập chứng cứ điện tử.</p>
+          </div>
+        </section>
+
+        <section id="advanced-cases">
+          <h2>Vụ án khó — Kỹ thuật ít phổ biến & điều tra nâng cao</h2>
+          <p>
+            Phần này dành cho các <strong>vụ án phức tạp</strong> mà thám tử và cảnh sát có thể gặp: kỹ thuật tấn công ít phổ biến hơn, chống điều tra (anti-forensics), và góc nhìn điều tra nâng cao. Nội dung chỉ mô tả cơ chế và dấu hiệu để nhận diện, không cung cấp công cụ hay mã thực thi.
+          </p>
+          <div class="callout callout-info">
+            <h4>Phối hợp chuyên gia</h4>
+            <p>Vụ án khó thường cần phối hợp với chuyên gia forensics số, đơn vị an ninh mạng, hoặc cơ quan điều tra chuyên ngành. Học liệu giúp nhận diện sớm để yêu cầu hỗ trợ đúng hướng.</p>
+          </div>
+
+          <h3>Malware ít để lại dấu vết (fileless, living-off-the-land)</h3>
+          <ul>
+            <li><strong>Fileless malware:</strong> Mã độc chạy trong bộ nhớ (RAM), không ghi file lên ổ cứng. Vào qua macro, script (PowerShell, WSH), hoặc khai thác lỗ hổng. Khi tắt máy có thể mất bằng chứng. <em>Điều tra:</em> dump memory (RAM) trước khi tắt; log PowerShell, script execution; prefetch/SRAM nếu có.</li>
+            <li><strong>Living-off-the-land (LOLBins):</strong> Dùng công cụ sẵn có của hệ điều hành (PowerShell, mshta, wmic, bitsadmin, certutil…) để tải/ thực thi mã độc hoặc exfil dữ liệu. Khó phát hiện vì process “hợp lệ”. <em>Điều tra:</em> log command line của process; script block logging PowerShell; so sánh hành vi với baseline.</li>
+            <li><strong>Process hollowing / injection:</strong> Process hợp lệ được tạo nhưng code bên trong bị thay bằng mã độc; tên process không đáng ngờ. <em>Điều tra:</em> so sánh image trên đĩa với image trong memory; EDR phát hiện injection.</li>
+          </ul>
+
+          <h3>Chống điều tra (anti-forensics)</h3>
+          <ul>
+            <li><strong>Xóa/ làm hỏng log:</strong> Attacker xóa event log, syslog, hoặc ghi đè. <em>Điều tra:</em> kiểm tra khoảng trống thời gian trong log; backup log nếu có; registry, prefetch có thể còn dấu vết.</li>
+            <li><strong>Timestomping:</strong> Sửa thời gian tạo/sửa file (timestamp) để trông như file cũ hoặc không liên quan. <em>Điều tra:</em> so sánh MFT (Master File Table) với timestamp hiển thị; $I30 index; journal.</li>
+            <li><strong>Wipe / secure delete:</strong> Ghi đè nhiều lần lên ổ cứng để chống phục hồi. <em>Điều tra:</em> có thể vẫn còn fragment trong vùng chưa ghi đè; SSD wear-leveling có thể giữ bản copy; thu giữ sớm trước khi wipe toàn bộ.</li>
+            <li><strong>Mã hóa ổ đĩa/ container:</strong> Dữ liệu bị mã hóa (VeraCrypt, BitLocker, container) — không đọc được nếu không có key. <em>Điều tra:</em> thu giữ thiết bị; hợp tác pháp lý để yêu cầu mật khẩu/ key; phân tích RAM khi máy đang mở volume (key có thể trong memory).</li>
+          </ul>
+
+          <h3>Kênh C2 và exfil ẩn</h3>
+          <ul>
+            <li><strong>DNS tunneling:</strong> Dữ liệu được mã hóa/ mã hóa trong truy vấn DNS (subdomain, TXT record); C2 qua DNS. Firewall thường cho DNS qua. <em>Điều tra:</em> log DNS (tên miền lạ, tần suất cao, độ dài bất thường); phân tích payload trong request/response.</li>
+            <li><strong>C2 qua HTTPS/ CDN:</strong> Traffic C2 trộn với HTTPS bình thường hoặc qua CDN (Cloudflare, etc.) → khó chặn theo IP/ domain. <em>Điều tra:</strong> JA3 fingerprint; pattern request; so sánh với threat intel.</li>
+            <li><strong>Exfil qua kênh hợp lệ:</strong> Đánh cắp dữ liệu qua cloud sync (OneDrive, Dropbox), email, hoặc upload lên blog/ ảnh (steganography). <em>Điều tra:</em> log upload, API; kiểm tra file ảnh/ đính kèm có nhúng dữ liệu.</li>
+          </ul>
+
+          <h3>Steganography — ẩn dữ liệu trong ảnh/ file</h3>
+          <p>Kẻ tấn công hoặc tội phạm có thể giấu dữ liệu (malware, danh sách nạn nhân, thông tin trộm) bên trong file ảnh, âm thanh, hoặc tài liệu. File nhìn bình thường nhưng chứa payload khi dùng công cụ giải mã. <em>Điều tra:</em> so sánh kích thước file với ảnh gốc (lớn hơn bất thường); phân tích bit (LSB, tool steganalysis); kiểm tra metadata, comment. Không mở file tùy tiện trên máy chính — dùng máy cách ly hoặc sandbox.</p>
+
+          <h3>Ransomware nâng cao (double/triple extortion)</h3>
+          <p>Ngoài mã hóa, nhóm tấn công <strong>đánh cắp dữ liệu trước</strong> rồi đe dọa công bố (double extortion) hoặc liên hệ khách hàng/ đối tác (triple extortion). Nạn nhân trả tiền vẫn có thể bị leak. <em>Điều tra:</em> xác định lượng dữ liệu bị exfil (log upload, egress); kiểm tra site/ blog leak của nhóm; theo dõi dark web forum; thu thập ransom note, địa chỉ ví, email liên hệ.</p>
+
+          <h3>Tiền mã hóa — mixing, tumbling, privacy coin</h3>
+          <ul>
+            <li><strong>Mixing / tumbling:</strong> Dịch vụ trộn Bitcoin (hoặc coin khác) để che chuỗi giao dịch. Tiền vào nhiều ví rồi trộn và rút ra ví “sạch”. <em>Điều tra:</em> theo dõi chuỗi trước/sau mix; hợp tác với sàn có KYC khi rút ra fiat; subpoena dịch vụ mix (nếu có).</li>
+            <li><strong>Privacy coin (Monero, Zcash):</strong> Giao dịch khó truy vết hơn Bitcoin. <em>Điều tra:</em> điểm vào/ra (sàn đổi sang Bitcoin hoặc fiat); KYC tại sàn; thiết bị/ IP khi đăng ký sàn.</li>
+            <li><strong>Ví phần cứng / cold wallet:</strong> Key không lên mạng; thu giữ thiết bị mới có cơ hội truy cập (hoặc yêu cầu pháp lý mật khẩu).</li>
+          </ul>
+
+          <h3>Dark web — góc điều tra (không hướng dẫn sử dụng)</h3>
+          <p>Chợ dark web bán dữ liệu rò rỉ, công cụ mã độc, ma túy, vũ khí. Điều tra cần: xác định URL/ mirror; thu thập listing, nickname, cryptocurrency địa chỉ; đối chiếu với dữ liệu đã có (breach, ví). Truy vết thường cần chuyên gia và hợp tác quốc tế. <strong>Không cung cấp hướng dẫn truy cập hay mua bán;</strong> chỉ mô tả góc nhìn điều tra và loại chứng cứ có thể thu thập từ báo cáo chuyên ngành.</p>
+
+          <h3>Tấn công nhắm cá nhân (stalkerware, spyware)</h3>
+          <p>Phần mềm theo dõi cài trên điện thoại/ máy tính nạn nhân (bạn đời, đối tác) để đọc tin nhắn, vị trí, microphone. Cài qua truy cập vật lý, lừa cấp quyền, hoặc lỗ hổng. <em>Điều tra:</em> forensics điện thoại (app không rõ nguồn, quyền bất thường); so sánh danh sách app với bản gốc; kiểm tra cài đặt MDM/ profile; nạn nhân báo hành vi theo dõi (biết nội dung riêng tư). Thu thập thiết bị khi còn bật; không reset.</p>
+
+          <h3>Deepfake trong lừa đảo</h3>
+          <p>Giọng nói hoặc video giả mạo (deepfake) dùng để lừa chuyển tiền (giả lãnh đạo, giả người thân). Nạn nhân nghe/ thấy “người quen” yêu cầu chuyển gấp. <em>Điều tra:</em> thu thập file âm thanh/ video gốc; so sánh với mẫu thật (phân tích tần số, artifact); truy nguồn file (metadata, nền, thiết bị). Xác minh qua kênh khác (gọi lại số chính thống) là cách phòng ngừa quan trọng.</p>
+
+          <h3>Tin nhắn mã hóa (E2E) trong tội phạm</h3>
+          <p>Ứng dụng tin nhắn mã hóa đầu-cuối (E2E) được tội phạm dùng để trao đổi; nội dung không đọc được nếu chỉ thu giữ server. <em>Điều tra:</em> thu giữ thiết bị của nghi phạm/ nạn nhân (điện thoại, máy tính) khi còn mở khóa; backup thiết bị theo quy trình forensics; metadata (thời gian, người nhận) có thể có từ nhà cung cấp theo lệnh pháp lý; hợp tác quốc tế khi server ở nước ngoài.</p>
+
+          <h3>Supply chain ít phổ biến (npm, PyPI, thư viện)</h3>
+          <p>Ngoài phần mềm enterprise (SolarWinds), mã độc có thể được chèn vào thư viện mã nguồn mở (npm, PyPI, RubyGems). Developer cài package “bị nhiễm” → build/ deploy đưa mã độc vào ứng dụng hoặc máy developer. <em>Điều tra:</em> xác định package nào, version nào; so sánh với bản gốc (hash, diff); log cài đặt, build; ai publish, khi nào. Phòng ngừa: verify package, lockfile; quét dependency.</p>
+
+          <h3>Checklist vụ án khó — cần hỗ trợ chuyên ngành khi nào</h3>
+          <ul>
+            <li>Malware fileless / chỉ trong RAM → cần dump memory, phân tích memory forensics.</li>
+            <li>Ổ đĩa/ container mã hóa → thu giữ khi máy đang bật (key có thể trong RAM); yêu cầu pháp lý mật khẩu.</li>
+            <li>DNS tunneling, C2 qua HTTPS → cần log DNS/ proxy đầy đủ; threat intel; có thể cần hợp tác ISP.</li>
+            <li>Steganography nghi ngờ → phân tích file bằng tool chuyên dụng; không mở trên máy chính.</li>
+            <li>Dark web, mixing, privacy coin → cần chuyên gia blockchain/ dark web; hợp tác sàn, cơ quan nước ngoài.</li>
+            <li>Stalkerware / deepfake → forensics thiết bị; phân tích âm thanh/ hình ảnh chuyên sâu.</li>
+          </ul>
+        </section>
+
+        <section id="crypto">
+          <h2>Mật mã học cơ bản (Cryptography)</h2>
+          <p>
+            Mật mã học là nền tảng bảo vệ tính <strong>bí mật</strong>, <strong>toàn vẹn</strong> và <strong>xác thực</strong> của dữ liệu. Hiểu đúng các khối cơ bản giúp tránh những lỗi thiết kế nghiêm trọng như tự chế thuật toán, lưu mật khẩu dạng thô, hoặc dùng hàm băm nhanh cho mật khẩu.
+          </p>
+          <h3>Ba trụ cột của mật mã</h3>
+          <ul>
+            <li><strong>Mã hóa (encryption):</strong> Đối xứng (cùng khóa, nhanh — AES, ChaCha20) và bất đối xứng (cặp khóa công khai/riêng tư, chậm hơn — RSA, ECC). Thực tế thường kết hợp: dùng khóa bất đối xứng để trao đổi khóa phiên, sau đó mã hóa dữ liệu bằng khóa đối xứng.</li>
+            <li><strong>Hàm băm (hash):</strong> Biến dữ liệu thành chuỗi độ dài cố định, một chiều (SHA-256, SHA-3). Dùng để kiểm tra toàn vẹn và lưu mật khẩu — lưu mật khẩu phải dùng hàm băm chậm có salt (bcrypt, scrypt, Argon2), không dùng MD5/SHA-1.</li>
+            <li><strong>Chữ ký số và MAC:</strong> Chữ ký số (khóa riêng ký, khóa công khai xác minh) chứng minh nguồn gốc; HMAC (khóa bí mật chung) xác thực tính toàn vẹn giữa hai bên đã chia sẻ khóa.</li>
+          </ul>
+          <h3>Áp dụng thực tế</h3>
+          <ul>
+            <li><strong>TLS/HTTPS:</strong> Bắt tay TLS dùng chứng chỉ (X.509) để xác thực server và trao đổi khóa phiên; sau đó mã hóa toàn bộ traffic. HSTS và kiểm tra chứng chỉ giúp chống MITM.</li>
+            <li><strong>Lưu mật khẩu:</strong> Luôn băm với salt + hàm chậm; không bao giờ lưu plaintext, không mã hóa hai chiều mật khẩu.</li>
+            <li><strong>Quản lý khóa:</strong> Sinh khóa từ nguồn entropy an toàn, xoay vòng định kỳ, lưu trong HSM/KMS, phân quyền truy cập tối thiểu.</li>
+          </ul>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr><th>Mục đích</th><th>Thuật toán phổ biến</th><th>Ghi chú</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Mã hóa đối xứng</td><td>AES-256-GCM, ChaCha20-Poly1305</td><td>Nhanh, dùng cho dữ liệu lớn; chọn chế độ có xác thực (AEAD).</td></tr>
+                <tr><td>Mã hóa bất đối xứng</td><td>RSA-3072+, ECDH, ECDSA</td><td>Dùng trao đổi khóa và chữ ký; không mã hóa khối dữ liệu lớn.</td></tr>
+                <tr><td>Hàm băm</td><td>SHA-256, SHA-3, BLAKE2</td><td>Kiểm tra toàn vẹn, chữ ký; không dùng MD5/SHA-1 cho mục tiêu bảo mật.</td></tr>
+                <tr><td>Băm mật khẩu</td><td>Argon2, bcrypt, scrypt</td><td>Chậm có chủ đích + salt; chống brute force và rainbow table.</td></tr>
+                <tr><td>MAC</td><td>HMAC-SHA256</td><td>Xác thực toàn vẹn khi hai bên chia sẻ khóa.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="network-defense">
+          <h2>Hạ tầng phòng thủ mạng (Defense-in-depth)</h2>
+          <p>
+            Không một lớp phòng thủ nào là tuyệt đối — mô hình <strong>phòng thủ theo chiều sâu</strong> xếp nhiều lớp kiểm soát để khi một lớp bị vượt qua, các lớp còn lại vẫn giữ hệ thống an toàn.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr><th>Lớp / Công cụ</th><th>Chức năng</th><th>Ví dụ triển khai</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Firewall</td><td>Lọc traffic theo IP, cổng, giao thức ở biên mạng.</td><td>Chặn cổng không dùng; mở tối thiểu dịch vụ cần thiết.</td></tr>
+                <tr><td>IDS / IPS</td><td>Phát hiện (IDS) hoặc chặn (IPS) xâm nhập theo chữ ký/hành vi.</td><td>Đặt ở biên và các phân đoạn nội bộ quan trọng.</td></tr>
+                <tr><td>WAF</td><td>Lọc request tầng ứng dụng (SQLi, XSS, bot…).</td><td>Đặt trước web app; không thay thế việc sửa code.</td></tr>
+                <tr><td>SIEM / SOAR</td><td>Gom log, phát hiện bất thường, tự động phản ứng.</td><td>Trung tâm giám sát; cảnh báo 24/7 theo quy tắc.</td></tr>
+                <tr><td>EDR / Antivirus</td><td>Bảo vệ và phản ứng trên máy đầu cuối.</td><td>Cài trên mọi máy; cập nhật signature và chính sách.</td></tr>
+                <tr><td>VPN</td><td>Kênh mã hóa cho truy cập từ xa.</td><td>Bắt buộc MFA; kiểm soát thiết bị truy cập.</td></tr>
+                <tr><td>Phân đoạn mạng</td><td>Chia mạng thành vùng nhỏ, hạn chế lan truyền.</td><td>Tách IT/OT, guest, server, workstation.</td></tr>
+                <tr><td>DMZ</td><td>Vùng trung gian cho dịch vụ công khai.</td><td>Web/email đặt ở DMZ, không cho thẳng vào mạng nội bộ.</td></tr>
+                <tr><td>Honeypot / decoy</td><td>Bẫy thu hút kẻ tấn công để phát hiện sớm.</td><td>Dịch vụ giả, tài khoản mồi, file canary.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Nguyên tắc vận hành</h3>
+          <ul>
+            <li><strong>Least privilege:</strong> Người dùng, dịch vụ, tài khoản chỉ có quyền tối thiểu; định kỳ rà soát quyền.</li>
+            <li><strong>Zero Trust:</strong> Không tin tưởng mặc định dù ở trong mạng; xác thực và kiểm tra mọi request, thiết bị, người dùng.</li>
+            <li><strong>Giám sát liên tục:</strong> Log đầy đủ, cảnh báo kịp thời; diễn tập và threat hunting định kỳ.</li>
+            <li><strong>Cập nhật & vá lỗi:</strong> Patch management ưu tiên theo CVSS và mức độ lộ ra ngoài (ưu tiên internet-facing trước).</li>
+          </ul>
+        </section>
+
+        <section id="ir-lifecycle">
+          <h2>Quy trình ứng phó sự cố (Incident Response)</h2>
+          <p>
+            Ứng phó sự cố là quy trình có tổ chức để phát hiện, khống chế, khôi phục và rút kinh nghiệm sau sự cố bảo mật. Khung phổ biến theo <strong>NIST SP 800-61</strong> gồm các pha:
+          </p>
+          <ol>
+            <li><strong>Chuẩn bị (Preparation):</strong> Xây dựng kế hoạch IR, đội ứng phó, kênh liên lạc; chuẩn bị công cụ forensics, quy trình bảo quản chứng cứ và backup.</li>
+            <li><strong>Phát hiện & phân tích (Detection & Analysis):</strong> Nhận diện sự cố từ cảnh báo SIEM/EDR hoặc báo cáo người dùng; xác định phạm vi, mức độ và thu bằng chứng (log, process, network).</li>
+            <li><strong>Khống chế (Containment):</strong> Cách ly hệ thống nhiễm (ngắt mạng, chặn IP/C2) để ngăn lan rộng — cân nhắc giữa bảo toàn chứng cứ và dừng thiệt hại.</li>
+            <li><strong>Loại bỏ (Eradication):</strong> Gỡ mã độc, đóng lỗ hổng gốc (vá lỗi, đổi mật khẩu, thu hồi tài khoản), loại bỏ quyền truy cập trái phép.</li>
+            <li><strong>Khôi phục (Recovery):</strong> Khôi phục dữ liệu từ backup sạch, giám sát kỹ, xác nhận hệ thống hoạt động bình thường trước khi mở lại.</li>
+            <li><strong>Rút kinh nghiệm (Lessons Learned):</strong> Họp đánh giá, cập nhật quy trình, vá điểm yếu về con người và kỹ thuật, chia sẻ bài học.</li>
+          </ol>
+          <div class="callout callout-warning">
+            <h4>Bảo toàn chứng cứ</h4>
+            <p>Trong mọi pha: ghi log thời gian, người thao tác, hành động; ưu tiên tạo bản sao forensics (image) trước khi thay đổi; không tắt máy đột ngột nếu đang chạy — dữ liệu trong RAM có thể chứa bằng chứng quan trọng.</p>
+          </div>
+          <h3>Checklist ứng phó nhanh</h3>
+          <ul>
+            <li>Xác nhận sự cố thật (tránh false positive) và phân loại mức độ nghiêm trọng.</li>
+            <li>Báo cáo đúng người phụ trách; tuân thủ quy định thông báo sự cố của tổ chức/pháp luật.</li>
+            <li>Lưu log firewall, proxy, EDR, mail server; chụp ảnh màn hình nếu cần.</li>
+            <li>Cách ly tài khoản/máy nghi ngờ; đổi mật khẩu và thu hồi phiên đăng nhập.</li>
+            <li>Khôi phục từ backup đã kiểm chứng; giám sát 24–48 giờ sau khôi phục.</li>
+          </ul>
+        </section>
+
+        <section id="defense">
+          <h2>Xây dựng hệ thống phòng thủ</h2>
+          <p>
+            Mục tiêu của học liệu là hướng tới <strong>phòng thủ chủ động</strong>:
+          </p>
+          <ul>
+            <li>Áp dụng Secure SDLC: bảo mật từ thiết kế, code review, testing (SAST/DAST), deployment.</li>
+            <li>Patch management: theo dõi CVE, ưu tiên vá lỗi theo mức độ nghiêm trọng.</li>
+            <li>Network segmentation, firewall, IDS/IPS phù hợp với kiến trúc.</li>
+            <li>Đào tạo nhận thức bảo mật cho nhân sự (phishing, mật khẩu, quy định).</li>
+            <li>Incident response plan và backup để phục hồi khi sự cố xảy ra.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <strong>Bách Khoa Toàn Thư về Bảo Mật và Khoa Học Độc Học</strong> — Học liệu giáo dục. 
+      <a href="index.html">Về trang chủ</a>
+    </p>
+  </footer>
+<script src="js/app.js"></script>
+</body>
+</html>

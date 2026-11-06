@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Quản trị — Bách Khoa Bảo Mật &amp; Độc Học</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/v2.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="../js/static-auth.js"></script>
+</head>
+<body class="v2 admin">
+  <div class="admin-shell">
+    <aside class="admin-side">
+      <a class="v2-brand" href="/dashboard.html">
+        <span class="v2-brand__mark">🛡</span>
+        <span>Bách Khoa<small>Admin Console</small></span>
+      </a>
+      <div class="admin-side__label">Điều hành</div>
+      <nav class="admin-nav" id="admin-nav" aria-label="Khu vực quản trị">
+        <button type="button" data-view="overview" class="active">📊 Tổng quan</button>
+        <button type="button" data-view="content">📝 Nội dung</button>
+        <button type="button" data-view="sources">🔗 Nguồn &amp; đồng bộ</button>
+        <button type="button" data-view="users">👥 Người dùng</button>
+        <button type="button" data-view="audit">🧾 Audit log</button>
+        <button type="button" data-view="security">🔐 Bảo mật &amp; backup</button>
+        <button type="button" data-view="settings">⚙️ Cấu hình</button>
+      </nav>
+      <div class="admin-side__foot">
+        <a href="/dashboard.html">← Về trang công khai</a>
+        <a href="/sources.html">Trạng thái nguồn dữ liệu</a>
+        <span>Phiên đăng nhập phía server</span>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <h1 id="view-title">Tổng quan hệ thống</h1>
+        <div class="admin-topbar__user">
+          <span class="admin-user-chip"><span class="admin-avatar" id="user-avatar">A</span><span class="username" id="user-name">Đang tải…</span><span class="v2-badge v2-badge--neutral" id="user-role">—</span></span>
+          <button class="v2-btn v2-btn--sm" type="button" id="logout-btn">Đăng xuất</button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <div class="admin-banner" id="password-banner" hidden>
+          Tài khoản đang dùng mật khẩu tạm. Vui lòng đổi mật khẩu trong mục <strong>Bảo mật &amp; backup</strong> trước khi tiếp tục.
+        </div>
+
+        <section class="admin-view active" id="view-overview">
+          <div class="admin-section-head">
+            <div><h2>Tổng quan hệ thống</h2><p>Số liệu CSDL, trạng thái đồng bộ và hoạt động quản trị gần nhất.</p></div>
+            <button class="v2-btn v2-btn--primary" type="button" data-sync-all>↻ Đồng bộ tất cả nguồn</button>
+          </div>
+          <div class="admin-kpis" id="overview-kpis"><div class="admin-empty">Đang tải…</div></div>
+          <div class="admin-split">
+            <div class="v2-card"><div class="v2-card__head"><h3>Nguồn đang lỗi</h3></div><div class="v2-card__body" id="overview-failing"><div class="admin-empty">Đang tải…</div></div></div>
+            <div class="v2-card"><div class="v2-card__head"><h3>Hoạt động gần đây</h3></div><div class="v2-card__body admin-log" id="overview-audit"><div class="admin-empty">Đang tải…</div></div></div>
+          </div>
+          <div class="v2-card" style="margin-top:16px"><div class="v2-card__head"><h3>Lần đồng bộ gần nhất</h3></div><div class="v2-card__body" id="overview-sync"><div class="admin-empty">Đang tải…</div></div></div>
+        </section>
+
+        <section class="admin-view" id="view-content">
+          <div class="admin-section-head">
+            <div><h2>Quản lý nội dung</h2><p>Bài viết, thuật ngữ và hồ sơ hóa chất. Mọi thay đổi đều ghi audit.</p></div>
+          </div>
+          <div class="admin-tabs" id="content-tabs">
+            <button type="button" data-tab="articles" class="active">Bài viết</button>
+            <button type="button" data-tab="glossary">Thuật ngữ</button>
+            <button type="button" data-tab="chemicals">Hóa chất</button>
+            <button type="button" data-tab="import">Nhập JSON</button>
+          </div>
+          <div id="content-body"><div class="admin-empty">Đang tải…</div></div>
+        </section>
+
+        <section class="admin-view" id="view-sources">
+          <div class="admin-section-head">
+            <div><h2>Nguồn dữ liệu &amp; đồng bộ</h2><p>Bật/tắt connector, chạy đồng bộ và xem lỗi. Nguồn tham chiếu không thể đồng bộ.</p></div>
+            <button class="v2-btn v2-btn--primary" type="button" data-sync-all>↻ Đồng bộ tất cả</button>
+          </div>
+          <div id="sync-job" class="admin-job"></div>
+          <div class="v2-card"><div class="v2-card__body admin-table-wrap" id="sources-table"><div class="admin-empty">Đang tải…</div></div></div>
+          <div class="v2-card" style="margin-top:16px"><div class="v2-card__head"><h3>Nhật ký đồng bộ</h3></div><div class="v2-card__body admin-log" id="sync-logs"><div class="admin-empty">Đang tải…</div></div></div>
+        </section>
+
+        <section class="admin-view" id="view-users">
+          <div class="admin-section-head">
+            <div><h2>Người dùng &amp; phân quyền</h2><p>RBAC: admin toàn quyền, editor biên tập, viewer chỉ đọc.</p></div>
+            <button class="v2-btn v2-btn--primary" type="button" id="add-user">+ Thêm người dùng</button>
+          </div>
+          <div class="v2-card"><div class="v2-card__body admin-table-wrap" id="users-table"><div class="admin-empty">Đang tải…</div></div></div>
+        </section>
+
+        <section class="admin-view" id="view-audit">
+          <div class="admin-section-head">
+            <div><h2>Audit log</h2><p>Ghi nhận đăng nhập, thay đổi nội dung, phân quyền, đồng bộ và sao lưu.</p></div>
+            <button class="v2-btn" type="button" id="refresh-audit">↻ Làm mới</button>
+          </div>
+          <div class="v2-card"><div class="v2-card__body admin-table-wrap" id="audit-table"><div class="admin-empty">Đang tải…</div></div></div>
+        </section>
+
+        <section class="admin-view" id="view-security">
+          <div class="admin-section-head">
+            <div><h2>Bảo mật tài khoản &amp; sao lưu</h2><p>Đổi mật khẩu, bật TOTP nếu muốn, tạo bản sao lưu CSDL.</p></div>
+          </div>
+          <div class="admin-split">
+            <div class="v2-card">
+              <div class="v2-card__head"><h3>Đổi mật khẩu</h3></div>
+              <div class="v2-card__body">
+                <form id="password-form">
+                  <div class="v2-field"><label for="current-password">Mật khẩu hiện tại</label><input id="current-password" type="password" autocomplete="current-password" required></div>
+                  <div class="v2-field"><label for="new-password">Mật khẩu mới</label><input id="new-password" type="password" autocomplete="new-password" required><div class="admin-hint">Tối thiểu 12 ký tự, có chữ hoa, chữ thường và số.</div></div>
+                  <div class="v2-field"><label for="confirm-password">Nhập lại mật khẩu mới</label><input id="confirm-password" type="password" autocomplete="new-password" required></div>
+                  <button class="v2-btn v2-btn--primary" type="submit">Cập nhật mật khẩu</button>
+                </form>
+              </div>
+            </div>
+            <div>
+              <div class="v2-card">
+                <div class="v2-card__head"><h3>Xác thực hai bước (TOTP — tùy chọn)</h3><span class="v2-badge v2-badge--neutral" id="totp-state">—</span></div>
+                <div class="v2-card__body" id="totp-panel"><div class="admin-empty">Đang tải…</div></div>
+              </div>
+              <div class="v2-card" style="margin-top:16px">
+                <div class="v2-card__head"><h3>Sao lưu CSDL</h3><button class="v2-btn v2-btn--sm" type="button" id="create-backup">+ Tạo bản sao lưu</button></div>
+                <div class="v2-card__body" id="backup-list"><div class="admin-empty">Đang tải…</div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-view" id="view-settings">
+          <div class="admin-section-head"><div><h2>Cấu hình website</h2><p>Tiêu đề và mô tả hiển thị công khai.</p></div></div>
+          <div class="v2-card" style="max-width:640px"><div class="v2-card__body">
+            <form id="settings-form">
+              <div class="v2-field"><label for="site-title">Tiêu đề</label><input id="site-title" maxlength="200"></div>
+              <div class="v2-field"><label for="site-description">Mô tả</label><textarea id="site-description" maxlength="500"></textarea></div>
+              <button class="v2-btn v2-btn--primary" type="submit">Lưu cấu hình</button>
+            </form>
+          </div></div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-modal" id="modal" hidden>
+    <div class="admin-modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="admin-modal__head"><h3 id="modal-title">Form</h3><button class="admin-close" type="button" data-close-modal aria-label="Đóng">×</button></div>
+      <div class="admin-modal__body" id="modal-body"></div>
+      <div class="admin-modal__foot" id="modal-foot"></div>
+    </div>
+  </div>
+
+  <script src="../js/core.js"></script>
+  <script src="../js/admin.js?v=2"></script>
+  <script src="../js/admin-content.js?v=2"></script>
+</body>
+</html>

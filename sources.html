@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Nguồn dữ liệu — Bách Khoa Bảo Mật &amp; Độc Học</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/v2.css">
+  <script src="js/static-auth.js"></script>
+</head>
+<body class="v2" data-page="sources">
+  <header class="v2-topbar" data-topbar></header>
+
+  <section class="v2-hero" style="padding:42px 0 54px">
+    <div class="v2-container">
+      <span class="v2-eyebrow">Source Registry · 32 nguồn</span>
+      <h1 style="font-size:clamp(1.8rem,3.4vw,2.6rem)">Nguồn dữ liệu công khai &amp; giới hạn truy cập</h1>
+      <p>Danh mục minh bạch: nguồn nào có connector, nguồn nào cần API key, nguồn nào chỉ liên kết tham chiếu và nguồn nào bị giới hạn cho cơ quan có thẩm quyền.</p>
+      <div id="source-summary" class="v2-hero__meta"></div>
+    </div>
+  </section>
+
+  <main class="v2-main">
+    <div class="v2-container">
+      <div class="v2-alert v2-alert--warn">
+        <strong>Nguyên tắc:</strong> không vượt qua giới hạn truy cập, không tải dữ liệu trái phép. Nguồn “tham chiếu” không được tính là đã tích hợp.
+        Trạng thái đồng bộ phản ánh lần chạy gần nhất và có thể lỗi do mạng, hạn mức hoặc thay đổi API.
+      </div>
+      <div id="source-groups"><p class="v2-muted">Đang tải danh mục nguồn…</p></div>
+    </div>
+  </main>
+
+  <footer class="v2-footer" data-footer></footer>
+  <script src="js/core.js"></script>
+  <script src="js/sources.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "slug":"doc-cvss-va-epss",
+    "title":"Cách đọc CVSS, EPSS và danh mục KEV",
+    "summary":"Ba thang đo khác nhau trả lời ba câu hỏi khác nhau: lỗ hổng nguy hiểm đến đâu, khả năng bị khai thác trong 30 ngày là bao nhiêu, và đã có bằng chứng khai thác thực tế chưa.",
+    "domain":"cybersecurity",
+    "category":"cyber-defense",
+    "body":"## CVSS đo mức độ nghiêm trọng kỹ thuật\n\nCVSS (Common Vulnerability Scoring System) mô tả đặc tính của lỗ hổng: vector tấn công, độ phức tạp, quyền yêu cầu, tác động tới bảo mật – toàn vẹn – khả dụng. Điểm 0–10 được chia thành Low, Medium, High và Critical. Điểm CVSS **không** cho biết lỗ hổng đã bị khai thác hay chưa, cũng không phản ánh mức độ quan trọng của hệ thống đối với tổ chức.\n\n## EPSS là dự báo, không phải kết luận\n\nEPSS (Exploit Prediction Scoring System) của FIRST ước lượng xác suất một CVE bị khai thác trong 30 ngày tới, dựa trên dữ liệu công khai và mô hình thống kê. Chỉ số này thay đổi theo thời gian. Một CVE điểm CVSS thấp nhưng EPSS percentile cao vẫn cần ưu tiên vá nếu hệ thống đang phơi bày.\n\n## KEV là bằng chứng khai thác thực tế\n\nDanh mục Known Exploited Vulnerabilities của CISA chỉ liệt kê những lỗ hổng đã được quan sát khai thác ngoài thực tế. Đây là tín hiệu mạnh nhất trong ba nguồn: nếu CVE nằm trong KEV, việc vá hoặc giảm thiểu không còn là vấn đề lý thuyết.\n\n## Cách kết hợp\n\n1. Dùng CVSS để phân loại sơ bộ và hiểu bản chất kỹ thuật.\n2. Dùng EPSS để xếp hạng khả năng bị nhắm tới trong ngắn hạn.\n3. Dùng KEV để xác nhận đã có khai thác thực tế.\n4. Luôn đối chiếu với mức độ phơi bày thực tế: hệ thống có truy cập Internet không, có dữ liệu nhạy cảm không, đã có kiểm soát bù trừ chưa.\n\n> Điểm số chỉ hỗ trợ ra quyết định. Quy trình vá lỗi cần tính đến khả năng gây gián đoạn, thời gian kiểm thử và yêu cầu tuân thủ.",
+    "source_url":"https://www.first.org/epss/",
+    "verification_status":"editorial"
+  },
+  {
+    "slug":"quy-trinh-ung-pho-su-co-mang",
+    "title":"Sáu bước ứng phó sự cố an ninh mạng",
+    "summary":"Khung ứng phó rút gọn từ chuẩn NIST SP 800-61: chuẩn bị, nhận diện, ngăn chặn, loại bỏ, khôi phục và rút kinh nghiệm.",
+    "domain":"cybersecurity",
+    "category":"incident-response",
+    "body":"## 1. Chuẩn bị\n\nXác định người chịu trách nhiệm, kênh liên lạc ngoài hệ thống bị ảnh hưởng, quyền truy cập công cụ điều tra và bản sao lưu đã kiểm thử khôi phục. Danh bạ ứng cứu cần được cập nhật và in sẵn.\n\n## 2. Nhận diện\n\nGhi nhận thời điểm, nguồn phát hiện, phạm vi ảnh hưởng ban đầu. Bảo toàn log và hình ảnh bộ nhớ trước khi khởi động lại. Không kết luận vội khi chưa đủ dữ kiện; phân biệt sự cố thật với dương tính giả.\n\n## 3. Ngăn chặn\n\nCô lập máy bị nhiễm, thu hồi phiên và khóa tài khoản bị xâm phạm, chặn IOC đã xác minh. Cân nhắc giữa cô lập ngay và quan sát thêm để hiểu phạm vi; ưu tiên bảo vệ dữ liệu và dịch vụ thiết yếu.\n\n## 4. Loại bỏ\n\nXóa malware, vá lỗ hổng, đóng điểm vào, đặt lại mật khẩu và khóa. Kiểm tra các cơ chế duy trì hiện diện như tác vụ định kỳ, dịch vụ mới, tài khoản lạ.\n\n## 5. Khôi phục\n\nPhục hồi từ bản sao lưu đã xác minh, giám sát chặt trong giai đoạn đầu, xác nhận dịch vụ hoạt động đúng trước khi mở lại cho người dùng.\n\n## 6. Rút kinh nghiệm\n\nTrong vòng vài ngày, họp đánh giá: điều gì hiệu quả, điều gì chậm, kiểm soát nào cần bổ sung. Ghi lại bài học và cập nhật kịch bản diễn tập.\n\n> Không tự ý xóa dấu vết hoặc tắt hệ thống ghi log trong lúc ứng phó: chứng cứ có thể cần cho điều tra và nghĩa vụ báo cáo.",
+    "source_url":"https://www.cisa.gov/",
+    "verification_status":"editorial"
+  },
+  {
+    "slug":"an-toan-hoa-chat-gia-dinh",
+    "title":"An toàn hóa chất trong gia đình: đọc nhãn và tránh pha trộn",
+    "summary":"Phần lớn tai nạn hóa chất gia dụng đến từ ba lỗi: không đọc nhãn, pha trộn chất tẩy và bảo quản sai chỗ.",
+    "domain":"safety",
+    "category":"chemical-safety",
+    "body":"## Đọc nhãn trước khi dùng\n\nNhãn sản phẩm gia dụng thường có biểu tượng GHS, cảnh báo nguy cơ và hướng dẫn sơ cứu. Giữ lại nhãn hoặc chụp ảnh để tra cứu khi cần. Không chuyển hóa chất sang chai nước uống, chai gia vị hoặc hộp thực phẩm.\n\n## Không pha trộn chất tẩy\n\nNước tẩy chứa clo khi trộn với axit (giấm, chất tẩy cặn) tạo khí clo; khi trộn với amoniac tạo chloramine. Cả hai đều gây tổn thương đường hô hấp. Không trộn các sản phẩm tẩy rửa khác nhau để “tăng hiệu quả”.\n\n## Thông gió và bảo vệ cá nhân\n\nMở cửa sổ, bật quạt hút khi dùng sản phẩm có mùi mạnh. Đeo găng tay và kính bảo hộ khi pha dung dịch. Không dùng trong không gian kín như nhà tắm không thông gió.\n\n## Bảo quản\n\nĐể hóa chất trong tủ có khóa, xa tầm tay trẻ em và thú nuôi, tránh nguồn nhiệt và ánh nắng. Bảo quản riêng chất oxy hóa, axit và chất dễ cháy.\n\n## Khi xảy ra sự cố\n\nHít phải khí: đưa ra nơi thoáng, gọi 115 nếu khó thở. Dính da/mắt: rửa nhiều nước ít nhất 15 phút. Nuốt phải: không tự gây nôn, gọi cấp cứu và mang theo nhãn. Với lượng lớn hoặc chất công nghiệp, thông báo cơ quan ứng phó hóa chất.\n\n> Trang này chỉ là kiến thức phòng ngừa chung, không thay thế hướng dẫn trên nhãn hoặc tư vấn của bác sĩ.",
+    "source_url":"https://www.who.int/",
+    "verification_status":"editorial"
+  }
+]

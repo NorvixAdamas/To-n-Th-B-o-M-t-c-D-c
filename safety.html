@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>An toàn đời sống & Sơ cấp cứu — Bách Khoa Bảo Mật & Độc Học</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/static-auth.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="site-logo">
+        <span class="icon-cyber">🛡</span>
+        <span class="icon-tox">🧪</span>
+        Bách Khoa Bảo Mật & Độc Học
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="cybersecurity.html">An ninh mạng</a></li>
+          <li><a href="toxicology.html">Độc học & ATTP</a></li>
+          <li><a href="weapons.html">Chống vũ khí & đồ cấm</a></li>
+          <li><a href="safety.html" aria-current="page">An toàn đời sống</a></li>
+          <li><a href="glossary.html">Thuật ngữ</a></li>
+        </ul>
+      </nav>
+      <div class="version-switch" role="group" aria-label="Chọn phiên bản giao diện">
+        <span class="version-switch__item is-active" aria-current="page">1.0</span>
+        <a class="version-switch__item" href="dashboard.html" title="Chuyển sang giao diện 2.0">2.0</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Bật chế độ tối" title="Bật/tắt chế độ tối">🌙</button>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <header class="page-header">
+      <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> → An toàn đời sống & Sơ cấp cứu
+      </div>
+      <h1>Phân khu An toàn đời sống &amp; Sơ cấp cứu</h1>
+      <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
+        Phòng ngừa tai nạn và xử trí ban đầu trong gia đình, lao động và môi trường — cháy nổ, hóa chất, sơ cấp cứu, thực phẩm, trẻ em và hiểm họa theo mùa.
+      </p>
+    </header>
+
+    <div class="wiki-layout">
+      <aside class="sidebar-toc">
+        <h3>Mục lục</h3>
+        <ul>
+          <li><a href="#intro">Giới thiệu</a></li>
+          <li><a href="#fire">Cháy nổ & thoát hiểm trong nhà</a></li>
+          <li><a href="#occupational">An toàn lao động & hóa chất</a></li>
+          <li><a href="#first-aid">Sơ cấp cứu mở rộng</a></li>
+          <li><a href="#food-safety">Bảo quản thực phẩm & nhiễm khuẩn/giả</a></li>
+          <li><a href="#child-safety">An toàn cho trẻ em trong nhà</a></li>
+          <li><a href="#seasonal">Hiểm họa theo vùng/mùa</a></li>
+        </ul>
+      </aside>
+
+      <article class="article-body">
+        <section id="intro">
+          <h2>Giới thiệu</h2>
+          <p>
+            Phân khu này tổng hợp kiến thức <strong>phòng ngừa tai nạn và xử trí ban đầu</strong> dành cho mọi người: phòng cháy chữa cháy trong nhà, an toàn hóa chất và lao động, sơ cấp cứu cơ bản, an toàn thực phẩm, bảo vệ trẻ em và ứng phó hiểm họa theo mùa. Tất cả nội dung mang tính giáo dục và phòng ngừa — không thay thế đào tạo chuyên ngành hay chỉ định y tế.
+          </p>
+          <div class="callout callout-info">
+            <h4>Số điện thoại khẩn cấp (Việt Nam)</h4>
+            <p><strong>113</strong> — Công an · <strong>114</strong> — Cứu hỏa (PCCC &amp; CNCH) · <strong>115</strong> — Cấp cứu y tế. Khi nghi ngờ ngộ độc, gọi cấp cứu và liên hệ trung tâm chống độc theo hướng dẫn của cơ quan y tế địa phương. Dán các số này nơi dễ thấy trong nhà.</p>
+          </div>
+          <div class="callout callout-warning">
+            <h4>Giới hạn của học liệu</h4>
+            <p>Sơ cấp cứu cần được học qua lớp thực hành có chứng nhận. Hướng dẫn tại đây chỉ giúp nhận biết và làm đúng bước đầu trong lúc chờ nhân viên y tế — không thay thế khóa đào tạo CPR/sơ cấp cứu chính quy.</p>
+          </div>
+        </section>
+
+        <section id="fire">
+          <h2>🧯 An toàn cháy nổ &amp; thoát hiểm trong nhà</h2>
+          <p>
+            Cháy nhà thường bắt nguồn từ <strong>bếp nấu, điện, khí gas, nến và thuốc lá</strong>. Phần lớn trường hợp có thể phòng ngừa được bằng thói quen đơn giản.
+          </p>
+          <h3>Khí gas</h3>
+          <ul>
+            <li>Kiểm tra dây dẫn, van và mối nối định kỳ; thay dây khi nứt, cứng, mòn. Kiểm tra rò rỉ bằng nước xà phòng (nổi bọt), không dùng lửa.</li>
+            <li>Không để bình gas gần nguồn nhiệt, bếp lửa, thiết bị điện phát nhiệt; không chặn lỗ thông gió.</li>
+            <li><strong>Khi ngửi thấy gas:</strong> tuyệt đối không bật/tắt công tắc điện, không bật quạt, không dùng lửa hay điện thoại trong nhà; mở cửa thoáng, khóa van gas, đưa mọi người ra ngoài rồi gọi 114/cơ quan chức năng.</li>
+          </ul>
+          <h3>Điện</h3>
+          <ul>
+            <li>Không cắm quá tải một ổ điện (nhiều thiết bị công suất lớn chung ổ); không dùng dây dẫn hỏng, phích cắm lỏng.</li>
+            <li>Ngắt thiết bị khi không dùng; không sạc điện thoại/sạc dự phòng qua đêm trên giường hoặc nơi dễ cháy.</li>
+            <li>Lắp aptomat chống giật/chống quá tải; nhờ thợ có chuyên môn xử lý dây điện.</li>
+          </ul>
+          <h3>Bình cứu hỏa và dụng cụ chữa cháy ban đầu</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead><tr><th>Loại bình / dụng cụ</th><th>Phù hợp với</th><th>Lưu ý</th></tr></thead>
+              <tbody>
+                <tr><td>Bình bột ABC</td><td>Cháy rắn (gỗ, giấy), lỏng (xăng dầu), khí</td><td>Đa dụng cho gia đình; kiểm tra đồng hồ áp suất định kỳ.</td></tr>
+                <tr><td>Bình CO₂</td><td>Cháy thiết bị điện, chất lỏng</td><td>Không dùng trong không gian kín quá lâu; cầm loa phun tránh bỏng lạnh.</td></tr>
+                <tr><td>Bình nước (chỉ loại chuyên dụng)</td><td>Cháy chất rắn</td><td>Tuyệt đối không dùng cho cháy điện, dầu mỡ.</td></tr>
+                <tr><td>Chăn chữa cháy / nắp đậy</td><td>Chảo dầu bốc cháy nhỏ</td><td>Đậy kín để ngắt oxy; không đổ nước vào chảo dầu đang cháy.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Cách dùng bình cơ bản theo bốn bước <strong>PASS</strong>: <em>Pull</em> (rút chốt) → <em>Aim</em> (hướng vòi vào gốc lửa) → <em>Squeeze</em> (bóp cò) → <em>Sweep</em> (quét ngang gốc lửa). Chỉ chữa cháy khi đám cháy còn nhỏ và lối thoát phía sau bạn vẫn an toàn; nếu không, hãy thoát ra và gọi 114.
+          </p>
+          <h3>Thoát hiểm khi có cháy</h3>
+          <ol>
+            <li>Bình tĩnh, báo mọi người, gọi 114 (hoặc nhờ người gọi) ngay khi an toàn.</li>
+            <li>Bò thấp dưới làn khói (khói và khí độc bốc lên cao); dùng khăn ẩm che mũi miệng nếu có thể.</li>
+            <li>Kiểm tra tay nắm cửa: nếu nóng, đừng mở — tìm lối khác hoặc chờ cứu hộ, bịt khe cửa bằng vải ẩm.</li>
+            <li>Không dùng thang máy; đi theo lối thoát hiểm/cầu thang bộ.</li>
+            <li>Tập trung tại điểm hẹn đã thống nhất; không quay lại lấy đồ.</li>
+          </ol>
+          <div class="callout callout-warning">
+            <h4>Đám cháy dầu mỡ / điện</h4>
+            <p>Không đổ nước vào cháy dầu mỡ (dầu bắn lan) hoặc cháy điện (nguy cơ điện giật). Đậy nắp/ngắt điện và dùng bình phù hợp.</p>
+          </div>
+        </section>
+
+        <section id="occupational">
+          <h2>🏭 An toàn lao động &amp; hóa chất công nghiệp</h2>
+          <p>
+            Người làm việc với hóa chất cần biết đọc <strong>nhãn GHS</strong>, tra <strong>SDS (MSDS)</strong> và dùng <strong>PPE</strong> đúng loại. Đây là ba công cụ cơ bản để phòng ngừa phơi nhiễm.
+          </p>
+          <h3>Nhãn GHS — 9 biểu tượng nguy hiểm</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead><tr><th>Nhóm nguy hiểm</th><th>Ý nghĩa</th><th>Ví dụ thường gặp</th></tr></thead>
+              <tbody>
+                <tr><td>Chất nổ</td><td>Có thể nổ khi va đập, nhiệt, ma sát</td><td>Một số hóa chất, pháo hoa công nghiệp</td></tr>
+                <tr><td>Chất dễ cháy</td><td>Bắt lửa khi gặp nguồn nhiệt/tia lửa</td><td>Xăng, cồn, dung môi</td></tr>
+                <tr><td>Chất oxy hóa</td><td>Cung cấp oxy, làm cháy mạnh hơn</td><td>Peroxide, nitrat</td></tr>
+                <tr><td>Khí nén</td><td>Bình khí áp suất cao, có thể nổ/đông lạnh</td><td>Bình oxy, bình khí nén</td></tr>
+                <tr><td>Ăn mòn</td><td>Bỏng da, mắt, kim loại</td><td>Acid, base đậm đặc</td></tr>
+                <tr><td>Độc cấp</td><td>Gây ngộ độc nhanh khi nuốt/hít/chạm</td><td>Cyanide, một số thuốc trừ sâu</td></tr>
+                <tr><td>Nguy hiểm sức khỏe</td><td>Gây ung thư, độc tính sinh sản, dị ứng hô hấp…</td><td>Benzene, formaldehyde</td></tr>
+                <tr><td>Nguy hiểm môi trường</td><td>Độc hại cho sinh vật thủy sinh</td><td>Một số thuốc trừ sâu, hóa chất</td></tr>
+                <tr><td>Dấu chấm than</td><td>Kích ứng da/mắt, độc cấp nhẹ</td><td>Chất tẩy rửa</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>SDS (Safety Data Sheet) — đọc nhanh phần nào</h3>
+          <ul>
+            <li><strong>Mục 2 — Nhận diện nguy hiểm:</strong> Biểu tượng GHS, cảnh báo nguy hiểm chính.</li>
+            <li><strong>Mục 4 — Sơ cứu:</strong> Làm gì khi hít/nuốt/dính da/mắt.</li>
+            <li><strong>Mục 6 — Xử lý tràn đổ:</strong> Cách thu dọn an toàn.</li>
+            <li><strong>Mục 8 — Kiểm soát phơi nhiễm / PPE:</strong> Loại bảo hộ cần dùng.</li>
+            <li><strong>Mục 9–10 — Tính chất và độ ổn định:</strong> Nhiệt độ, khả năng phản ứng nguy hiểm.</li>
+          </ul>
+          <h3>PPE — chọn theo đường phơi nhiễm</h3>
+          <ul>
+            <li><strong>Mắt/mặt:</strong> Kính bảo hộ chống hóa chất khi có nguy cơ bắn tóe; tấm che mặt cho chất ăn mòn.</li>
+            <li><strong>Hô hấp:</strong> Khẩu trang lọc bụi/hơi phù hợp; mặt nạ phòng độc khi có khí độc — đúng loại lõi lọc, kiểm tra kín khít.</li>
+            <li><strong>Tay:</strong> Găng nitrile/neoprene tùy hóa chất (kiểm tra bảng tương thích); thay găng khi hỏng.</li>
+            <li><strong>Thân, chân:</strong> Áo dài tay, tạp dề chống hóa chất, giày kín chống trượt.</li>
+          </ul>
+          <div class="callout callout-warning">
+            <h4>Quy tắc vàng</h4>
+            <p>Không ăn uống, hút thuốc tại nơi làm việc hóa chất; rửa tay trước khi ăn và trước khi rời nơi làm việc; làm việc nơi thông gió; không trộn hóa chất tùy tiện; đọc nhãn và SDS trước khi dùng.</p>
+          </div>
+        </section>
+
+        <section id="first-aid">
+          <h2>⛑ Sơ cấp cứu mở rộng</h2>
+          <p>
+            Nguyên tắc chung: <strong>an toàn cho bản thân → gọi cấp cứu → hỗ trợ nạn nhân</strong>. Kiểm tra nạn nhân có tỉnh, thở không, chảy máu nặng không trước khi làm các bước dưới đây.
+          </p>
+          <h3>Hồi sinh tim phổi (CPR) — người lớn ngừng tim</h3>
+          <ol>
+            <li>Xác nhận nạn nhân không đáp ứng, không thở bình thường; gọi/nhờ người gọi 115 và tìm máy khử rung (AED) nếu có.</li>
+            <li>Ép ngực: đặt gót bàn tay giữa ngực, hai tay chồng lên nhau, khuỷu thẳng; ấn sâu khoảng 5–6 cm với tốc độ 100–120 lần/phút, cho ngực phồng lại hoàn toàn giữa mỗi lần ấn.</li>
+            <li>Nếu được đào tạo: phối hợp 30 lần ép ngực với 2 lần thổi ngạt; nếu chưa được đào tạo, ép ngực liên tục đến khi nhân viên y tế tới hoặc nạn nhân cử động.</li>
+            <li>Dùng AED ngay khi có máy, làm theo hướng dẫn thoại của máy.</li>
+          </ol>
+          <h3>Cầm máu</h3>
+          <ul>
+            <li>Ép trực tiếp lên vết thương bằng gạc/vải sạch; nâng cao chi bị thương nếu có thể.</li>
+            <li>Không rút vật đâm vào cơ thể — cố định và gọi cấp cứu.</li>
+            <li>Garô (dây thắt) là biện pháp cuối khi máu phun thành tia không cầm được; ghi rõ giờ thắt và thông báo cho nhân viên y tế.</li>
+          </ul>
+          <h3>Bỏng</h3>
+          <ul>
+            <li>Làm mát vùng bỏng dưới vòi nước mát (không phải nước đá) khoảng 15–20 phút ngay sau bỏng.</li>
+            <li>Không bôi kem đánh răng, dầu, nước mắm; tháo đồ trang sức trước khi sưng; che bằng gạc sạch.</li>
+            <li>Gọi cấp cứu khi bỏng rộng, bỏng mặt/tay/chân/khớp, bỏng điện, bỏng hóa chất hoặc bỏng trẻ em.</li>
+          </ul>
+          <h3>Ngạt — dị vật đường thở (người lớn còn tỉnh)</h3>
+          <ul>
+            <li>Khuyến khích ho mạnh nếu còn ho được; không vỗ lưng khi nạn nhân đang ho hiệu quả.</li>
+            <li>Nếu không thở được: đứng sau, vòng tay qua bụng, nắm tay đặt trên rốn, ấn mạnh vào trong–lên trên (nghiệm pháp Heimlich) theo chu kỳ cho tới khi dị vật bật ra; nếu nạn nhân bất tỉnh, đặt nằm và bắt đầu CPR, gọi 115.</li>
+          </ul>
+          <h3>Ngạt khí / đuối nước</h3>
+          <ul>
+            <li>Đưa nạn nhân ra khỏi nguồn khí/nước an toàn (ưu tiên không trở thành nạn nhân thứ hai); gọi cấp cứu.</li>
+            <li>Nếu không thở: bắt đầu CPR ngay với nạn nhân đuối nước (bắt đầu bằng 2–5 nhịp thổi ngạt nếu được đào tạo, rồi ép ngực).</li>
+            <li>Không "dốc ngược" nạn nhân để xả nước — ưu tiên thổi ngạt/ép tim.</li>
+          </ul>
+          <h3>Gọi cấp cứu — cần nói gì</h3>
+          <ul>
+            <li>Địa chỉ chính xác, số người bị nạn, tình trạng (còn tỉnh/thở/đang chảy máu…).</li>
+            <li>Chuyện gì xảy ra và thời điểm; có ai đang sơ cứu không.</li>
+            <li>Không cúp máy trước khi tổng đài hướng dẫn xong.</li>
+          </ul>
+        </section>
+
+        <section id="food-safety">
+          <h2>🍱 An toàn bảo quản thực phẩm &amp; nhận diện thực phẩm nhiễm khuẩn/giả</h2>
+          <p>
+            Ngộ độc thực phẩm phần lớn do <strong>bảo quản sai nhiệt độ</strong> và <strong>nhiễm chéo</strong> giữa thực phẩm sống – chín. Nắm "vùng nguy hiểm nhiệt độ" là cách phòng ngừa hiệu quả nhất.
+          </p>
+          <h3>Nhiệt độ an toàn</h3>
+          <ul>
+            <li><strong>Vùng nguy hiểm 5–60 °C:</strong> vi khuẩn sinh sôi nhanh nhất. Thực phẩm chín không nên để ngoài quá 2 giờ (1 giờ khi trời nóng).</li>
+            <li>Bảo quản lạnh dưới 5 °C; giữ nóng trên 60 °C; rã đông trong ngăn mát tủ lạnh hoặc lò vi sóng, không để ngoài nhiệt độ phòng.</li>
+            <li>Hâm lại thức ăn thừa đến sôi, ăn ngay và không hâm lại nhiều lần.</li>
+          </ul>
+          <h3>Bảo quản và chống nhiễm chéo</h3>
+          <ul>
+            <li>Thịt/cá sống để ngăn dưới cùng tủ lạnh (tránh nhỏ giọt vào thức ăn chín); đậy kín thực phẩm.</li>
+            <li>Dùng thớt và dao riêng cho thực phẩm sống và chín; rửa tay trước khi chế biến và sau khi chạm thực phẩm sống.</li>
+            <li>Không rửa thịt gà sống dưới vòi (vi khuẩn bắn ra xung quanh) — nấu chín là cách diệt khuẩn chính.</li>
+          </ul>
+          <h3>Nhận diện thực phẩm nhiễm khuẩn / hỏng</h3>
+          <ul>
+            <li>Dấu hiệu: mùi chua/hôi, màu nhợt hoặc đổi màu, bề mặt nhớt, hộp phồng hoặc rò rỉ (đặc biệt đồ hộp — nguy cơ botulinum), thực phẩm hết hạn.</li>
+            <li>Khi nghi ngờ, nguyên tắc an toàn là <strong>bỏ đi</strong> — không nếm thử để kiểm tra.</li>
+            <li>Triệu chứng ngộ độc (nôn, tiêu chảy, đau bụng, sốt) thường xuất hiện vài giờ sau ăn; gặp bác sĩ ngay khi có máu trong phân, sốt cao, mất nước, hoặc triệu chứng thần kinh (nhìn đôi, yếu cơ — nghĩ tới botulinum).</li>
+          </ul>
+          <h3>Nhận diện thực phẩm giả / kém chất lượng</h3>
+          <ul>
+            <li>Kiểm tra nhãn: tên, thành phần, hạn dùng, mã số, nhà sản xuất/địa chỉ rõ ràng; cảnh giác giá rẻ bất thường, bao bì in mờ, sai chính tả.</li>
+            <li>Rượu giả (pha methanol) là nguy cơ nghiêm trọng: chỉ mua rượu có nguồn gốc rõ ràng, tem nhãn đầy đủ; cảnh giác rượu không nhãn mác.</li>
+            <li>Mật ong, dầu ăn, thịt, thuốc/“thực phẩm chức năng” không rõ nguồn có thể bị pha trộn — mua tại nơi uy tín, giữ hóa đơn.</li>
+          </ul>
+        </section>
+
+        <section id="child-safety">
+          <h2>👶 An toàn cho trẻ em trong nhà</h2>
+          <p>
+            Tai nạn trẻ em trong nhà thường gặp: <strong>ngộ độc, ngã, điện giật, bỏng, đuối nước và dị vật đường thở</strong>. Phòng ngừa bằng cách quan sát từ tầm mắt trẻ và loại bỏ nguy cơ.
+          </p>
+          <h3>Chống ngộ độc</h3>
+          <ul>
+            <li>Thuốc, vitamin, hóa chất tẩy rửa, mỹ phẩm để tủ khóa trên cao, ngoài tầm với của trẻ; ưu tiên chai có nắp an toàn trẻ em.</li>
+            <li>Không đựng hóa chất vào chai nước/đồ uống; không nói thuốc là "kẹo" để dỗ trẻ uống.</li>
+            <li>Pin cúc áo (pin cúc) cực kỳ nguy hiểm nếu nuốt — để xa tầm tay, đậy kín ngăn pin của đồ chơi/thiết bị.</li>
+          </ul>
+          <h3>Chống ngã</h3>
+          <ul>
+            <li>Lắp lưới/chấn song cửa sổ và ban công; không kê ghế, đồ đạc để trẻ leo gần cửa sổ.</li>
+            <li>Dùng rào chắn ở cầu thang; giám sát khi trẻ tập đi.</li>
+          </ul>
+          <h3>Chống điện giật & bỏng</h3>
+          <ul>
+            <li>Bịt ổ điện bằng nắp che; gọn dây điện, tránh dây thòng lọng quanh cổ; để thiết bị điện xa tầm với.</li>
+            <li>Để nồi nước sôi, ấm, bếp ở vị trí trẻ không với tới; xoay cán nồi vào trong; không bế trẻ khi đang nấu hoặc cầm đồ nóng.</li>
+          </ul>
+          <h3>Chống đuối nước & dị vật</h3>
+          <ul>
+            <li>Không để trẻ một mình gần nước (bồn tắm, xô nước, bể bơi) dù chỉ vài giây; đậy nắp, xả nước sau khi dùng.</li>
+            <li>Đồ chơi nhỏ, hạt, nam châm viên, pin cúc xa tầm tay trẻ dưới 3 tuổi; cắt nhỏ thức ăn tròn (nho, xúc xích) để tránh hóc.</li>
+          </ul>
+          <div class="callout callout-info">
+            <h4>Mẹo hữu ích</h4>
+            <p>Dán số 113/114/115 và địa chỉ nhà cạnh điện thoại; dạy trẻ không nuốt thứ lạ và biết gọi người lớn khi có chuyện. Thường xuyên rà soát nhà từ tầm mắt của trẻ (ngồi thấp xuống để nhìn).</p>
+          </div>
+        </section>
+
+        <section id="seasonal">
+          <h2>🐍 Hiểm họa theo vùng/mùa</h2>
+          <p>
+            Tùy vùng miền và mùa, các hiểm họa phổ biến gồm: rắn cắn, sứa biển, bão lũ, say nắng, sét đánh và côn trùng đốt. Biết xử trí đúng bước đầu giúp giảm nguy hiểm đáng kể.
+          </p>
+          <h3>Rắn cắn</h3>
+          <ul>
+            <li>Giữ nạn nhân bình tĩnh, hạn chế cử động chi bị cắn; tháo đồ trang sức/giày ở chi bị cắn trước khi sưng.</li>
+            <li>Băng ép bất động toàn bộ chi (pressure immobilization) theo hướng dẫn — băng chặt vừa phải từ ngón lên trên, cố định nẹp; đưa đến cơ sở y tế ngay.</li>
+            <li><strong>Không:</strong> rạch/hút nọc, garô chặt, chườm đá, uống rượu; chụp ảnh rắn từ xa (nếu an toàn) để hỗ trợ xác định loài, không cố bắt rắn.</li>
+          </ul>
+          <h3>Sứa biển</h3>
+          <ul>
+            <li>Rửa vùng tiếp xúc bằng nước biển (không dùng nước ngọt — có thể kích hoạt thêm nọc); gỡ xúc tu bằng nhíp/găng, không chà cát hay khăn.</li>
+            <li>Với sứa hộp (box jellyfish), rửa bằng giấm nếu có; không bôi rượu hay nước tiểu.</li>
+            <li>Theo dõi dấu hiệu dị ứng nặng (khó thở, sưng, tức ngực) → gọi cấp cứu ngay.</li>
+          </ul>
+          <h3>Bão lũ</h3>
+          <ul>
+            <li>Chuẩn bị trước mùa: nước sạch, thực phẩm khô, đèn pin, pin dự phòng, thuốc thiết yếu, giấy tờ quan trọng bọc kín.</li>
+            <li>Không đi qua nước ngập (nguy cơ cống hở, điện giật, vật sắc); tránh khu vực có dây điện đổ.</li>
+            <li>Tuân theo hướng dẫn sơ tán của chính quyền; không quay lại vùng nguy hiểm khi chưa được phép.</li>
+          </ul>
+          <h3>Say nắng / say nóng</h3>
+          <ul>
+            <li>Dấu hiệu: da nóng đỏ, đau đầu, chóng mặt, buồn nôn; nặng hơn là lú lẫn, co giật, bất tỉnh.</li>
+            <li>Đưa vào chỗ mát, cởi bớt quần áo, làm mát bằng khăn ướt/quạt; cho uống nước nếu còn tỉnh.</li>
+            <li>Gọi cấp cứu ngay khi lú lẫn, bất tỉnh, co giật hoặc không cải thiện.</li>
+          </ul>
+          <h3>Sét đánh</h3>
+          <ul>
+            <li>Khi nghe thấy sấm, vào trong nhà hoặc xe kín; tránh chỗ trống trải, cây cao, cột, nước.</li>
+            <li>Quy tắc 30/30: đếm dưới 30 giây từ chớp tới sấm → tìm nơi trú; chờ 30 phút sau tiếng sấm cuối mới ra ngoài.</li>
+            <li>Người bị sét đánh có thể cần CPR ngay (không còn dòng điện trong người nạn nhân — có thể chạm vào an toàn).</li>
+          </ul>
+          <h3>Côn trùng đốt (ong, kiến, rết, bọ cạp)</h3>
+          <ul>
+            <li>Ong đốt: gỡ ngòi (cạo ngang bằng vật phẳng), rửa sạch, chườm lạnh; theo dõi dị ứng.</li>
+            <li>Dấu hiệu sốc phản vệ (sưng mặt/môi, khó thở, nổi mẩn toàn thân, tụt huyết áp) → gọi 115 ngay, để nạn nhân nằm kê chân cao nếu tỉnh.</li>
+            <li>Người có tiền sử dị ứng nên mang theo bút epinephrine (EpiPen) theo chỉ định bác sĩ.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <strong>Bách Khoa Toàn Thư về Bảo Mật và Khoa Học Độc Học</strong> — Học liệu giáo dục.
+      <a href="index.html">Về trang chủ</a>
+    </p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

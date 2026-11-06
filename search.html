@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Tra cứu hợp nhất — Bách Khoa Bảo Mật &amp; Độc Học</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/v2.css">
+  <script src="js/static-auth.js"></script>
+</head>
+<body class="v2" data-page="search">
+  <header class="v2-topbar" data-topbar></header>
+
+  <section class="v2-page-head">
+    <div class="v2-container">
+      <div class="v2-breadcrumb"><a href="/dashboard.html">Tổng quan</a><span>/</span><span>Tra cứu hợp nhất</span></div>
+      <h1 style="margin-top:8px">Tra cứu toàn hệ thống</h1>
+      <p>Bài viết, thuật ngữ, hóa chất, lỗ hổng, tình báo, thu hồi thực phẩm, pháp luật, quy trình an toàn và nghiên cứu.</p>
+      <form class="v2-search" id="search-form" role="search" style="margin-top:18px;max-width:100%;box-shadow:var(--v2-shadow-sm);border-color:var(--v2-border)">
+        <label class="v2-sr-only" for="search-q">Từ khoá</label>
+        <input id="search-q" name="q" type="search" placeholder="Tìm không dấu cũng được: ngo doc, methanol, log4shell…" autocomplete="off">
+        <button type="submit">Tìm kiếm</button>
+      </form>
+    </div>
+  </section>
+
+  <main class="v2-main" style="padding-top:0">
+    <div class="v2-container">
+      <div class="v2-search-layout">
+        <aside class="v2-facets" aria-label="Bộ lọc">
+          <div class="v2-card">
+            <div class="v2-card__head"><h3>Bộ lọc</h3><button class="v2-btn v2-btn--sm v2-btn--ghost" type="button" id="reset-filters">Xoá</button></div>
+            <div class="v2-card__body" id="facets">
+              <p class="v2-muted v2-small">Đang tải bộ lọc…</p>
+            </div>
+          </div>
+          <div class="v2-card" style="margin-top:14px">
+            <div class="v2-card__body">
+              <p class="v2-small v2-muted" style="margin:0">
+                Kết quả xếp theo độ liên quan. Dữ liệu nguồn ngoài được đánh dấu ↗ và mở ở tab mới.
+              </p>
+            </div>
+          </div>
+        </aside>
+
+        <section aria-live="polite">
+          <div class="v2-search-toolbar">
+            <div class="v2-small v2-muted" id="result-summary">Nhập từ khoá để bắt đầu.</div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <label class="v2-small v2-muted" for="sort">Sắp xếp</label>
+              <select id="sort">
+                <option value="relevance">Liên quan</option>
+                <option value="newest">Mới nhất</option>
+              </select>
+            </div>
+          </div>
+          <div id="results" class="v2-results"></div>
+          <div class="v2-pagination" id="pagination"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="v2-footer" data-footer></footer>
+  <script src="js/core.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

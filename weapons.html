@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Chống vũ khí và đồ bất hợp pháp — Bách Khoa Bảo Mật & Độc Học</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/static-auth.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="site-logo">
+        <span class="icon-cyber">🛡</span>
+        <span class="icon-tox">🧪</span>
+        Bách Khoa Bảo Mật & Độc Học
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="cybersecurity.html">An ninh mạng</a></li>
+          <li><a href="toxicology.html">Độc học & ATTP</a></li>
+          <li><a href="weapons.html" aria-current="page">Chống vũ khí & đồ cấm</a></li>
+          <li><a href="safety.html">An toàn đời sống</a></li>
+          <li><a href="glossary.html">Thuật ngữ</a></li>
+        </ul>
+      </nav>
+      <div class="version-switch" role="group" aria-label="Chọn phiên bản giao diện">
+        <span class="version-switch__item is-active" aria-current="page">1.0</span>
+        <a class="version-switch__item" href="dashboard.html" title="Chuyển sang giao diện 2.0">2.0</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Bật chế độ tối" title="Bật/tắt chế độ tối">🌙</button>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <header class="page-header">
+      <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> → Chống vũ khí và đồ bất hợp pháp
+      </div>
+      <h1>Phân khu Chống vũ khí và đồ bất hợp pháp</h1>
+      <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
+        Nhận diện, phân loại, quy định pháp luật và quy trình an toàn khi phát hiện vũ khí, vật liệu nổ và đồ cấm — học liệu cho sinh viên và cán bộ thực thi pháp luật.
+      </p>
+    </header>
+
+    <div class="wiki-layout">
+      <aside class="sidebar-toc">
+        <h3>Mục lục</h3>
+        <ul>
+          <li><a href="#intro">Giới thiệu</a></li>
+          <li><a href="#legal">Khung pháp lý tổng quan</a></li>
+          <li><a href="#legal-detail">Khung pháp lý chi tiết & phân loại</a></li>
+          <li><a href="#categories">Phân loại nhận diện</a></li>
+          <li><a href="#identification">Phương pháp xác định loại vũ khí</a></li>
+          <li><a href="#improvised">Vũ khí tự chế — nhận diện</a></li>
+          <li><a href="#structure-analysis">Phân tích cấu trúc (đã hiện hữu)</a></li>
+          <li><a href="#discovery">Khi phát hiện vũ khí / đồ cấm</a></li>
+          <li><a href="#evidence">Bảo quản chứng cứ và bàn giao</a></li>
+          <li><a href="#detection-tech">Phương tiện & kỹ thuật phát hiện</a></li>
+          <li><a href="#safety">An toàn cá nhân và hiện trường</a></li>
+        </ul>
+      </aside>
+
+      <article class="article-body">
+        <section id="intro">
+          <h2>Giới thiệu</h2>
+          <p>
+            Phân khu này cung cấp kiến thức <strong>giáo dục</strong> về nhận diện, phân loại và xử lý an toàn khi gặp <strong>vũ khí, vật liệu nổ và đồ bất hợp pháp</strong>. Mục tiêu là hỗ trợ sinh viên chuyên ngành liên quan và cán bộ thực thi pháp luật trong việc: nhận biết loại hình, nắm khung pháp lý cơ bản, tuân thủ quy trình khi phát hiện và bảo quản chứng cứ trước khi bàn giao chuyên ngành. <strong>Không cung cấp hướng dẫn chế tạo, sử dụng hay cải tạo vũ khí hoặc vật liệu nổ.</strong>
+          </p>
+          <div class="callout callout-warning">
+            <h4>Nguyên tắc an toàn</h4>
+            <p>Khi phát hiện vũ khí hoặc vật nghi ngờ: <strong>không sờ, di chuyển hay tháo rời;</strong> cách ly khu vực; báo ngay cơ quan công an / chức năng có thẩm quyền; chờ đơn vị chuyên trách xử lý.</p>
+          </div>
+        </section>
+
+        <section id="legal">
+          <h2>Khung pháp lý tổng quan</h2>
+          <p>
+            Việc sở hữu, chế tạo, mua bán, vận chuyển vũ khí, vật liệu nổ và một số đồ vật nguy hiểm bị <strong>pháp luật Việt Nam</strong> và hầu hết quốc gia <strong>cấm hoặc kiểm soát chặt chẽ</strong>. Sinh viên và cán bộ cần tham chiếu văn bản luật hiện hành (Luật Quản lý vũ khí, vật liệu nổ và công cụ hỗ trợ; Bộ luật Hình sự; nghị định, thông tư liên quan) để nắm chi tiết phân loại, điều kiện cấp phép (nếu có) và hình phạt.
+          </p>
+          <ul>
+            <li><strong>Vũ khí quân dụng, vũ khí thô sơ, vũ khí thể thao:</strong> Pháp luật phân loại và quy định điều kiện sở hữu, sử dụng; nhiều loại chỉ được lực lượng vũ trang hoặc cơ quan có thẩm quyền sử dụng.</li>
+            <li><strong>Vật liệu nổ, phụ kiện nổ:</strong> Thuộc danh mục nguy hiểm; việc sản xuất, mua bán, vận chuyển, tàng trữ thường bị cấm hoặc phải có giấy phép đặc biệt.</li>
+            <li><strong>Đồ vật bị cấm mang theo nơi công cộng:</strong> Dao, vật sắc nhọn, công cụ có thể gây thương tích khi mang không có lý do hợp pháp có thể bị xử lý hành chính hoặc hình sự tùy mức độ.</li>
+            <li><strong>Hàng cấm khác:</strong> Ma túy, hàng giả, hàng nhập lậu… do luật chuyên ngành quy định; không nằm trong phạm vi “vũ khí” nhưng có thể xuất hiện cùng hiện trường.</li>
+          </ul>
+          <p>
+            Học liệu chỉ nêu khái quát; mọi áp dụng cụ thể phải dựa trên văn bản pháp luật đang có hiệu lực và hướng dẫn của cơ quan chức năng.
+          </p>
+        </section>
+
+        <section id="legal-detail">
+          <h2>Khung pháp lý chi tiết và phân loại theo nhóm</h2>
+          <p>
+            Pháp luật Việt Nam quản lý vũ khí, vật liệu nổ và công cụ hỗ trợ theo từng nhóm với điều kiện sở hữu, sử dụng và chế tài khác nhau. Dưới đây là <strong>góc nhìn phân loại khái quát phục vụ học tập</strong>; chi tiết phải đối chiếu văn bản luật đang có hiệu lực (Luật Quản lý vũ khí, vật liệu nổ và công cụ hỗ trợ; Bộ luật Hình sự; các nghị định, thông tư hướng dẫn).
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr><th>Nhóm</th><th>Ví dụ thường gặp</th><th>Đặc điểm quản lý (khái quát)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Vũ khí quân dụng</td><td>Súng bộ binh, súng máy, đạn quân dụng…</td><td>Chỉ lực lượng vũ trang/cơ quan được giao sử dụng; sản xuất, kinh doanh kiểm soát đặc biệt.</td></tr>
+                <tr><td>Vũ khí thô sơ</td><td>Dao găm, kiếm, giáo, côn, cung nỏ…</td><td>Nhiều loại bị cấm tàng trữ/mang theo khi không có mục đích hợp pháp.</td></tr>
+                <tr><td>Vũ khí thể thao</td><td>Súng trường/súng ngắn thể thao, súng hơi…</td><td>Chỉ được sở hữu/sử dụng khi có giấy phép và trong phạm vi thi đấu, tập luyện.</td></tr>
+                <tr><td>Công cụ hỗ trợ</td><td>Dùi cui, bình xịt hơi cay, súng bắn điện…</td><td>Thuộc danh mục riêng; đối tượng và điều kiện sử dụng bị giới hạn.</td></tr>
+                <tr><td>Vật liệu nổ & tiền chất nổ</td><td>Thuốc nổ công nghiệp, kíp nổ, dây nổ, tiền chất…</td><td>Cấm/hạn chế nghiêm ngặt; sản xuất, vận chuyển, tàng trữ cần giấy phép đặc biệt.</td></tr>
+                <tr><td>Đồ cấm khác</td><td>Ma túy, hàng giả, hàng nhập lậu…</td><td>Do luật chuyên ngành quy định; thường xuất hiện cùng hiện trường vũ khí.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Điểm cần lưu ý khi áp dụng</h3>
+          <ul>
+            <li><strong>Xác định đúng nhóm</strong> quyết định cơ quan xử lý và chế tài — vũ khí quân dụng, thô sơ, thể thao hay công cụ hỗ trợ có quy định khác nhau.</li>
+            <li><strong>Yếu tố “mang theo nơi công cộng”:</strong> Vật sắc nhọn thông thường có thể bị xử lý khi mang không có lý do chính đáng và có nguy cơ gây thương tích.</li>
+            <li><strong>Không tự ý kết luận pháp lý:</strong> Việc giám định thuộc cơ quan có thẩm quyền; cán bộ hiện trường chỉ mô tả đặc điểm và báo cáo.</li>
+          </ul>
+        </section>
+
+        <section id="categories">
+          <h2>Phân loại nhận diện (phục vụ báo cáo và điều tra)</h2>
+          <p>
+            Phần dưới đây mô tả <strong>nhóm loại</strong> để nhận diện và báo cáo, không hướng dẫn sử dụng hay chế tạo. Khi nghi ngờ, luôn coi là nguy hiểm và gọi đơn vị chuyên trách.
+          </p>
+
+          <h3>Vũ khí nóng (súng, đạn)</h3>
+          <ul>
+            <li><strong>Súng các loại:</strong> Súng ngắn, súng trường, súng săn, súng tự chế (home-made). Đặc điểm nhận diện chung: thân kim loại hoặc polymer, nòng, bộ phận kích hoạt, có thể có ổ đạn hoặc khoang nạp đạn. Súng tự chế có thể thô sơ, không giống súng công nghiệp.</li>
+            <li><strong>Đạn, hộp đạn:</strong> Viên đạn (vỏ đạn, đầu đạn, thuốc nổ); hộp đạn chứa nhiều viên. Không cầm nắm, không đặt gần nhiệt hoặc va đập mạnh.</li>
+            <li><strong>Nhận diện phục vụ báo cáo:</strong> Mô tả hình dạng (súng ngắn/ dài, màu, kích thước tương đối); vị trí (trên người, trong xe, trong nhà); không cần tháo hay kiểm tra bên trong — để đơn vị chuyên trách xử lý.</li>
+          </ul>
+
+          <h3>Vũ khí lạnh và vật gây thương tích</h3>
+          <ul>
+            <li><strong>Dao, kiếm, vật sắc nhọn:</strong> Dao găm, dao quắm, kiếm, dao tự chế; vật có lưỡi hoặc đầu nhọn dùng để đâm, chém. Pháp luật quy định rõ loại bị cấm mang nơi công cộng.</li>
+            <li><strong>Công cụ cải tạo thành vũ khí:</strong> Tuốc-nơ-vít dài nhọn, ống sắt có đầu vát, gậy có gắn lưỡi — khi mang với mục đích gây thương tích có thể bị xử lý.</li>
+            <li><strong>Nhận diện:</strong> Mô tả loại (dao/ kiếm/ vật nhọn), kích thước, vị trí; không cầm lưỡi; tránh để người khác tiếp cận.</li>
+          </ul>
+
+          <h3>Vật liệu nổ và chất cháy nổ</h3>
+          <ul>
+            <li><strong>Vật liệu nổ:</strong> Thuốc nổ công nghiệp (TNT, C4, dynamite…), thuốc nổ tự chế; kíp nổ, dây nổ. Thường được cất trong hộp, túi, ống. <strong>Không di chuyển, không đụng vào;</strong> nhiệt, va đập, tĩnh điện có thể gây nổ.</li>
+            <li><strong>Pháo, pháo tự chế:</strong> Pháo hợp pháp do cơ quan được cấp phép sản xuất/ nhập; pháo tự chế, pháo “cây” thường bất hợp pháp và rất nguy hiểm.</li>
+            <li><strong>Chất cháy nguy hiểm:</strong> Xăng, dầu, hóa chất dễ cháy đựng bất thường (chai, can trong nhà/ xe không rõ mục đích) có thể liên quan đến ý đồ gây cháy. Không mở, không để gần lửa.</li>
+            <li><strong>Nhận diện:</strong> Mô tả hình dạng bao bì, kích thước, vị trí; không lắc, không mở; báo ngay và cách ly người/xe.</li>
+          </ul>
+
+          <h3>Đồ bất hợp pháp khác (liên quan hiện trường)</h3>
+          <ul>
+            <li><strong>Ma túy và tiền chất:</strong> Thuộc danh mục cấm; nhận diện theo hướng dẫn của ngành công an và độc học (đã có trong phân khu Độc học khi liên quan chất).</li>
+            <li><strong>Hàng giả, hàng nhập lậu:</strong> Thuộc lĩnh vực kinh tế, hải quan; khi phát hiện cùng hiện trường vũ khí cần bảo vệ hiện trường và báo đầy đủ.</li>
+            <li><strong>Phương tiện bị cải tạo để che giấu vũ khí:</strong> Xe, vali, đồ dùng có ngăn bí mật — không tự ý tháo, khoan; báo và để đơn vị chuyên trách kiểm tra.</li>
+          </ul>
+        </section>
+
+        <section id="identification">
+          <h2>Phương pháp xác định loại vũ khí (chi tiết)</h2>
+          <p>
+            Phần này mô tả <strong>phương pháp nhận diện và phân loại</strong> vũ khí dựa trên <strong>đặc điểm quan sát được</strong>, thành phần thường gặp và góc độ điều tra. Mục đích là giúp sinh viên và cán bộ báo cáo chính xác, thu thập chứng cứ phù hợp và bàn giao đúng chuyên ngành. <strong>Học liệu không cung cấp quy trình chế tạo hay hướng dẫn chế tạo vũ khí;</strong> quy trình chi tiết (nếu cần cho công tác điều tra chuyên sâu) do cơ quan có thẩm quyền quản lý và đào tạo trong môi trường kiểm soát.
+          </p>
+
+          <h3>Nguyên tắc xác định chung</h3>
+          <ul>
+            <li><strong>Quan sát từ xa, không sờ:</strong> Mô tả hình dạng, kích thước ước lượng, màu sắc, chất liệu bề mặt (kim loại, nhựa, gỗ…). Chụp ảnh toàn cảnh và chi tiết (nếu an toàn) trước khi chuyên trách di chuyển.</li>
+            <li><strong>Vị trí và ngữ cảnh:</strong> Vật nằm ở đâu (trên người, trong túi, dưới xe…); có vật kèm theo không (đạn rời, hộp đạn, dây, băng keo…). Ngữ cảnh giúp suy luận loại và mục đích.</li>
+            <li><strong>So sánh với danh mục:</strong> Đối chiếu với tài liệu phân loại vũ khí của ngành (danh mục vũ khí, ảnh mẫu do cơ quan quản lý vũ khí hoặc kỹ thuật hình sự cung cấp) để gọi tên nhóm hoặc loại gần đúng.</li>
+            <li><strong>Thu thập cho chuyên ngành:</strong> Kỹ thuật hình sự sẽ xác định cụ thể (nhãn hiệu, model, caliber, nguồn gốc…); nhiệm vụ hiện trường là bảo vệ hiện trường và ghi nhận đủ thông tin để báo cáo.</li>
+          </ul>
+
+          <h3>Súng công nghiệp — dấu hiệu nhận diện</h3>
+          <ul>
+            <li><strong>Súng ngắn (pistol):</strong> Thân gọn, nòng ngắn; thường có báng (grip) một tay; có thể có ổ đạn tháo rời ở tay cầm. Nhãn hiệu, số seri có thể khắc trên thân (không cần đọc sát — ghi lại bằng ảnh). Caliber thường ghi trên vỏ đạn tương thích (nếu có đạn rời).</li>
+            <li><strong>Súng trường / súng săn (rifle, shotgun):</strong> Nòng dài, có báng (stock); súng trường thường có rãnh xoắn trong nòng (rifling); súng săn có thể nòng trơn hoặc có rãnh. Kích thước tổng thể lớn hơn súng ngắn.</li>
+            <li><strong>Đặc điểm để báo cáo:</strong> Súng ngắn hay dài; màu (đen, bạc, nâu…); chất liệu (kim loại, polymer); có ổ đạn gắn hay rời; có đạn trong khoang hay không (không tháo kiểm tra — mô tả bên ngoài). Số seri, nhãn hiệu (nếu nhìn thấy từ xa hoặc qua ảnh) — do chuyên trách ghi nhận khi thu giữ.</li>
+          </ul>
+
+          <h3>Vũ khí lạnh — dấu hiệu nhận diện</h3>
+          <ul>
+            <li><strong>Dao có chuôi (knife):</strong> Lưỡi (blade) và chuôi (handle); lưỡi có thể gấp được (dao gập) hoặc cố định. Mô tả: độ dài lưỡi (ước lượng), hình dạng lưỡi (nhọn, cong, răng cưa…), chất liệu chuôi (nhựa, gỗ, kim loại).</li>
+            <li><strong>Kiếm, dao dài:</strong> Lưỡi dài, thẳng hoặc cong; có thể có vỏ. Mô tả chiều dài tổng thể, có mũi nhọn hay không, một lưỡi hay hai lưỡi.</li>
+            <li><strong>Vật nhọn tự chế / cải tạo:</strong> Ống sắt vát nhọn, tuốc-nơ-vít dài, thanh kim loại mài nhọn, mảnh thủy tinh gắn chuôi. Đặc điểm: không có hình dạng dao/ kiếm thương mại; vết cắt, mài, hàn có thể thấy trên bề mặt.</li>
+            <li><strong>Điều tra:</strong> Vết công cụ (tool marks) trên bề mặt; chất liệu (kim loại, hợp kim); so sánh với mẫu dao/ kiếm thương mại để xác định tự chế hay cải tạo.</li>
+          </ul>
+
+          <h3>Vật liệu nổ và thiết bị — dấu hiệu nhận diện</h3>
+          <ul>
+            <li><strong>Bao bì và hình dạng:</strong> Thuốc nổ công nghiệp thường có bao bì nhãn mác (hộp, ống, băng); thuốc nổ tự chế có thể đựng trong chai, túi nilon, ống nhựa không nhãn. Không mở, không lắc — chỉ mô tả bên ngoài.</li>
+            <li><strong>Kíp nổ, dây nổ:</strong> Dây dẫn, dây điện, ống nhỏ gắn với khối nghi là thuốc nổ — có thể là thiết bị kích nổ. Không kéo, cắt hay đụng vào.</li>
+            <li><strong>Pháo tự chế:</strong> Hình dạng không đồng đều; vỏ có thể là ống giấy, ống nhựa; không có nhãn nhà sản xuất hợp pháp. So sánh với pháo được cấp phép (hình dạng chuẩn, nhãn) để nhận diện “tự chế”.</li>
+          </ul>
+        </section>
+
+        <section id="improvised">
+          <h2>Vũ khí tự chế — nhận diện và phân loại</h2>
+          <p>
+            <strong>Vũ khí tự chế</strong> (improvised weapons) là vũ khí không do nhà sản xuất hợp pháp chế tạo theo tiêu chuẩn, mà được lắp ráp hoặc cải tạo từ vật liệu, linh kiện khác. Việc <strong>nhận diện</strong> dựa trên đặc điểm bên ngoài, thành phần thường gặp và dấu vết điều tra — giúp cảnh sát và cơ quan điều tra phân loại, báo cáo và giám sát. <strong>Học liệu chỉ mô tả đặc điểm để nhận biết;</strong> không cung cấp quy trình chế tạo, công thức hay hướng dẫn lắp ráp. Kiến thức chi tiết về quy trình (nếu cần cho điều tra chuyên sâu) do cơ quan có thẩm quyền đào tạo trong khuôn khổ được kiểm soát.
+          </p>
+
+          <h3>Tại sao cần nhận diện vũ khí tự chế</h3>
+          <ul>
+            <li><strong>Báo cáo và phân loại:</strong> Gọi đúng nhóm (súng tự chế, dao tự chế, thiết bị nổ tự chế…) giúp điều động đơn vị chuyên trách phù hợp (EOD, kỹ thuật hình sự).</li>
+            <li><strong>An toàn hiện trường:</strong> Một số loại tự chế kém ổn định hơn vũ khí công nghiệp (nòng yếu, kích nổ nhạy) — nhận diện sớm giúp quyết định khoảng cách cách ly và PPE.</li>
+            <li><strong>Điều tra và chứng cứ:</strong> Thành phần, vết công cụ, vật liệu giúp truy nguồn (mua ở đâu, công nghệ nào). Không cần biết cách chế tạo để ghi nhận các đặc điểm này.</li>
+          </ul>
+
+          <h3>Súng tự chế (improvised firearms) — đặc điểm nhận diện</h3>
+          <p>
+            Súng tự chế thường <strong>không có</strong> nhãn hiệu, số seri, hoặc hình dáng chuẩn của súng công nghiệp. Nhận diện dựa trên các đặc điểm quan sát được sau (không phải hướng dẫn chế tạo):
+          </p>
+          <ul>
+            <li><strong>Vật liệu và cấu trúc:</strong> Thân có thể làm từ ống kim loại (ống nước, ống thép); nòng có thể là một đoạn ống kín một đầu. Vỏ ngoài có thể thô, có vết hàn, cắt, ren không chuẩn. Chất liệu thường không phải vỏ súng chuyên dụng (không phải hợp kim súng công nghiệp).</li>
+            <li><strong>Bộ phận kích hoạt:</strong> Có thể là cơ khí đơn giản (lò xo, đinh, búa gõ); không giống cò súng công nghiệp. Có thể thấy dây, thanh kim loại lộ ra ngoài.</li>
+            <li><strong>Đạn và nòng:</strong> Caliber không chuẩn hoặc dùng đạn tự chế (vỏ đạn có thể thô, không nhãn). Nòng có thể không có rãnh xoắn (smoothbore) hoặc rãnh tự tạo. Khi thu giữ, chuyên trách sẽ đo caliber, kiểm tra rãnh nòng.</li>
+            <li><strong>Dấu vết điều tra:</strong> Vết công cụ (máy khoan, tiện, hàn); dấu vân tay; vật liệu còn dính (dầu, sơn). So sánh với ống, linh kiện bán trên thị trường để truy nguồn. Không cần biết “cách lắp” — chỉ cần ghi nhận “có ống A gắn với bộ phận B bằng hàn”.</li>
+          </ul>
+          <div class="callout callout-warning">
+            <h4>Không cung cấp quy trình chế tạo</h4>
+            <p>Học liệu mô tả <strong>đặc điểm để nhận biết</strong> (ví dụ: “có thể có ống kim loại, bộ phận kích hoạt đơn giản”) — không liệt kê bước lắp ráp, kích thước, nguyên vật liệu cụ thể để chế tạo. Quy trình chi tiết (nếu cần cho chuyên ngành) do cơ quan có thẩm quyền quản lý.</p>
+          </div>
+
+          <h3>Vũ khí lạnh tự chế / cải tạo — đặc điểm nhận diện</h3>
+          <ul>
+            <li><strong>Lưỡi và chuôi:</strong> Lưỡi có thể là mảnh kim loại mài nhọn (dao, cưa, lưỡi cưa); chuôi có thể là băng dính, vải, ống nhựa bọc. Không có logo nhà sản xuất; hình dạng không đối xứng hoặc không chuẩn.</li>
+            <li><strong>Vật cải tạo:</strong> Tuốc-nơ-vít dài, ống sắt vát nhọn, mảnh thủy tinh, lưỡi dao cạo gắn chuôi. Đặc điểm: vật dụng thông thường được sửa (mài, bẻ, gắn thêm) để tăng khả năng gây thương tích.</li>
+            <li><strong>Dấu vết điều tra:</strong> Vết mài, cắt trên bề mặt; chất liệu lưỡi (thép, hợp kim); so sánh với dụng cụ thương mại để xác định nguồn gốc linh kiện.</li>
+          </ul>
+
+          <h3>Thiết bị nổ tự chế (IED) — đặc điểm nhận diện</h3>
+          <p>
+            Thiết bị nổ tự chế (Improvised Explosive Device) là vật chứa thuốc nổ hoặc chất cháy nổ kết hợp với bộ phận kích nổ, thường không phải đạn pháo tiêu chuẩn. <strong>Không di chuyển, không đụng vào;</strong> chỉ mô tả từ xa và báo EOD.
+          </p>
+          <ul>
+            <li><strong>Vỏ bọc:</strong> Có thể là túi xách, hộp, ống, chai — bất kỳ vật chứa nào. Hình dạng không chuẩn so với đạn pháo công nghiệp.</li>
+            <li><strong>Dây, ống, thiết bị điện:</strong> Dây dẫn, pin, điện thoại, dây cáp — có thể là bộ phận kích nổ (điện, hẹn giờ, điều khiển từ xa). Không cắt dây, không mở.</li>
+            <li><strong>Mùi, vết ướt:</strong> Một số chất dùng trong IED có mùi đặc trưng hoặc rò rỉ. Không lại gần để ngửi; nếu đã ngửi thấy bất thường, báo và rút ra xa.</li>
+            <li><strong>Báo cáo:</strong> Mô tả hình dạng, kích thước, màu sắc vỏ; có dây/ pin/ thiết bị gắn kèm hay không; vị trí. Chờ EOD xử lý; không tự ý vô hiệu hóa.</li>
+          </ul>
+
+          <h3>Bảng tóm tắt — so sánh vũ khí công nghiệp và tự chế (nhận diện)</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tiêu chí</th>
+                  <th>Vũ khí công nghiệp</th>
+                  <th>Vũ khí tự chế (đặc điểm thường gặp)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hình dáng</td>
+                  <td>Chuẩn theo model, đối xứng, hoàn thiện</td>
+                  <td>Thô, không đối xứng, vết hàn/cắt/mài</td>
+                </tr>
+                <tr>
+                  <td>Nhãn hiệu, số seri</td>
+                  <td>Có khắc/ in trên thân</td>
+                  <td>Thường không có</td>
+                </tr>
+                <tr>
+                  <td>Chất liệu</td>
+                  <td>Hợp kim chuyên dụng, polymer chuẩn súng</td>
+                  <td>Ống kim loại thông thường, nhựa, vật tận dụng</td>
+                </tr>
+                <tr>
+                  <td>Bộ phận kích hoạt</td>
+                  <td>Cò, khóa an toàn chuẩn thiết kế</td>
+                  <td>Cơ khí đơn giản, lò xo/ đinh/ dây lộ ra</td>
+                </tr>
+                <tr>
+                  <td>Đạn</td>
+                  <td>Đạn thương mại, nhãn caliber</td>
+                  <td>Đạn tự chế hoặc caliber không chuẩn; vỏ thô</td>
+                </tr>
+                <tr>
+                  <td>Điều tra</td>
+                  <td>Tra số seri, nhãn hiệu, nguồn nhập</td>
+                  <td>Vết công cụ, vật liệu, truy nguồn linh kiện</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Nguồn tài liệu chuyên sâu (do cơ quan quản lý)</h3>
+          <p>
+            Để xác định loại vũ khí và phân loại chi tiết, sinh viên và cán bộ nên tham chiếu:
+          </p>
+          <ul>
+            <li><strong>Danh mục vũ khí, vật liệu nổ</strong> do Bộ Công an hoặc cơ quan quản lý vũ khí ban hành.</li>
+            <li><strong>Tài liệu nhận dạng vũ khí</strong> của Phòng Kỹ thuật hình sự (ảnh mẫu, bảng phân loại).</li>
+            <li><strong>Khóa đào tạo chuyên ngành</strong> do cơ quan có thẩm quyền tổ chức (nhận dạng vũ khí, hiện trường có vật nổ, chain of custody).</li>
+          </ul>
+          <p>
+            Học liệu này chỉ bổ sung góc nhìn <strong>đặc điểm nhận diện</strong> và <strong>phương pháp quan sát, báo cáo</strong> — không thay thế tài liệu chính thống và đào tạo chuyên ngành.
+          </p>
+        </section>
+
+        <section id="structure-analysis">
+          <h2>Phân tích cấu trúc vũ khí tự chế đã hiện hữu</h2>
+          <p>
+            Phần này mô tả <strong>cấu trúc</strong> (các bộ phận và chức năng) của vũ khí tự chế <strong>đã được thu giữ hoặc ghi nhận</strong> trong báo cáo kỹ thuật hình sự và tài liệu forensic — nhằm giúp sinh viên và cán bộ hiểu “vũ khí tự chế thường gồm những phần nào” để nhận diện, phân loại và báo cáo chính xác. Nội dung chỉ <strong>phân tích cấu trúc có sẵn</strong>, không phải hướng dẫn lắp ráp hay chế tạo.
+          </p>
+
+          <h3>Súng tự chế — cấu trúc thường gặp (phân tích từ mẫu thu giữ)</h3>
+          <p>
+            Từ các báo cáo kỹ thuật hình sự và tài liệu nhận dạng, súng tự chế đã hiện hữu thường có cấu trúc gồm các thành phần sau. Mô tả theo <strong>chức năng</strong> và <strong>vị trí tương đối</strong> để nhận diện khi quan sát:
+          </p>
+          <ul>
+            <li><strong>Nòng (barrel):</strong> Phần ống kim loại mà viên đạn đi qua khi bắn. Một đầu thường kín (để tạo áp suất); đầu kia thông với buồng đạn. Trên mẫu thu giữ, nòng có thể là một đoạn ống thép, ống đồng hoặc ống kim loại khác; có thể có vết hàn, ren hoặc ép. Nòng có thể trơn (smoothbore) hoặc có rãnh xoắn tự tạo.</li>
+            <li><strong>Buồng đạn (chamber):</strong> Khu vực chứa viên đạn trước khi bắn. Có thể là phần mở rộng của ống hoặc một đoạn ống nối với nòng. Trên súng tự chế, buồng đạn thường không tách rời như súng công nghiệp mà gắn liền với nòng.</li>
+            <li><strong>Cơ cấu kích hoạt (firing mechanism):</strong> Bộ phận gây nổ thuốc đạn (kích hoạt). Trên mẫu thu giữ thường thấy: búa gõ (hammer) hoặc đinh/thanh kim loại đập vào đầu nổ; lò xo đẩy búa; cò (trigger) hoặc nút bấm kéo/đẩy búa. Dây thép, đinh ốc, lò xo là linh kiện thường xuất hiện trong cơ cấu này.</li>
+            <li><strong>Thân / khung:</strong> Phần gắn nòng, buồng đạn và cơ cấu kích hoạt lại với nhau. Có thể là tấm kim loại, ống to hơn bọc ngoài, hoặc khung hàn từ nhiều mảnh. Trên bề mặt thường có vết hàn, khoan, cắt.</li>
+            <li><strong>Báng / tay cầm (stock / grip):</strong> Không phải mẫu nào cũng có. Nếu có thì thường là ống nhựa, gỗ, hoặc băng dính bọc để cầm; không có hình dáng chuẩn như súng công nghiệp.</li>
+          </ul>
+          <p>
+            Khi thu giữ, kỹ thuật hình sự ghi nhận từng bộ phận (nòng, buồng đạn, cơ cấu kích hoạt, thân) và cách chúng gắn với nhau (hàn, ren, ép) — phục vụ phân loại và truy nguồn linh kiện, không phục vụ chế tạo.
+          </p>
+
+          <h3>Vũ khí lạnh tự chế — cấu trúc thường gặp</h3>
+          <ul>
+            <li><strong>Lưỡi (blade):</strong> Phần sắc hoặc nhọn dùng để đâm/chém. Trên mẫu thu giữ có thể là một mảnh kim loại (dao, cưa, lưỡi cưa, ống vát) được mài hoặc cắt; có thể có một lưỡi hoặc hai lưỡi; mép có thể thẳng, cong hoặc răng cưa.</li>
+            <li><strong>Chuôi (handle / grip):</strong> Phần cầm tay. Có thể là chuôi gắn liền (cùng một miếng kim loại với lưỡi) hoặc chuôi rời bọc lưỡi (băng dính, vải, ống nhựa, gỗ). Trên vũ khí tự chế, chuôi thường không có lớp bọc chuẩn công nghiệp.</li>
+            <li><strong>Vỏ (sheath):</strong> Một số mẫu có vỏ bọc lưỡi khi không dùng — có thể là ống nhựa, vải, gỗ. Vỏ tự chế thường không có khóa, không chuẩn hình.</li>
+            <li><strong>Điểm gắn lưỡi–chuôi:</strong> Nếu lưỡi và chuôi là hai phần rời, chỗ nối có thể thấy vít, đinh tán, hàn hoặc băng dính. Phân tích điểm gắn giúp xác định cách lắp (phục vụ điều tra), không phải hướng dẫn lắp.</li>
+          </ul>
+
+          <h3>Thiết bị nổ tự chế (IED) — cấu trúc thường gặp (phân tích từ báo cáo)</h3>
+          <p>
+            Theo tài liệu forensic và báo cáo EOD, IED đã ghi nhận thường có cấu trúc gồm ba nhóm thành phần chính. Mô tả dưới đây là <strong>phân tích cấu trúc</strong>, không phải hướng dẫn chế tạo:
+          </p>
+          <ul>
+            <li><strong>Vỏ chứa (container):</strong> Bao bọc toàn bộ thiết bị. Có thể là túi xách, hộp nhựa, ống, chai, vali — bất kỳ vật chứa nào đủ chứa khối thuốc nổ và bộ phận kích nổ. Vỏ có tác dụng che giấu và đôi khi tăng sát thương (mảnh vỏ văng ra).</li>
+            <li><strong>Khối thuốc nổ / chất cháy nổ (main charge):</strong> Phần gây nổ chính. Trong báo cáo thường ghi nhận dạng thuốc nổ (nếu đã xác định được qua phân tích) — có thể là thuốc nổ công nghiệp bị đánh cắp hoặc chất cháy nổ tự pha. Không liệt kê công thức; chỉ ghi nhận “có khối thuốc nổ” và vị trí tương đối trong vỏ.</li>
+            <li><strong>Bộ phận kích nổ (initiation system):</strong> Phần kích hoạt làm nổ khối chính. Thường gồm: (1) <em>kíp nổ / detonator</em> — nhạy với nhiệt hoặc dòng điện; (2) <em>nguồn kích</em> — pin, dây điện, công tắc, hẹn giờ (đồng hồ, điện thoại), hoặc điều khiển từ xa. Trên hiện trường có thể thấy dây dẫn, pin, điện thoại, ống nhỏ gắn với khối — <strong>không đụng vào, không cắt dây</strong>; báo EOD.</li>
+          </ul>
+          <p>
+            Sơ đồ cấu trúc IED trong tài liệu forensic thường thể hiện: vỏ → khối chính → kíp nổ → nguồn kích (pin/công tắc/hẹn giờ). Việc phân tích giúp báo cáo “có những phần nào” và hỗ trợ EOD đánh giá cách vô hiệu hóa — không cung cấp cách lắp ráp.
+          </p>
+
+          <h3>Bảng tóm tắt — cấu trúc theo loại (để nhận diện)</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Loại vũ khí tự chế</th>
+                  <th>Các bộ phận cấu trúc thường gặp (phân tích từ mẫu thu giữ)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Súng tự chế</td>
+                  <td>Nòng (ống) — Buồng đạn — Cơ cấu kích hoạt (búa, lò xo, cò) — Thân/khung — (Tùy mẫu) Báng/tay cầm</td>
+                </tr>
+                <tr>
+                  <td>Vũ khí lạnh tự chế</td>
+                  <td>Lưỡi (mảnh kim loại mài/cắt) — Chuôi (bọc hoặc gắn) — (Tùy mẫu) Vỏ — Điểm gắn lưỡi–chuôi</td>
+                </tr>
+                <tr>
+                  <td>IED</td>
+                  <td>Vỏ chứa — Khối thuốc nổ/chất cháy nổ — Bộ phận kích nổ (kíp + nguồn kích: pin, dây, hẹn giờ, điều khiển)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            Khi gặp vật nghi là vũ khí tự chế, cán bộ có thể đối chiếu với bảng trên để mô tả “có những phần nào thấy được” trong báo cáo — giúp chuyên trách đánh giá loại và mức độ nguy hiểm. Chi tiết phân tích (vật liệu, vết công cụ, nguồn linh kiện) do Phòng Kỹ thuật hình sự thực hiện sau khi thu giữ.
+          </p>
+        </section>
+
+        <section id="discovery">
+          <h2>Khi phát hiện vũ khí hoặc đồ nghi ngờ</h2>
+          <ol>
+            <li><strong>Không sờ, không di chuyển, không tháo rời</strong> bất kỳ vật nào nghi là vũ khí hoặc vật liệu nổ.</li>
+            <li><strong>Cách ly khu vực:</strong> Không cho người không có nhiệm vụ vào gần; nếu vật nghi là chất nổ, di chuyển người ra xa, tránh va đập và nguồn nhiệt.</li>
+            <li><strong>Báo ngay:</strong> Gọi công an (113 hoặc số địa phương), báo rõ địa chỉ, mô tả ngắn (súng/ dao/ vật nghi nổ/…), số người tại hiện trường, không có ai đang cầm vũ khí hay đe dọa (hoặc có — để tổng đài hướng dẫn).</li>
+            <li><strong>Ghi chép phục vụ báo cáo:</strong> Vị trí vật (trên bàn, trong túi, dưới gầm xe…); hình dạng, kích thước ước lượng; thời gian phát hiện; người phát hiện. Chụp ảnh từ xa nếu an toàn và không làm thay đổi hiện trường.</li>
+            <li><strong>Chờ đơn vị chuyên trách:</strong> Công an, lực lượng EOD (gỡ bom mìn) hoặc chuyên ngành sẽ đến xử lý; không tự ý “vô hiệu hóa” hay mang đi.</li>
+          </ol>
+          <div class="callout callout-ethical">
+            <h4>Nghi phạm đang cầm vũ khí</h4>
+            <p>Nếu có người đang cầm vũ khí hoặc đe dọa: ưu tiên bảo vệ tính mạng (rút lui, tránh đối đầu trực tiếp nếu không được huấn luyện); báo 113 ngay và mô tả địa điểm, đối tượng, loại vũ khí (nếu nhận biết được); tuân theo hướng dẫn của tổng đài.</p>
+          </div>
+        </section>
+
+        <section id="evidence">
+          <h2>Bảo quản chứng cứ và bàn giao</h2>
+          <p>
+            Trong phạm vi nhiệm vụ được giao (ví dụ: cán bộ điều tra, bảo vệ hiện trường), cần bảo đảm chứng cứ không bị thay đổi hoặc mất trước khi bàn giao cho đơn vị chuyên trách hoặc phòng kỹ thuật hình sự.
+          </p>
+          <ul>
+            <li><strong>Không di chuyển vũ khí/ vật nổ</strong> trừ khi đơn vị chuyên trách yêu cầu và có quy trình an toàn.</li>
+            <li><strong>Vật nhỏ (dao, đạn rời):</strong> Khi đã được chuyên trách vô hiệu hóa/ thu giữ, có thể được đựng trong túi/ hộp kín, dán nhãn (thời gian, địa điểm, người thu). Tránh chạm tay trực tiếp lên bề mặt có thể lấy dấu vân tay; dùng găng khi cần thiết theo quy định.</li>
+            <li><strong>Sổ ghi chép:</strong> Ghi rõ thời gian phát hiện, người phát hiện, vị trí từng vật, ảnh chụp (nếu có); người tiếp cận hiện trường sau đó. Chain of custody (chuỗi lưu giữ) phải được duy trì theo quy định đơn vị.</li>
+            <li><strong>Bàn giao:</strong> Lập biên bản bàn giao cho đơn vị kỹ thuật hình sự hoặc cơ quan có thẩm quyền; lưu bản sao theo quy định.</li>
+          </ul>
+        </section>
+
+        <section id="detection-tech">
+          <h2>Phương tiện và kỹ thuật phát hiện, kiểm tra</h2>
+          <p>
+            Phát hiện vũ khí, vật liệu nổ và đồ cấm dựa trên kết hợp <strong>quan sát, công cụ kỹ thuật và nghiệp vụ</strong>. Phần này mô tả phương tiện phổ biến dùng tại chốt kiểm soát, sân bay, hiện trường — không thay thế quy trình và đào tạo chuyên ngành.
+          </p>
+          <ul>
+            <li><strong>Quan sát và khám xét có hệ thống:</strong> Đánh giá hành vi bất thường, hình dáng vật thể, ngăn bí mật trong phương tiện/hành lý; tuân thủ quy trình khám xét theo pháp luật.</li>
+            <li><strong>Máy dò kim loại (walk-through / handheld):</strong> Phát hiện vật kim loại (súng, dao, vỏ đạn). Nhược điểm: không phân biệt được kim loại thường và vũ khí; cần kết hợp soi chiếu.</li>
+            <li><strong>Máy soi X-ray:</strong> Quét hình ảnh hành lý/hàng hóa để nhận diện hình dáng súng, lưỡi dao, mạch điện của thiết bị nổ. Người vận hành cần được đào tạo đọc ảnh.</li>
+            <li><strong>Thiết bị phát hiện vết nổ (ETD):</strong> Quét vết bám (trace) của chất nổ trên bề mặt; hỗ trợ xác nhận nghi vấn tại hiện trường.</li>
+            <li><strong>Chó nghiệp vụ (K9):</strong> Phát hiện ma túy, thuốc nổ qua khứu giác; hiệu quả ở hiện trường rộng, kho hàng, phương tiện.</li>
+            <li><strong>Camera và phân tích hình ảnh:</strong> Giám sát hiện trường, truy vết di chuyển; kết hợp nhận dạng bất thường.</li>
+            <li><strong>Kiểm tra hóa chất hiện trường:</strong> Bộ test màu (colorimetric) xác định sơ bộ một số chất; kết quả cuối cùng do phòng thí nghiệm khẳng định.</li>
+          </ul>
+          <h3>Nguyên tắc khi dùng công cụ phát hiện</h3>
+          <ul>
+            <li>Không làm thay đổi hiện trường: chụp ảnh, ghi chép trước khi dùng thiết bị tiếp xúc.</li>
+            <li>Không đưa thiết bị phát sóng mạnh lại gần vật nghi nổ; tuân thủ khoảng cách an toàn.</li>
+            <li>Kết quả sơ bộ không thay thế giám định: vật nghi vấn phải được chuyên trách xử lý.</li>
+          </ul>
+        </section>
+
+        <section id="safety">
+          <h2>An toàn cá nhân và hiện trường</h2>
+          <ul>
+            <li><strong>Vũ khí nóng:</strong> Luôn coi như có thể còn đạn và có thể nổ; không chĩa vào người; không đặt gần nhiệt hoặc va đập. Chỉ nhân sự được đào tạo và có thẩm quyền mới được thao tác vô hiệu hóa/ thu giữ.</li>
+            <li><strong>Vật liệu nổ:</strong> Không lắc, không mở, không dùng điện thoại di động hoặc thiết bị phát sóng sát vật nghi nổ (một số kíp có thể kích nổ bằng sóng). Tránh tạo tia lửa, tĩnh điện; không hút thuốc. Chờ EOD hoặc chuyên trách.</li>
+            <li><strong>Vũ khí lạnh:</strong> Không cầm lưỡi; tránh để người khác với tới. Khi thu giữ theo quy định: dùng găng, đựng trong hộp/ túi cứng để tránh đâm thủng và bảo vệ dấu vết.</li>
+            <li><strong>PPE:</strong> Khi phải tiếp cận hiện trường có vũ khí/ đồ nghi ngờ: găng tay, giày bảo hộ, áo phản quang (nếu làm việc ngoài trời); không dùng đồ dễ gây tĩnh điện gần vật nghi nổ.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <strong>Bách Khoa Toàn Thư về Bảo Mật và Khoa Học Độc Học</strong> — Học liệu giáo dục. 
+      <a href="index.html">Về trang chủ</a>
+    </p>
+  </footer>
+<script src="js/app.js"></script>
+</body>
+</html>

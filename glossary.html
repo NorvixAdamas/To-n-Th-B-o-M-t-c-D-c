@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Bảng thuật ngữ chuyên ngành — Bách Khoa Bảo Mật & Độc Học</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/static-auth.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="site-logo">
+        <span class="icon-cyber">🛡</span>
+        <span class="icon-tox">🧪</span>
+        Bách Khoa Bảo Mật & Độc Học
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="cybersecurity.html">An ninh mạng</a></li>
+          <li><a href="toxicology.html">Độc học & ATTP</a></li>
+          <li><a href="weapons.html">Chống vũ khí & đồ cấm</a></li>
+          <li><a href="safety.html">An toàn đời sống</a></li>
+          <li><a href="glossary.html" aria-current="page">Thuật ngữ</a></li>
+        </ul>
+      </nav>
+      <div class="version-switch" role="group" aria-label="Chọn phiên bản giao diện">
+        <span class="version-switch__item is-active" aria-current="page">1.0</span>
+        <a class="version-switch__item" href="dashboard.html" title="Chuyển sang giao diện 2.0">2.0</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Bật chế độ tối" title="Bật/tắt chế độ tối">🌙</button>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <header class="page-header">
+      <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> → Thuật ngữ chuyên ngành
+      </div>
+      <h1>Bảng thuật ngữ chuyên ngành</h1>
+      <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
+        Tra cứu nhanh các khái niệm cốt lõi trong An ninh mạng, Độc học & An toàn thực phẩm, và Chống vũ khí & đồ cấm. Gõ từ khóa để lọc theo thời gian thực (không phân biệt dấu tiếng Việt).
+      </p>
+    </header>
+
+    <div class="glossary-toolbar">
+      <input
+        type="search"
+        id="glossary-search"
+        class="glossary-search"
+        placeholder="Tìm thuật ngữ… (ví dụ: ransomware, amatoxin, IED)"
+        autocomplete="off"
+      >
+      <span id="glossary-count" class="glossary-count"></span>
+    </div>
+
+    <section id="glossary-cyber" class="glossary-group">
+      <h2>🛡 An ninh mạng &amp; An toàn thông tin</h2>
+      <dl class="glossary-list">
+        <div class="glossary-term"><dt>SQL Injection (SQLi)</dt><dd>Lỗ hổng khi ứng dụng ghép dữ liệu người dùng trực tiếp vào câu lệnh SQL, cho phép thay đổi truy vấn để đọc/sửa/xóa dữ liệu. Phòng thủ: truy vấn tham số hóa, kiểm soát đầu vào.</dd></div>
+        <div class="glossary-term"><dt>Cross-Site Scripting (XSS)</dt><dd>Kẻ tấn công chèn script độc vào trang web để chạy trong trình duyệt nạn nhân. Phân loại: Stored, Reflected, DOM-based. Phòng thủ: mã hóa đầu ra, CSP.</dd></div>
+        <div class="glossary-term"><dt>CSRF</dt><dd>Cross-Site Request Forgery — lừa trình duyệt nạn nhân gửi request thay mặt họ tới ứng dụng đã đăng nhập. Phòng thủ: CSRF token, cookie SameSite.</dd></div>
+        <div class="glossary-term"><dt>SSRF</dt><dd>Server-Side Request Forgery — lừa server gửi request tới địa chỉ do kẻ tấn công chỉ định. Phòng thủ: whitelist URL, chặn truy cập mạng nội bộ.</dd></div>
+        <div class="glossary-term"><dt>RCE</dt><dd>Remote Code Execution — khả năng thực thi mã từ xa trên máy chủ; là hệ quả nghiêm trọng nhất của nhiều lỗ hổng.</dd></div>
+        <div class="glossary-term"><dt>LFI / RFI</dt><dd>Local/Remote File Inclusion — lỗi include file cho phép đọc file nội bộ hoặc nhúng file từ xa.</dd></div>
+        <div class="glossary-term"><dt>Buffer Overflow</dt><dd>Tràn bộ đệm — ghi dữ liệu vượt giới hạn vùng nhớ, có thể ghi đè địa chỉ trả về và thực thi mã.</dd></div>
+        <div class="glossary-term"><dt>Zero-day</dt><dd>Lỗ hổng chưa được công bố hoặc chưa có bản vá; exploit khai thác nó gọi là zero-day exploit.</dd></div>
+        <div class="glossary-term"><dt>CVE</dt><dd>Common Vulnerabilities and Exposures — mã định danh chuẩn cho từng lỗ hổng đã công bố.</dd></div>
+        <div class="glossary-term"><dt>CWE</dt><dd>Common Weakness Enumeration — danh mục phân loại điểm yếu phần mềm.</dd></div>
+        <div class="glossary-term"><dt>CVSS</dt><dd>Common Vulnerability Scoring System — thang điểm (0–10) đánh giá mức độ nghiêm trọng của lỗ hổng.</dd></div>
+        <div class="glossary-term"><dt>OWASP</dt><dd>Open Web Application Security Project — tổ chức cung cấp chuẩn và tài liệu bảo mật ứng dụng (OWASP Top 10, Cheat Sheet).</dd></div>
+        <div class="glossary-term"><dt>NIST</dt><dd>National Institute of Standards and Technology — viện tiêu chuẩn Mỹ, ban hành khung an ninh mạng (CSF) và chuẩn ứng phó sự cố.</dd></div>
+        <div class="glossary-term"><dt>MITRE ATT&amp;CK</dt><dd>Khung kiến thức mô tả chiến thuật và kỹ thuật của kẻ tấn công, dùng để phát hiện và mô phỏng đối kháng.</dd></div>
+        <div class="glossary-term"><dt>Phishing</dt><dd>Giả mạo email/tin nhắn đáng tin để lừa lấy thông tin đăng nhập hoặc cài mã độc.</dd></div>
+        <div class="glossary-term"><dt>Spear phishing</dt><dd>Phishing nhắm đích cụ thể (cá nhân/tổ chức) và được cá nhân hóa.</dd></div>
+        <div class="glossary-term"><dt>Whaling</dt><dd>Phishing nhắm vào lãnh đạo cấp cao (CEO, giám đốc).</dd></div>
+        <div class="glossary-term"><dt>Vishing</dt><dd>Phishing qua điện thoại (giả mạo ngân hàng, công an…).</dd></div>
+        <div class="glossary-term"><dt>Smishing</dt><dd>Phishing qua tin nhắn SMS.</dd></div>
+        <div class="glossary-term"><dt>BEC</dt><dd>Business Email Compromise — giả mạo email lãnh đạo/đối tác để lừa chuyển tiền.</dd></div>
+        <div class="glossary-term"><dt>Ransomware</dt><dd>Mã độc mã hóa dữ liệu đòi tiền chuộc. Phòng thủ: backup offline, vá lỗi, phân quyền tối thiểu.</dd></div>
+        <div class="glossary-term"><dt>Malware</dt><dd>Phần mềm độc hại nói chung: virus, worm, trojan, ransomware, spyware…</dd></div>
+        <div class="glossary-term"><dt>Virus</dt><dd>Mã độc gắn vào file hợp lệ, lây lan khi file được mở/chạy.</dd></div>
+        <div class="glossary-term"><dt>Worm</dt><dd>Mã độc tự nhân bản và lan qua mạng mà không cần file chủ.</dd></div>
+        <div class="glossary-term"><dt>Trojan</dt><dd>Mã độc giả dạng phần mềm hợp lệ để lừa người dùng cài đặt.</dd></div>
+        <div class="glossary-term"><dt>Rootkit</dt><dd>Mã độc che giấu process/file/đăng nhập, rất khó phát hiện.</dd></div>
+        <div class="glossary-term"><dt>Spyware</dt><dd>Phần mềm theo dõi, bí mật thu thập thông tin người dùng.</dd></div>
+        <div class="glossary-term"><dt>Keylogger</dt><dd>Ghi lại phím gõ để đánh cắp mật khẩu, tin nhắn.</dd></div>
+        <div class="glossary-term"><dt>Botnet</dt><dd>Mạng máy bị nhiễm mã độc và điều khiển từ xa, thường dùng để DDoS hoặc gửi spam.</dd></div>
+        <div class="glossary-term"><dt>DDoS</dt><dd>Distributed Denial of Service — flood traffic từ botnet làm sập dịch vụ.</dd></div>
+        <div class="glossary-term"><dt>DoS</dt><dd>Denial of Service — làm hệ thống không phục vụ được người dùng hợp lệ (từ một nguồn).</dd></div>
+        <div class="glossary-term"><dt>MITM</dt><dd>Man-in-the-Middle — chặn hoặc chỉnh sửa traffic giữa hai bên.</dd></div>
+        <div class="glossary-term"><dt>DNS poisoning</dt><dd>Làm nhiễm độc cache DNS để chuyển hướng người dùng tới trang giả.</dd></div>
+        <div class="glossary-term"><dt>ARP spoofing</dt><dd>Giả mạo địa chỉ MAC trong mạng nội bộ để chặn traffic.</dd></div>
+        <div class="glossary-term"><dt>Session hijacking</dt><dd>Chiếm phiên đăng nhập (cookie/token) để giả danh người dùng.</dd></div>
+        <div class="glossary-term"><dt>Credential stuffing</dt><dd>Dùng tổ hợp tài khoản/mật khẩu đã rò rỉ để thử đăng nhập hàng loạt.</dd></div>
+        <div class="glossary-term"><dt>Brute force</dt><dd>Thử nhiều tổ hợp mật khẩu cho tới khi đoán đúng.</dd></div>
+        <div class="glossary-term"><dt>Hash</dt><dd>Hàm băm biến dữ liệu thành chuỗi độ dài cố định, một chiều (SHA-256…). Dùng để lưu mật khẩu (kèm salt).</dd></div>
+        <div class="glossary-term"><dt>Salt</dt><dd>Chuỗi ngẫu nhiên thêm vào mật khẩu trước khi băm, chống tấn công bằng bảng tra cứu.</dd></div>
+        <div class="glossary-term"><dt>Mã hóa đối xứng</dt><dd>Dùng cùng một khóa cho cả mã hóa và giải mã (ví dụ AES).</dd></div>
+        <div class="glossary-term"><dt>Mã hóa bất đối xứng</dt><dd>Dùng cặp khóa công khai/riêng tư (RSA, ECC); khóa công khai mã hóa, khóa riêng giải mã.</dd></div>
+        <div class="glossary-term"><dt>Chữ ký số</dt><dd>Dùng khóa riêng ký, khóa công khai xác minh tính toàn vẹn và nguồn gốc dữ liệu.</dd></div>
+        <div class="glossary-term"><dt>TLS / SSL</dt><dd>Giao thức mã hóa kênh truyền; HTTPS chạy trên nền TLS.</dd></div>
+        <div class="glossary-term"><dt>HTTPS</dt><dd>HTTP qua TLS, bảo vệ dữ liệu trên đường truyền.</dd></div>
+        <div class="glossary-term"><dt>HSTS</dt><dd>HTTP Strict Transport Security — header buộc trình duyệt dùng HTTPS.</dd></div>
+        <div class="glossary-term"><dt>CSP</dt><dd>Content Security Policy — header giới hạn nguồn script/resource, giảm thiệt hại do XSS.</dd></div>
+        <div class="glossary-term"><dt>2FA / MFA</dt><dd>Xác thực nhiều yếu tố — thêm lớp bảo vệ ngoài mật khẩu.</dd></div>
+        <div class="glossary-term"><dt>OTP</dt><dd>One-Time Password — mật khẩu dùng một lần.</dd></div>
+        <div class="glossary-term"><dt>TOTP</dt><dd>Time-based OTP — mã đổi theo thời gian, dùng trong ứng dụng authenticator.</dd></div>
+        <div class="glossary-term"><dt>OAuth</dt><dd>Chuẩn ủy quyền cho phép ứng dụng truy cập tài nguyên thay mặt người dùng.</dd></div>
+        <div class="glossary-term"><dt>JWT</dt><dd>JSON Web Token — token chứa thông tin (claims), dùng cho xác thực/ủy quyền không trạng thái.</dd></div>
+        <div class="glossary-term"><dt>Firewall</dt><dd>Thiết bị/phần mềm lọc traffic theo tập quy tắc.</dd></div>
+        <div class="glossary-term"><dt>IDS / IPS</dt><dd>Hệ phát hiện xâm nhập / hệ ngăn chặn xâm nhập.</dd></div>
+        <div class="glossary-term"><dt>WAF</dt><dd>Web Application Firewall — lọc request ở tầng ứng dụng web.</dd></div>
+        <div class="glossary-term"><dt>SIEM</dt><dd>Security Information and Event Management — gom log và phát hiện bất thường tập trung.</dd></div>
+        <div class="glossary-term"><dt>SOAR</dt><dd>Security Orchestration, Automation and Response — tự động hóa phản ứng bảo mật.</dd></div>
+        <div class="glossary-term"><dt>EDR</dt><dd>Endpoint Detection and Response — giám sát và phản ứng trên máy đầu cuối.</dd></div>
+        <div class="glossary-term"><dt>Antivirus</dt><dd>Phần mềm phát hiện/diệt mã độc theo chữ ký (signature).</dd></div>
+        <div class="glossary-term"><dt>Sandbox</dt><dd>Môi trường cách ly để chạy và phân tích file nghi ngờ an toàn.</dd></div>
+        <div class="glossary-term"><dt>Honeypot</dt><dd>Hệ thống bẫy giả để thu hút và nghiên cứu hành vi kẻ tấn công.</dd></div>
+        <div class="glossary-term"><dt>DMZ</dt><dd>Vùng mạng trung gian đặt dịch vụ công khai, tách biệt khỏi mạng nội bộ.</dd></div>
+        <div class="glossary-term"><dt>VPN</dt><dd>Virtual Private Network — kênh mã hóa kết nối qua mạng không tin cậy.</dd></div>
+        <div class="glossary-term"><dt>Zero Trust</dt><dd>Mô hình bảo mật “không tin tưởng mặc định” — xác thực và kiểm tra mọi request.</dd></div>
+        <div class="glossary-term"><dt>Least privilege</dt><dd>Nguyên tắc cấp quyền tối thiểu cần thiết cho từng người dùng/ứng dụng.</dd></div>
+        <div class="glossary-term"><dt>Patch management</dt><dd>Quy trình theo dõi, ưu tiên và áp dụng bản vá lỗ hổng.</dd></div>
+        <div class="glossary-term"><dt>Secure SDLC</dt><dd>Vòng đời phát triển phần mềm tích hợp bảo mật ngay từ thiết kế.</dd></div>
+        <div class="glossary-term"><dt>SAST</dt><dd>Static Application Security Testing — kiểm thử bảo mật bằng phân tích mã nguồn.</dd></div>
+        <div class="glossary-term"><dt>DAST</dt><dd>Dynamic Application Security Testing — kiểm thử bảo mật trên ứng dụng đang chạy.</dd></div>
+        <div class="glossary-term"><dt>Penetration testing</dt><dd>Kiểm thử xâm nhập được ủy quyền nhằm phát hiện lỗ hổng trước kẻ tấn công.</dd></div>
+        <div class="glossary-term"><dt>Red / Blue / Purple team</dt><dd>Nhóm tấn công giả lập / nhóm phòng thủ / kết hợp huấn luyện đối kháng.</dd></div>
+        <div class="glossary-term"><dt>Incident response</dt><dd>Quy trình phát hiện, xử lý, khôi phục và rút kinh nghiệm sau sự cố bảo mật.</dd></div>
+        <div class="glossary-term"><dt>Digital forensics</dt><dd>Thu thập, bảo quản và phân tích chứng cứ số theo chuẩn pháp lý.</dd></div>
+        <div class="glossary-term"><dt>Chain of custody</dt><dd>Chuỗi lưu giữ chứng cứ ghi rõ ai, khi nào tiếp cận — đảm bảo giá trị pháp lý.</dd></div>
+        <div class="glossary-term"><dt>OSINT</dt><dd>Open Source Intelligence — thu thập thông tin từ nguồn công khai.</dd></div>
+        <div class="glossary-term"><dt>Threat intelligence</dt><dd>Thông tin tình báo về mối đe dọa, phục vụ phát hiện và phòng thủ.</dd></div>
+        <div class="glossary-term"><dt>APT</dt><dd>Advanced Persistent Threat — nhóm tấn công có tổ chức, kiên trì, mục tiêu dài hạn.</dd></div>
+        <div class="glossary-term"><dt>C2</dt><dd>Command and Control — kênh điều khiển máy bị nhiễm mã độc.</dd></div>
+        <div class="glossary-term"><dt>Data exfiltration</dt><dd>Đánh cắp dữ liệu ra khỏi hệ thống ra bên ngoài.</dd></div>
+        <div class="glossary-term"><dt>LOLBins</dt><dd>Living-off-the-Land Binaries — lạm dụng công cụ có sẵn của hệ điều hành để tấn công.</dd></div>
+        <div class="glossary-term"><dt>Fileless malware</dt><dd>Mã độc chạy trong RAM, không ghi file, khó phát hiện bằng quét ổ đĩa.</dd></div>
+        <div class="glossary-term"><dt>Steganography</dt><dd>Kỹ thuật giấu dữ liệu trong file ảnh/âm thanh/tài liệu.</dd></div>
+        <div class="glossary-term"><dt>Social engineering</dt><dd>Kỹ thuật khai thác tâm lý con người thay vì lỗ hổng kỹ thuật.</dd></div>
+        <div class="glossary-term"><dt>Insider threat</dt><dd>Mối đe dọa từ người bên trong tổ chức (cố ý hoặc vô ý).</dd></div>
+        <div class="glossary-term"><dt>Supply chain attack</dt><dd>Tấn công thông qua nhà cung cấp/chuỗi cung ứng phần mềm (ví dụ SolarWinds).</dd></div>
+        <div class="glossary-term"><dt>Watering hole</dt><dd>Tấn công nhắm vào website mà nhóm mục tiêu thường truy cập.</dd></div>
+        <div class="glossary-term"><dt>Cryptojacking</dt><dd>Lợi dụng CPU/GPU máy nạn nhân để đào tiền mã hóa trái phép.</dd></div>
+        <div class="glossary-term"><dt>SIM swap</dt><dd>Chiếm số điện thoại bằng cách lừa nhà mạng đổi SIM để nhận OTP.</dd></div>
+        <div class="glossary-term"><dt>Dark web</dt><dd>Phần web ẩn cần phần mềm đặc biệt để truy cập, thường liên quan giao dịch bất hợp pháp.</dd></div>
+        <div class="glossary-term"><dt>TOR</dt><dd>The Onion Router — mạng ẩn danh định tuyến qua nhiều nút trung gian.</dd></div>
+        <div class="glossary-term"><dt>Privacy coin</dt><dd>Tiền mã hóa che giấu giao dịch, khó truy vết (ví dụ Monero, Zcash).</dd></div>
+        <div class="glossary-term"><dt>XXE</dt><dd>XML External Entity — lỗ hổng parser XML cho phép đọc file nội bộ hoặc tấn công SSRF. Phòng thủ: tắt xử lý external entity.</dd></div>
+        <div class="glossary-term"><dt>Insecure deserialization</dt><dd>Giải tuần tự hóa dữ liệu không tin cậy có thể dẫn thực thi mã hoặc sửa đổi dữ liệu. Phòng thủ: không deserialize dữ liệu untrusted.</dd></div>
+        <div class="glossary-term"><dt>Open redirect</dt><dd>Ứng dụng chuyển hướng theo input người dùng không kiểm soát, dùng để lừa phishing.</dd></div>
+        <div class="glossary-term"><dt>Clickjacking</dt><dd>Lừa người dùng bấm vào phần tử bị che khuất trong iframe trong suốt. Phòng thủ: X-Frame-Options / CSP frame-ancestors.</dd></div>
+        <div class="glossary-term"><dt>Session fixation</dt><dd>Kẻ tấn công ép nạn nhân dùng session ID đã biết trước. Phòng thủ: cấp lại session ID sau đăng nhập.</dd></div>
+        <div class="glossary-term"><dt>Password spraying</dt><dd>Thử một mật khẩu phổ biến trên nhiều tài khoản để tránh bị khóa tài khoản.</dd></div>
+        <div class="glossary-term"><dt>Rainbow table</dt><dd>Bảng tra cứu hash → chuỗi gốc; phòng thủ bằng cách thêm salt trước khi băm.</dd></div>
+        <div class="glossary-term"><dt>PBKDF2 / Argon2</dt><dd>Hàm băm mật khẩu chậm có chủ đích, thay thế MD5/SHA-1 khi lưu mật khẩu.</dd></div>
+        <div class="glossary-term"><dt>PKI</dt><dd>Public Key Infrastructure — hạ tầng khóa công khai quản lý cấp phát và thu hồi chứng chỉ số.</dd></div>
+        <div class="glossary-term"><dt>Certificate Authority (CA)</dt><dd>Tổ chức cấp chứng chỉ số xác thực danh tính cho HTTPS.</dd></div>
+        <div class="glossary-term"><dt>Certificate pinning</dt><dd>Ghim chứng chỉ/khóa cụ thể của server để phát hiện MITM dùng chứng chỉ giả.</dd></div>
+        <div class="glossary-term"><dt>End-to-end encryption (E2EE)</dt><dd>Chỉ hai đầu liên lạc giải mã được nội dung; nhà cung cấp không đọc được.</dd></div>
+        <div class="glossary-term"><dt>Onion routing</dt><dd>Định tuyến qua nhiều lớp mã hóa (mạng Tor) để ẩn danh nguồn gốc kết nối.</dd></div>
+        <div class="glossary-term"><dt>DNS-over-HTTPS (DoH)</dt><dd>Mã hóa truy vấn DNS qua HTTPS để tránh nghe lén và can thiệp.</dd></div>
+        <div class="glossary-term"><dt>Fingerprinting (trình duyệt)</dt><dd>Nhận diện thiết bị qua đặc điểm trình duyệt (font, canvas, header) mà không cần cookie.</dd></div>
+        <div class="glossary-term"><dt>JA3</dt><dd>Dấu vân tay của TLS handshake, dùng trong điều tra để nhận diện phần mềm độc hại/C2.</dd></div>
+        <div class="glossary-term"><dt>IOC</dt><dd>Indicator of Compromise — dấu hiệu xâm nhập như IP, hash file, tên miền độc hại.</dd></div>
+        <div class="glossary-term"><dt>TTP</dt><dd>Tactics, Techniques and Procedures — chiến thuật, kỹ thuật và quy trình của kẻ tấn công.</dd></div>
+        <div class="glossary-term"><dt>Cyber kill chain</dt><dd>Chuỗi giai đoạn tấn công: do thám → vũ khí hóa → xâm nhập → khai thác → cài đặt → C2 → đạt mục tiêu.</dd></div>
+        <div class="glossary-term"><dt>Diamond model</dt><dd>Mô hình phân tích mối đe dọa theo 4 đỉnh: kẻ tấn công, năng lực, hạ tầng, nạn nhân.</dd></div>
+        <div class="glossary-term"><dt>Volatile memory</dt><dd>Dữ liệu trong RAM mất khi tắt máy; điều tra cần dump trước khi tắt để giữ bằng chứng.</dd></div>
+        <div class="glossary-term"><dt>Slack space</dt><dd>Vùng trống của ổ đĩa có thể còn sót dữ liệu đã xóa, dùng trong phục hồi pháp y.</dd></div>
+        <div class="glossary-term"><dt>MFT</dt><dd>Master File Table trong NTFS — bảng metadata của file, nguồn quan trọng khi phân tích dòng thời gian.</dd></div>
+        <div class="glossary-term"><dt>Timeline analysis</dt><dd>Xâu chuỗi sự kiện theo thời gian (log, MFT, registry) để tái hiện hành vi.</dd></div>
+        <div class="glossary-term"><dt>Write blocker</dt><dd>Thiết bị ngăn ghi vào ổ đĩa khi thu thập, bảo toàn nguyên trạng chứng cứ.</dd></div>
+        <div class="glossary-term"><dt>Disk imaging</dt><dd>Tạo bản sao bit-by-bit của ổ đĩa để phân tích mà không đụng vào bản gốc.</dd></div>
+        <div class="glossary-term"><dt>Hashing (chứng cứ)</dt><dd>Băm file/ổ đĩa (SHA-256) để chứng minh chứng cứ không bị thay đổi.</dd></div>
+        <div class="glossary-term"><dt>E-discovery</dt><dd>Quy trình thu thập, xử lý và trình bày chứng cứ điện tử phục vụ tố tụng.</dd></div>
+        <div class="glossary-term"><dt>Jurisdiction</dt><dd>Thẩm quyền pháp lý theo lãnh thổ — yếu tố quyết định khi truy cứu tội phạm mạng xuyên biên giới.</dd></div>
+        <div class="glossary-term"><dt>MLAT</dt><dd>Mutual Legal Assistance Treaty — hiệp định tương trợ tư pháp giữa các quốc gia khi điều tra.</dd></div>
+        <div class="glossary-term"><dt>DLP</dt><dd>Data Loss Prevention — hệ thống ngăn chặn dữ liệu nhạy cảm rò rỉ ra ngoài.</dd></div>
+        <div class="glossary-term"><dt>UEBA</dt><dd>Phân tích hành vi người dùng/thực thể để phát hiện bất thường, nhất là nội gián.</dd></div>
+        <div class="glossary-term"><dt>Canary token</dt><dd>Vật mồi (file, URL, tài khoản) âm thầm cảnh báo khi bị kẻ tấn công truy cập.</dd></div>
+        <div class="glossary-term"><dt>Air gap</dt><dd>Cách ly vật lý hệ thống khỏi mạng để bảo vệ dữ liệu cực nhạy cảm.</dd></div>
+        <div class="glossary-term"><dt>Faraday bag</dt><dd>Túi chặn sóng vô tuyến để cô lập điện thoại, chống xóa dữ liệu từ xa.</dd></div>
+        <div class="glossary-term"><dt>Blockchain analysis</dt><dd>Truy vết giao dịch tiền mã hóa qua phân tích chuỗi khối, hỗ trợ điều tra.</dd></div>
+        <div class="glossary-term"><dt>Wallet clustering</dt><dd>Gom các địa chỉ ví thuộc cùng một chủ thể để nhận diện dòng tiền.</dd></div>
+        <div class="glossary-term"><dt>KYC / AML</dt><dd>Nhận biết khách hàng / chống rửa tiền — nghĩa vụ của sàn giao dịch, đầu mối truy vết.</dd></div>
+        <div class="glossary-term"><dt>Typosquatting</dt><dd>Đăng ký tên miền sai chính tả gần giống thương hiệu để lừa người dùng.</dd></div>
+        <div class="glossary-term"><dt>Homograph attack</dt><dd>Tên miền dùng ký tự IDN trông giống ký tự Latin để giả mạo.</dd></div>
+        <div class="glossary-term"><dt>Subdomain takeover</dt><dd>Chiếm subdomain trỏ tới dịch vụ đã bị hủy để lừa hoặc phát tán mã độc.</dd></div>
+        <div class="glossary-term"><dt>OPSEC</dt><dd>Operational Security — bảo vệ thông tin về hoạt động điều tra/vận hành khỏi bị đối phương khai thác.</dd></div>
+      </dl>
+    </section>
+
+    <section id="glossary-tox" class="glossary-group">
+      <h2>🧪 Độc học &amp; An toàn thực phẩm</h2>
+      <dl class="glossary-list">
+        <div class="glossary-term"><dt>Độc tính học (Toxicology)</dt><dd>Ngành nghiên cứu tác động bất lợi của chất hóa học lên cơ thể sống.</dd></div>
+        <div class="glossary-term"><dt>Liều (dose)</dt><dd>Lượng chất đưa vào cơ thể; là yếu tố then chốt quyết định độc tính.</dd></div>
+        <div class="glossary-term"><dt>Dose-response</dt><dd>Mối quan hệ liều–đáp ứng: tác động tăng theo liều — nền tảng “liều lượng quyết định chất độc”.</dd></div>
+        <div class="glossary-term"><dt>LD50</dt><dd>Liều gây chết 50% quần thể thí nghiệm (dùng trong nghiên cứu, không áp trực tiếp lên người).</dd></div>
+        <div class="glossary-term"><dt>LC50</dt><dd>Nồng độ trong không khí/nước gây chết 50% quần thể thí nghiệm.</dd></div>
+        <div class="glossary-term"><dt>Độc tính cấp</dt><dd>Tác hại xuất hiện sau một lần phơi nhiễm liều cao.</dd></div>
+        <div class="glossary-term"><dt>Độc tính mạn</dt><dd>Tác hại tích lũy sau phơi nhiễm lặp lại liều thấp kéo dài.</dd></div>
+        <div class="glossary-term"><dt>ADME</dt><dd>Hấp thu – phân bố – chuyển hóa – thải trừ; bốn giai đoạn dược động học của một chất.</dd></div>
+        <div class="glossary-term"><dt>Chuyển hóa (metabolism)</dt><dd>Quá trình cơ thể biến đổi chất, chủ yếu ở gan, thường để thải trừ.</dd></div>
+        <div class="glossary-term"><dt>CYP450</dt><dd>Họ enzyme gan đảm nhận chuyển hóa phần lớn thuốc và độc chất.</dd></div>
+        <div class="glossary-term"><dt>CYP3A4</dt><dd>Enzyme CYP quan trọng; bị bưởi ức chế → nồng độ một số thuốc tăng cao.</dd></div>
+        <div class="glossary-term"><dt>Ức chế enzyme</dt><dd>Làm chậm phân hủy một chất → tích lũy trong cơ thể, tăng nguy cơ độc tính.</dd></div>
+        <div class="glossary-term"><dt>MAOI</dt><dd>Thuốc ức chế monoamine oxidase; kết hợp thực phẩm giàu tyramine gây tăng huyết áp nguy hiểm.</dd></div>
+        <div class="glossary-term"><dt>Teratogen</dt><dd>Chất có thể gây dị tật thai nhi.</dd></div>
+        <div class="glossary-term"><dt>Carcinogen</dt><dd>Chất có khả năng gây ung thư.</dd></div>
+        <div class="glossary-term"><dt>Mutagen</dt><dd>Chất gây đột biến vật liệu di truyền.</dd></div>
+        <div class="glossary-term"><dt>Neurotoxin</dt><dd>Độc tố tác động lên hệ thần kinh.</dd></div>
+        <div class="glossary-term"><dt>Hepatotoxin</dt><dd>Độc tố gây tổn thương gan (ví dụ amatoxin ở nấm độc).</dd></div>
+        <div class="glossary-term"><dt>Nephrotoxin</dt><dd>Độc tố gây tổn thương thận.</dd></div>
+        <div class="glossary-term"><dt>Hemotoxin</dt><dd>Độc tố ảnh hưởng tới máu và đông máu.</dd></div>
+        <div class="glossary-term"><dt>Cytotoxin</dt><dd>Độc tố phá hủy tế bào.</dd></div>
+        <div class="glossary-term"><dt>Thuốc giải (antidote)</dt><dd>Chất có tác dụng trung hòa hoặc giảm tác dụng của chất độc; dùng tại cơ sở y tế.</dd></div>
+        <div class="glossary-term"><dt>Chelation</dt><dd>Liệu pháp dùng chất gắn kim loại nặng để thải trừ (chì, thủy ngân, asen…).</dd></div>
+        <div class="glossary-term"><dt>Than hoạt tính</dt><dd>Chất hấp phụ độc chất trong đường tiêu hóa, chỉ dùng theo chỉ định chuyên môn.</dd></div>
+        <div class="glossary-term"><dt>Rửa dạ dày</dt><dd>Thủ thuật loại bỏ chất độc khỏi dạ dày; chỉ định hẹp và do nhân viên y tế thực hiện.</dd></div>
+        <div class="glossary-term"><dt>Toxidrome</dt><dd>Hội chứng nhiễm độc đặc trưng theo nhóm chất, hỗ trợ chẩn đoán nhanh.</dd></div>
+        <div class="glossary-term"><dt>Organophosphate</dt><dd>Thuốc trừ sâu ức chế cholinesterase; giải độc bằng atropine và pralidoxime tại bệnh viện.</dd></div>
+        <div class="glossary-term"><dt>Carbamate</dt><dd>Thuốc trừ sâu cơ chế tương tự organophosphate nhưng tác dụng ngắn hơn.</dd></div>
+        <div class="glossary-term"><dt>Atropine</dt><dd>Thuốc giải trong ngộ độc organophosphate/carbamate.</dd></div>
+        <div class="glossary-term"><dt>Naloxone</dt><dd>Thuốc giải ngộ độc opioid (morphine, heroin…).</dd></div>
+        <div class="glossary-term"><dt>N-acetylcysteine</dt><dd>Thuốc giải ngộ độc paracetamol quá liều.</dd></div>
+        <div class="glossary-term"><dt>Fomepizole</dt><dd>Thuốc giải ngộ độc methanol và ethylene glycol.</dd></div>
+        <div class="glossary-term"><dt>Ethanol (thuốc giải)</dt><dd>Được dùng trong bệnh viện để cạnh tranh enzyme trong ngộ độc methanol/ethylene glycol.</dd></div>
+        <div class="glossary-term"><dt>Methylene blue</dt><dd>Thuốc giải methemoglobin (ngộ độc nitrit…).</dd></div>
+        <div class="glossary-term"><dt>Vitamin K1</dt><dd>Thuốc giải ngộ độc warfarin/superwarfarin (thuốc diệt chuột chống đông).</dd></div>
+        <div class="glossary-term"><dt>Cyanide</dt><dd>Độc chất ức chế hô hấp tế bào; thuốc giải: hydroxocobalamin hoặc nitrit + thiosulfate.</dd></div>
+        <div class="glossary-term"><dt>Methanol</dt><dd>Cồn công nghiệp; chuyển hóa thành acid formic gây mù và toan chuyển hóa.</dd></div>
+        <div class="glossary-term"><dt>Ethylene glycol</dt><dd>Chất chống đông; chuyển hóa thành oxalat gây suy thận.</dd></div>
+        <div class="glossary-term"><dt>Carbon monoxide</dt><dd>Khí không màu, không mùi, gắn hemoglobin gây thiếu oxy mô.</dd></div>
+        <div class="glossary-term"><dt>Botulinum</dt><dd>Độc tố thần kinh cực mạnh gây liệt mềm; nguồn: đồ hộp kém an toàn, mật ong cho trẻ nhỏ.</dd></div>
+        <div class="glossary-term"><dt>Amatoxin</dt><dd>Độc tố nấm gây suy gan, khởi phát chậm.</dd></div>
+        <div class="glossary-term"><dt>Solanin</dt><dd>Glycoalkaloid trong khoai tây mọc mầm/vỏ xanh.</dd></div>
+        <div class="glossary-term"><dt>Ricin</dt><dd>Độc tố từ hạt thầu dầu, ức chế tổng hợp protein.</dd></div>
+        <div class="glossary-term"><dt>Aconitine</dt><dd>Độc tố từ ô đầu/phụ tử, gây rối loạn nhịp tim.</dd></div>
+        <div class="glossary-term"><dt>Strychnine</dt><dd>Độc tố gây co cứng cơ, co giật; từng dùng làm thuốc diệt chuột.</dd></div>
+        <div class="glossary-term"><dt>Thallium</dt><dd>Kim loại nặng; dấu hiệu đặc trưng là rụng tóc kèm đau thần kinh.</dd></div>
+        <div class="glossary-term"><dt>Arsenic (asen)</dt><dd>Á kim độc; ngộ độc cấp giống bệnh tả, mạn tính gây sạm da, tê chi.</dd></div>
+        <div class="glossary-term"><dt>Chì (lead)</dt><dd>Kim loại nặng; ảnh hưởng thần kinh, gây chậm phát triển ở trẻ em.</dd></div>
+        <div class="glossary-term"><dt>Thủy ngân (mercury)</dt><dd>Kim loại nặng; hơi thủy ngân rất độc, tổn thương thần kinh.</dd></div>
+        <div class="glossary-term"><dt>Cadmium</dt><dd>Kim loại nặng; gây suy thận, tổn thương phổi.</dd></div>
+        <div class="glossary-term"><dt>Oxalate</dt><dd>Muối acid oxalic; kết tủa calcium gây sỏi và suy thận.</dd></div>
+        <div class="glossary-term"><dt>Paraquat</dt><dd>Thuốc diệt cỏ cực độc, gây xơ phổi; không có thuốc giải đặc hiệu.</dd></div>
+        <div class="glossary-term"><dt>Glyphosate</dt><dd>Thuốc diệt cỏ phổ biến; nguy hiểm khi uống lượng lớn dung dịch đậm đặc.</dd></div>
+        <div class="glossary-term"><dt>Formaldehyde</dt><dd>Chất bảo quản (formol); kích ứng mạnh, nghi ngờ gây ung thư khi phơi nhiễm kéo dài.</dd></div>
+        <div class="glossary-term"><dt>Chlorine</dt><dd>Khí độc sinh ra khi trộn thuốc tẩy với acid; kích ứng hô hấp nặng.</dd></div>
+        <div class="glossary-term"><dt>Ammonia</dt><dd>Khí có mùi khai, kích ứng mạnh đường hô hấp và mắt.</dd></div>
+        <div class="glossary-term"><dt>Phosphine</dt><dd>Khí độc sinh ra từ thuốc diệt mối (phosphide) gặp ẩm.</dd></div>
+        <div class="glossary-term"><dt>Hydro sulfide (H₂S)</dt><dd>Khí mùi trứng thối trong cống/hầm; rất độc, mất khứu giác nhanh ở nồng độ cao.</dd></div>
+        <div class="glossary-term"><dt>Trung tâm chống độc</dt><dd>Cơ sở/hotline tư vấn chẩn đoán và điều trị ngộ độc; nguồn tham khảo quan trọng.</dd></div>
+        <div class="glossary-term"><dt>Độc học pháp y</dt><dd>Ứng dụng độc học trong điều tra và giám định pháp y.</dd></div>
+        <div class="glossary-term"><dt>Post-mortem toxicology</dt><dd>Xét nghiệm độc chất trên mẫu sau tử vong để xác định nguyên nhân.</dd></div>
+        <div class="glossary-term"><dt>Drug-facilitated crime</dt><dd>Tội phạm dùng chất gây mê/gây quên (GHB, flunitrazepam…) để khống chế nạn nhân.</dd></div>
+        <div class="glossary-term"><dt>GHB</dt><dd>Chất gây mê/gây quên, thải trừ rất nhanh nên cần lấy mẫu sớm.</dd></div>
+        <div class="glossary-term"><dt>Flunitrazepam</dt><dd>Benzodiazepine gây quên (biệt dược Rohypnol), từng bị lạm dụng trong tội phạm.</dd></div>
+        <div class="glossary-term"><dt>Mycotoxin</dt><dd>Độc tố do nấm mốc sinh ra (aflatoxin, ochratoxin…) thường có trên thực phẩm mốc.</dd></div>
+        <div class="glossary-term"><dt>Aflatoxin</dt><dd>Mycotoxin trên lạc, ngô mốc; gây độc gan và là tác nhân nghi ung thư.</dd></div>
+        <div class="glossary-term"><dt>Tetrodotoxin</dt><dd>Độc tố cá nóc gây tê, liệt cơ và suy hô hấp; không có thuốc giải đặc hiệu.</dd></div>
+        <div class="glossary-term"><dt>Saxitoxin</dt><dd>Độc tố tảo gây liệt (PSP), liên quan ngộ độc hải sản có độc.</dd></div>
+        <div class="glossary-term"><dt>Batrachotoxin</dt><dd>Độc tố từ ếch phi tiêu độc, tác động kênh natri gây liệt.</dd></div>
+        <div class="glossary-term"><dt>Conotoxin</dt><dd>Độc tố ốc cối (Conus), gây liệt; nhiều loại dùng trong nghiên cứu dược.</dd></div>
+        <div class="glossary-term"><dt>Ergot</dt><dd>Nấm cựa gà trên ngũ cốc; alkaloid gây co mạch, co giật, ảo giác.</dd></div>
+        <div class="glossary-term"><dt>Glycoalkaloid</dt><dd>Nhóm alkaloid gắn đường (solanin, chaconine) trong cây họ Cà.</dd></div>
+        <div class="glossary-term"><dt>Anticholinergic</dt><dd>Chất ức chế acetylcholine (atropine, datura): giãn đồng tử, khô miệng, nhịp nhanh, lú lẫn.</dd></div>
+        <div class="glossary-term"><dt>Cholinergic</dt><dd>Hội chứng tăng acetylcholine (organophosphate): chảy nước bọt, co đồng tử, tiêu chảy, co thắt phế quản.</dd></div>
+        <div class="glossary-term"><dt>Sympathomimetic</dt><dd>Chất kích thích giao cảm (amphetamin, cocaine): nhịp nhanh, tăng huyết áp, giãn đồng tử.</dd></div>
+        <div class="glossary-term"><dt>Opioid toxidrome</dt><dd>Hội chứng ngộ độc opioid: co đồng tử, thở chậm, lơ mơ, hạ thân nhiệt.</dd></div>
+        <div class="glossary-term"><dt>Metabolic acidosis</dt><dd>Toan chuyển hóa — gặp trong ngộ độc methanol, ethylene glycol, aspirin.</dd></div>
+        <div class="glossary-term"><dt>Anion gap</dt><dd>Khoảng trống anion trong máu, giúp phân loại nguyên nhân toan chuyển hóa.</dd></div>
+        <div class="glossary-term"><dt>Osmolal gap</dt><dd>Khoảng trống thẩm thấu — gợi ý ngộ độc methanol hoặc ethylene glycol.</dd></div>
+        <div class="glossary-term"><dt>Hemodialysis / hemoperfusion</dt><dd>Lọc máu để tăng thải trừ một số độc chất (methanol, lithium, salicylate).</dd></div>
+        <div class="glossary-term"><dt>Urine drug screen</dt><dd>Xét nghiệm sàng lọc thuốc/độc chất trong nước tiểu, thường là bước đầu tiên.</dd></div>
+        <div class="glossary-term"><dt>Immunoassay</dt><dd>Xét nghiệm miễn dịch nhanh; kết quả sàng lọc cần xác nhận bằng phương pháp đặc hiệu hơn.</dd></div>
+        <div class="glossary-term"><dt>GC-MS</dt><dd>Sắc ký khí ghép khối phổ — chuẩn vàng định danh chất dễ bay hơi.</dd></div>
+        <div class="glossary-term"><dt>LC-MS/MS</dt><dd>Sắc ký lỏng ghép khối phổ — định lượng độc chất phức tạp với độ nhạy cao.</dd></div>
+        <div class="glossary-term"><dt>Hair analysis</dt><dd>Phân tích tóc phản ánh lịch sử phơi nhiễm vài tuần đến vài tháng.</dd></div>
+        <div class="glossary-term"><dt>Vitreous humor</dt><dd>Dịch kính mắt ít bị phân hủy sau tử vong, mẫu hữu ích trong độc học pháp y.</dd></div>
+        <div class="glossary-term"><dt>Postmortem redistribution</dt><dd>Nồng độ chất thay đổi sau tử vong; cần thận trọng khi diễn giải kết quả.</dd></div>
+        <div class="glossary-term"><dt>Rigor mortis</dt><dd>Co cứng tử thi, diễn tiến theo thời gian, hỗ trợ ước lượng thời điểm tử vong.</dd></div>
+        <div class="glossary-term"><dt>Livor mortis</dt><dd>Hoen tử thi do máu lắng, giúp xác định tư thế và thời gian tử vong.</dd></div>
+        <div class="glossary-term"><dt>Algor mortis</dt><dd>Hạ nhiệt tử thi, một trong các dấu hiệu ước lượng thời gian tử vong.</dd></div>
+        <div class="glossary-term"><dt>Entomotoxicology</dt><dd>Phân tích côn trùng (giòi) để hỗ trợ xác định thời gian tử vong và phát hiện độc chất.</dd></div>
+        <div class="glossary-term"><dt>Precursor (tiền chất)</dt><dd>Hóa chất dùng để sản xuất chất cấm, thuộc danh mục kiểm soát đặc biệt.</dd></div>
+        <div class="glossary-term"><dt>Controlled substance</dt><dd>Chất thuộc danh mục quản lý, chỉ dùng với điều kiện và giấy phép nghiêm ngặt.</dd></div>
+        <div class="glossary-term"><dt>Synthetic cathinone</dt><dd>Chất kích thích tổng hợp (thường gọi “muối tắm”), thuộc nhóm ma túy mới.</dd></div>
+        <div class="glossary-term"><dt>Fentanyl analog</dt><dd>Dẫn xuất fentanyl cực mạnh, nguy cơ quá liều và tử vong cao.</dd></div>
+        <div class="glossary-term"><dt>Harm reduction</dt><dd>Chiến lược giảm tác hại cho người sử dụng chất, tách khỏi việc khuyến khích sử dụng.</dd></div>
+      </dl>
+    </section>
+
+    <section id="glossary-weapon" class="glossary-group">
+      <h2>⚔ Chống vũ khí &amp; đồ bất hợp pháp</h2>
+      <dl class="glossary-list">
+        <div class="glossary-term"><dt>Vũ khí quân dụng</dt><dd>Vũ khí dùng cho lực lượng vũ trang, được quản lý chặt chẽ theo pháp luật.</dd></div>
+        <div class="glossary-term"><dt>Vũ khí thô sơ</dt><dd>Dao, kiếm, côn, giáo mác… theo danh mục do pháp luật quy định.</dd></div>
+        <div class="glossary-term"><dt>Vũ khí thể thao</dt><dd>Vũ khí dùng trong thi đấu, chỉ được sở hữu/sử dụng khi đáp ứng điều kiện cấp phép.</dd></div>
+        <div class="glossary-term"><dt>Công cụ hỗ trợ</dt><dd>Dùi cui, bình xịt hơi cay, súng bắn điện… thuộc danh mục riêng, cần điều kiện sử dụng.</dd></div>
+        <div class="glossary-term"><dt>Súng ngắn (pistol)</dt><dd>Súng cầm tay nòng ngắn, thường dùng một tay.</dd></div>
+        <div class="glossary-term"><dt>Súng trường (rifle)</dt><dd>Súng nòng dài có rãnh xoắn trong nòng.</dd></div>
+        <div class="glossary-term"><dt>Súng săn (shotgun)</dt><dd>Súng nòng dài, nòng trơn hoặc có rãnh, thường bắn đạn chùm.</dd></div>
+        <div class="glossary-term"><dt>Caliber</dt><dd>Đường kính nòng/đạn, dùng để phân loại đạn và vũ khí.</dd></div>
+        <div class="glossary-term"><dt>Băng đạn (magazine)</dt><dd>Bộ phận chứa và nạp đạn vào súng.</dd></div>
+        <div class="glossary-term"><dt>Đạn (ammunition)</dt><dd>Tổ hợp vỏ đạn – đầu đạn – thuốc phóng – hạt lửa.</dd></div>
+        <div class="glossary-term"><dt>Số seri</dt><dd>Mã khắc trên vũ khí, dùng để truy nguồn gốc.</dd></div>
+        <div class="glossary-term"><dt>Vũ khí tự chế</dt><dd>Vũ khí được lắp ráp hoặc cải tạo từ vật liệu, linh kiện không phải của nhà sản xuất hợp pháp.</dd></div>
+        <div class="glossary-term"><dt>Zip gun</dt><dd>Súng tự chế thô sơ, thường từ ống kim loại và cơ cấu kích hoạt đơn giản.</dd></div>
+        <div class="glossary-term"><dt>Vũ khí lạnh</dt><dd>Dao, kiếm, vật nhọn có khả năng gây thương tích.</dd></div>
+        <div class="glossary-term"><dt>Shank</dt><dd>Vật nhọn tự chế (mảnh kim loại mài, tuốc-nơ-vít dài…).</dd></div>
+        <div class="glossary-term"><dt>IED</dt><dd>Improvised Explosive Device — thiết bị nổ tự chế; không chạm, không di chuyển, báo EOD.</dd></div>
+        <div class="glossary-term"><dt>EOD</dt><dd>Explosive Ordnance Disposal — lực lượng xử lý vật liệu nổ.</dd></div>
+        <div class="glossary-term"><dt>Kíp nổ (detonator)</dt><dd>Bộ phận kích nổ khối thuốc nổ.</dd></div>
+        <div class="glossary-term"><dt>Khối thuốc nổ (main charge)</dt><dd>Phần chất nổ chính của thiết bị nổ.</dd></div>
+        <div class="glossary-term"><dt>TNT</dt><dd>Thuốc nổ công nghiệp phổ biến (trinitrotoluene).</dd></div>
+        <div class="glossary-term"><dt>C4</dt><dd>Thuốc nổ dẻo thường dùng trong quân sự.</dd></div>
+        <div class="glossary-term"><dt>Dynamite</dt><dd>Thuốc nổ công nghiệp trên nền nitroglycerin.</dd></div>
+        <div class="glossary-term"><dt>Pháo nổ</dt><dd>Sản phẩm tạo tiếng nổ; pháo tự chế thường bất hợp pháp và rất nguy hiểm.</dd></div>
+        <div class="glossary-term"><dt>Đồ cấm (contraband)</dt><dd>Hàng hóa bị cấm sản xuất, lưu hành, vận chuyển (ma túy, vũ khí, hàng giả…).</dd></div>
+        <div class="glossary-term"><dt>Bảo quản chứng cứ</dt><dd>Quy trình giữ nguyên trạng chứng cứ trước khi bàn giao chuyên ngành.</dd></div>
+        <div class="glossary-term"><dt>Chu vi an toàn (perimeter)</dt><dd>Khu vực được cách ly để bảo vệ hiện trường và người xung quanh.</dd></div>
+        <div class="glossary-term"><dt>PPE</dt><dd>Personal Protective Equipment — phương tiện bảo vệ cá nhân (găng, kính, khẩu trang…).</dd></div>
+        <div class="glossary-term"><dt>Ballistics</dt><dd>Khoa học đường đạn, dùng trong giám định súng đạn.</dd></div>
+        <div class="glossary-term"><dt>Rifling</dt><dd>Rãnh xoắn trong nòng, tạo dấu vết đặc trưng trên đầu đạn.</dd></div>
+        <div class="glossary-term"><dt>Dấu vết công cụ (tool marks)</dt><dd>Vết để lại trên vật thể do công cụ tác động, dùng trong giám định.</dd></div>
+        <div class="glossary-term"><dt>Giám định vũ khí</dt><dd>Phân tích kỹ thuật hình sự để xác định loại, nguồn gốc vũ khí.</dd></div>
+        <div class="glossary-term"><dt>Máy dò kim loại</dt><dd>Thiết bị phát hiện kim loại (vũ khí, vỏ đạn…) tại hiện trường/cổng kiểm soát.</dd></div>
+        <div class="glossary-term"><dt>Máy soi (X-ray)</dt><dd>Quét hình ảnh hành lý, hàng hóa để phát hiện vật nghi vấn.</dd></div>
+        <div class="glossary-term"><dt>Chó nghiệp vụ</dt><dd>Phát hiện ma túy/thuốc nổ bằng khứu giác tại hiện trường và chốt kiểm soát.</dd></div>
+        <div class="glossary-term"><dt>Gunshot residue (GSR)</dt><dd>Vết thuốc súng bám trên tay/quần áo, dùng giám định xác định người bắn.</dd></div>
+        <div class="glossary-term"><dt>Breech face marks</dt><dd>Dấu vết mặt khóa nòng in lên đáy vỏ đạn khi bắn.</dd></div>
+        <div class="glossary-term"><dt>Firing pin impression</dt><dd>Vết kim hỏa in lên đáy vỏ đạn, đặc trưng theo từng khẩu súng.</dd></div>
+        <div class="glossary-term"><dt>Striation marks</dt><dd>Vết xước song song do rãnh xoắn nòng in lên đầu đạn.</dd></div>
+        <div class="glossary-term"><dt>Ballistic fingerprinting</dt><dd>Đối chiếu dấu vết đạn/vỏ đạn để truy nguồn khẩu súng.</dd></div>
+        <div class="glossary-term"><dt>Gauge / bore</dt><dd>Thông số cỡ nòng súng săn (nòng trơn).</dd></div>
+        <div class="glossary-term"><dt>Smoothbore</dt><dd>Nòng trơn không có rãnh xoắn (thường là súng săn).</dd></div>
+        <div class="glossary-term"><dt>Rifled barrel</dt><dd>Nòng có rãnh xoắn, tạo dấu vết đặc trưng trên đầu đạn.</dd></div>
+        <div class="glossary-term"><dt>Obliterated serial</dt><dd>Số seri bị tẩy xóa; kỹ thuật pháp y có thể phục hồi để truy nguồn.</dd></div>
+        <div class="glossary-term"><dt>Evidence bag / tamper-evident</dt><dd>Túi đựng chứng cứ có niêm phong chống can thiệp, bảo đảm chuỗi lưu giữ.</dd></div>
+        <div class="glossary-term"><dt>Scene documentation</dt><dd>Ghi chép, chụp ảnh có thước tỷ lệ và sơ đồ hiện trường trước khi thu giữ.</dd></div>
+        <div class="glossary-term"><dt>Explosive residue</dt><dd>Vết chất nổ còn lại trên bề mặt, phát hiện bằng ETD hoặc giám định phòng thí nghiệm.</dd></div>
+        <div class="glossary-term"><dt>Render safe procedure</dt><dd>Quy trình vô hiệu hóa vật liệu nổ, chỉ do lực lượng EOD thực hiện.</dd></div>
+        <div class="glossary-term"><dt>Isolation distance</dt><dd>Khoảng cách cách ly tối thiểu quanh vật nghi nổ để bảo đảm an toàn.</dd></div>
+        <div class="glossary-term"><dt>Hot / warm / cold zone</dt><dd>Phân vùng hiện trường theo mức nguy hiểm: nóng (nguy hiểm), ấm (khử nhiễm), lạnh (an toàn).</dd></div>
+      </dl>
+    </section>
+
+    <section id="glossary-safety" class="glossary-group">
+      <h2>🏠 An toàn đời sống & Sơ cấp cứu</h2>
+      <dl class="glossary-list">
+        <div class="glossary-term"><dt>GHS</dt><dd>Globally Harmonized System — hệ thống phân loại và ghi nhãn hóa chất quốc tế, gồm 9 biểu tượng nguy hiểm.</dd></div>
+        <div class="glossary-term"><dt>SDS (MSDS)</dt><dd>Safety Data Sheet — bảng dữ liệu an toàn hóa chất gồm 16 mục, cần tra trước khi dùng.</dd></div>
+        <div class="glossary-term"><dt>PASS</dt><dd>Quy trình dùng bình chữa cháy: Pull (rút chốt) → Aim (hướng vòi vào gốc lửa) → Squeeze (bóp cò) → Sweep (quét ngang).</dd></div>
+        <div class="glossary-term"><dt>Aptomat / RCD</dt><dd>Thiết bị ngắt điện tự động khi quá tải hoặc rò điện, giảm nguy cơ chập cháy và điện giật.</dd></div>
+        <div class="glossary-term"><dt>Vùng nguy hiểm nhiệt độ</dt><dd>Khoảng 5–60 °C mà vi khuẩn sinh sôi nhanh nhất; thức ăn chín không nên để quá 2 giờ trong vùng này.</dd></div>
+        <div class="glossary-term"><dt>Nhiễm chéo (cross-contamination)</dt><dd>Vi khuẩn lây từ thực phẩm sống sang thực phẩm chín qua tay, thớt, dao — phòng bằng thớt/dao riêng và rửa tay.</dd></div>
+        <div class="glossary-term"><dt>CPR</dt><dd>Cardiopulmonary Resuscitation — hồi sinh tim phổi: ép ngực (và thổi ngạt nếu được đào tạo) khi ngừng tim.</dd></div>
+        <div class="glossary-term"><dt>AED</dt><dd>Máy khử rung tự động — phân tích nhịp tim và sốc điện theo hướng dẫn thoại; dùng cho người ngừng tim.</dd></div>
+        <div class="glossary-term"><dt>Nghiệm pháp Heimlich</dt><dd>Kỹ thuật ấn bụng để tống dị vật khỏi đường thở của người bị hóc còn tỉnh.</dd></div>
+        <div class="glossary-term"><dt>Garô (tourniquet)</dt><dd>Dây thắt chặn máu ở chi khi chảy máu nặng không cầm được; ghi rõ giờ thắt cho nhân viên y tế.</dd></div>
+        <div class="glossary-term"><dt>Băng ép bất động</dt><dd>Kỹ thuật băng ép + nẹp cố định chi khi rắn cắn để làm chậm lan truyền nọc.</dd></div>
+        <div class="glossary-term"><dt>Sốc phản vệ</dt><dd>Phản ứng dị ứng nặng (khó thở, sưng, tụt huyết áp) cần cấp cứu ngay; người có nguy cơ nên mang epinephrine theo chỉ định.</dd></div>
+        <div class="glossary-term"><dt>Say nắng / say nóng</dt><dd>Tình trạng cơ thể quá nhiệt: da nóng, lú lẫn, có thể co giật — cần hạ nhiệt và gọi cấp cứu.</dd></div>
+        <div class="glossary-term"><dt>Quy tắc 30/30 (sét)</dt><dd>Dưới 30 giây từ chớp tới sấm thì vào nơi trú; chờ 30 phút sau tiếng sấm cuối mới ra ngoài.</dd></div>
+        <div class="glossary-term"><dt>Điểm tập trung</dt><dd>Nơi hẹn an toàn ngoài nhà khi thoát hiểm, giúp kiểm đếm đủ người.</dd></div>
+        <div class="glossary-term"><dt>Pin cúc áo (button battery)</dt><dd>Pin nhỏ dạng đồng xu — nuốt phải có thể gây bỏng/ăn mòn nghiêm trọng ở trẻ, cần cấp cứu ngay.</dd></div>
+        <div class="glossary-term"><dt>Scombroid</dt><dd>Ngộ độc histamine do cá biển ươn bảo quản không lạnh; triệu chứng giống dị ứng.</dd></div>
+        <div class="glossary-term"><dt>Rò rỉ gas</dt><dd>Phát hiện bằng mùi hoặc nước xà phòng sủi bọt; không bật/tắt điện hay dùng lửa, mở cửa, khóa van, gọi 114.</dd></div>
+      </dl>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <strong>Bách Khoa Toàn Thư về Bảo Mật và Khoa Học Độc Học</strong> — Học liệu giáo dục.
+      <a href="index.html">Về trang chủ</a>
+    </p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

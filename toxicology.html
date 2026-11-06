@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Khoa học Độc học & An toàn thực phẩm — Bách Khoa Bảo Mật & Độc Học</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/static-auth.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="site-logo">
+        <span class="icon-cyber">🛡</span>
+        <span class="icon-tox">🧪</span>
+        Bách Khoa Bảo Mật & Độc Học
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="cybersecurity.html">An ninh mạng</a></li>
+          <li><a href="toxicology.html" aria-current="page">Độc học & ATTP</a></li>
+          <li><a href="weapons.html">Chống vũ khí & đồ cấm</a></li>
+          <li><a href="safety.html">An toàn đời sống</a></li>
+          <li><a href="glossary.html">Thuật ngữ</a></li>
+        </ul>
+      </nav>
+      <div class="version-switch" role="group" aria-label="Chọn phiên bản giao diện">
+        <span class="version-switch__item is-active" aria-current="page">1.0</span>
+        <a class="version-switch__item" href="dashboard.html" title="Chuyển sang giao diện 2.0">2.0</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Bật chế độ tối" title="Bật/tắt chế độ tối">🌙</button>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <header class="page-header">
+      <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> → Độc học & An toàn thực phẩm
+      </div>
+      <h1>Phân khu Khoa học Độc học & An toàn thực phẩm</h1>
+      <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
+        Độc tính học, tương tác thuốc–thực phẩm, lịch sử chất độc và thuốc giải, nhận biết và phòng tránh độc tố trong đời sống.
+      </p>
+    </header>
+
+    <div class="wiki-layout">
+      <aside class="sidebar-toc">
+        <h3>Mục lục</h3>
+        <ul>
+          <li><a href="#intro">Giới thiệu</a></li>
+          <li><a href="#toxicology-basics">Độc tính học cơ bản</a></li>
+          <li><a href="#food-drug">Tương tác thuốc–thực phẩm</a></li>
+          <li><a href="#detail-solanine">Chi tiết: Solanin</a></li>
+          <li><a href="#detail-cyanide">Chi tiết: Glycoside cyanogenic</a></li>
+          <li><a href="#detail-botulinum">Chi tiết: Botulinum</a></li>
+          <li><a href="#detail-drugfood">Chi tiết: Tương tác thuốc–thực phẩm</a></li>
+          <li><a href="#detail-mushrooms">Chi tiết: Nấm độc</a></li>
+          <li><a href="#food-combinations">Kết hợp thực phẩm cần tránh & giải mã tin đồn</a></li>
+          <li><a href="#chemicals-list">Chất/dung dịch độc tố nguy hiểm</a></li>
+          <li><a href="#tox-plants">Độc tố thực vật (tóm tắt)</a></li>
+          <li><a href="#tox-household">Hóa chất gia dụng (tóm tắt)</a></li>
+          <li><a href="#first-aid">Sơ cứu ngộ độc</a></li>
+          <li><a href="#antidote-table">Bảng thuốc giải độc</a></li>
+          <li><a href="#advanced-tox">Vụ án khó — Độc tố ít phổ biến & pháp y</a></li>
+          <li><a href="#history-antidotes">Lịch sử độc tố và thuốc giải</a></li>
+          <li><a href="#never-do">Những việc tuyệt đối tránh (an toàn)</a></li>
+          <li><a href="#daily-safety">Nhận biết và phòng tránh trong đời sống</a></li>
+        </ul>
+      </aside>
+
+      <article class="article-body">
+        <section id="intro">
+          <h2>Giới thiệu</h2>
+          <p>
+            Phân khu này cung cấp kiến thức <strong>giáo dục</strong> về độc tính học (Toxicology) và an toàn thực phẩm: 
+            hiểu các hợp chất có hại trong tự nhiên và trong thực phẩm khi kết hợp sai cách, lịch sử phát triển thuốc giải, 
+            và cách nhận biết, phòng tránh để bảo vệ sức khỏe. Nội dung chỉ mang tính học thuật và phòng ngừa, 
+            không hướng dẫn chế tạo hay sử dụng chất độc.
+          </p>
+          <div class="callout callout-info">
+            <h4>Đối tượng học liệu</h4>
+            <p>Sinh viên Hóa sinh, Y khoa, Dược và các ngành liên quan đến an toàn thực phẩm và sức khỏe cộng đồng.</p>
+          </div>
+        </section>
+
+        <section id="toxicology-basics">
+          <h2>Độc tính học (Toxicology) cơ bản</h2>
+          <p>
+            Độc tính học là ngành nghiên cứu tác dụng bất lợi của các chất hóa học lên sinh vật. 
+            Các khái niệm quan trọng bao gồm:
+          </p>
+          <ul>
+            <li><strong>Dose-response:</strong> Mối quan hệ giữa liều lượng và đáp ứng — nhiều chất chỉ gây hại khi vượt ngưỡng nhất định.</li>
+            <li><strong>LD50, LC50:</strong> Liều/nồng độ gây chết 50% quần thể thí nghiệm (dùng trong nghiên cứu, không áp dụng trực tiếp lên người).</li>
+            <li><strong>Độc tính cấp tính vs mạn tính:</strong> Phơi nhiễm một lần với liều cao so với phơi nhiễm lặp lại liều thấp.</li>
+            <li><strong>Nguồn phơi nhiễm:</strong> Đường tiêu hóa, hô hấp, qua da, tiêm — ảnh hưởng đến tốc độ và mức độ hấp thu.</li>
+          </ul>
+          <p>
+            Trong tự nhiên và thực phẩm, nhiều hợp chất có thể gây hại khi ăn quá lượng (ví dụ solanin trong khoai tây mọc mầm, 
+            cyanogenic glycoside trong một số hạt quả), khi kết hợp sai (ví dụ với thuốc), hoặc khi chế biến/bảo quản không đúng.
+          </p>
+        </section>
+
+        <section id="food-drug">
+          <h2>Hợp chất có hại và tương tác thuốc–thực phẩm</h2>
+          <p>
+            Một số thực phẩm hoặc cách kết hợp thực phẩm với thuốc có thể làm thay đổi tác dụng thuốc hoặc tăng nguy cơ độc tính. 
+            Hiểu các tương tác này giúp tư vấn bệnh nhân và đảm bảo an toàn sử dụng thuốc.
+          </p>
+          <h3>Ví dụ tương tác (giáo dục, không thay thế chỉ định bác sĩ)</h3>
+          <ul>
+            <li><strong>Bưởi (grapefruit):</strong> Ức chế men CYP3A4 ở gan/ruột, làm tăng nồng độ nhiều thuốc (statin, một số thuốc huyết áp, an thần…) → tăng nguy cơ tác dụng phụ hoặc độc tính. Cần tránh ăn bưởi khi đang dùng các thuốc có cảnh báo.</li>
+            <li><strong>Thực phẩm giàu tyramine:</strong> Rượu lên men, phô mai già, thịt chế biến… có thể tương tác với thuốc ức chế MAO (IMAO), gây tăng huyết áp nguy hiểm.</li>
+            <li><strong>Vitamin K và thuốc chống đông (warfarin):</strong> Chế độ ăn thay đổi đột ngột lượng vitamin K (rau xanh đậm) có thể ảnh hưởng hiệu quả warfarin; cần ổn định chế độ ăn và theo dõi INR.</li>
+            <li><strong>Sữa và một số kháng sinh (tetracycline, fluoroquinolone):</strong> Canxi có thể gắn thuốc, giảm hấp thu — thường khuyến cáo uống thuốc cách bữa ăn/sữa.</li>
+          </ul>
+          <p>
+            Sinh viên và nhân viên y tế cần tham khảo tài liệu dược lâm sàng và cơ sở dữ liệu tương tác thuốc–thực phẩm được cập nhật, 
+            không chỉ dựa vào danh sách ngắn trong học liệu.
+          </p>
+
+          <h3 id="detail-solanine">Chi tiết: Solanin (khoai tây mọc mầm)</h3>
+          <div class="type-detail">
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Nguồn gốc / Cách hình thành</h4>
+              <p>Solanin là glycoalkaloid tự nhiên có sẵn trong cây họ Cà (Solanaceae), đặc biệt trong <strong>khoai tây</strong>. Hàm lượng tăng mạnh khi củ mọc mầm, bị ánh sáng (vỏ xanh), hoặc bị dập. Cơ thể hấp thu qua đường tiêu hóa; solanin gây kích thích niêm mạc và ảnh hưởng thần kinh khi liều đủ cao. Không do con người “tạo ra” — chỉ do bảo quản và chế biến không đúng làm tăng phơi nhiễm.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Đặc điểm nhận dạng</h4>
+              <ul>
+                <li><strong>Thực phẩm:</strong> Khoai tây có mầm, vỏ xanh (chlorophyll), củ nhăn/dập. Phần xanh và mầm chứa nồng độ solanin cao hơn phần thịt trắng.</li>
+                <li><strong>Triệu chứng ngộ độc (cấp tính):</strong> Buồn nôn, nôn, đau bụng, tiêu chảy; có thể đau đầu, chóng mặt, rối loạn tri giác. Triệu chứng thường xuất hiện vài giờ sau ăn. Trường hợp nặng hiếm nhưng có thể ảnh hưởng hô hấp, thần kinh.</li>
+                <li><strong>Nhận dạng trong lab:</strong> Phân tích hóa học (HPLC, v.v.) để định lượng glycoalkaloid; thường dùng trong nghiên cứu hoặc điều tra ngộ độc.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Cách ngăn chặn</h4>
+              <ul>
+                <li>Bảo quản khoai tây nơi khô, mát, tối; tránh ánh sáng trực tiếp để hạn chế vỏ xanh và mọc mầm.</li>
+                <li>Không ăn khoai đã mọc mầm nhiều hoặc vỏ xanh; nếu chỉ hơi xanh/mầm nhỏ thì gọt bỏ toàn bộ phần xanh và mầm, phần còn lại có thể dùng với lượng vừa phải.</li>
+                <li>Khi nghi ngờ ngộ độc: ngừng ăn, theo dõi; nếu nôn nhiều hoặc triệu chứng nặng cần đến cơ sở y tế. Không tự gây nôn trừ khi có hướng dẫn chuyên môn.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 id="detail-cyanide">Chi tiết: Glycoside cyanogenic (cyanide trong thực phẩm)</h3>
+          <div class="type-detail">
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Nguồn gốc / Cách hình thành</h4>
+              <p>Nhiều thực vật chứa <strong>glycoside cyanogenic</strong>: khi tế bào bị phá vỡ (nhai, nghiền, acid), enzyme thủy phân glycoside giải phóng hydrogen cyanide (HCN). Có trong hạt mận, đào, anh đào, măng tươi, sắn (khoai mì) chưa chế biến đúng cách. Độc tính do cyanide ức chế hô hấp tế bào. Ngộ độc thường do ăn nhiều hạt nghiền hoặc sắn/măng chưa luộc/gọt đúng cách — không do “chế tạo” độc tại nhà.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Đặc điểm nhận dạng</h4>
+              <ul>
+                <li><strong>Nguồn thực phẩm:</strong> Hạt quả (mận, đào, anh đào, táo); măng tươi; sắn (củ, lá) chưa chế biến. Hàm lượng cao hơn ở phần hạt và vỏ.</li>
+                <li><strong>Triệu chứng:</strong> Đau đầu, chóng mặt, buồn nôn, khó thở, tím tái; nặng có thể co giật, hôn mê, suy hô hấp. Triệu chứng có thể xuất hiện nhanh (vài phút đến vài giờ) tùy liều.</li>
+                <li><strong>Nhận dạng:</strong> Bệnh sử ăn sắn/măng/hạt; xét nghiệm cyanide trong máu/nước tiểu tại cơ sở y tế.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Cách ngăn chặn</h4>
+              <ul>
+                <li>Không ăn hạt mận, đào, anh đào, táo (đặc biệt khi đã nghiền/nhai). Trẻ em dễ nuốt hạt — cần giám sát.</li>
+                <li>Sắn: gọt vỏ, ngâm, luộc kỹ; bỏ nước luộc đầu; không ăn sống hoặc chưa nấu chín.</li>
+                <li>Măng tươi: luộc nhiều lần, thay nước; măng đóng hộp đã xử lý an toàn hơn nếu dùng đúng hướng dẫn.</li>
+                <li>Ngộ độc cyanide cần cấp cứu tại bệnh viện (thuốc giải, oxy, hỗ trợ hô hấp). Gọi trung tâm chống độc ngay khi nghi ngờ.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 id="detail-botulinum">Chi tiết: Độc tố Botulinum (ngộ độc thực phẩm)</h3>
+          <div class="type-detail">
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Nguồn gốc / Cách hình thành</h4>
+              <p>Vi khuẩn <em>Clostridium botulinum</em> sống trong môi trường yếm khí (thiếu oxy). Khi thực phẩm đóng hộp, đóng kín không đủ acid/ nhiệt/ áp suất, vi khuẩn có thể phát triển và tiết độc tố botulinum. Độc tố gây liệt cơ (ức chế giải phóng acetylcholine). Thường gặp ở: đồ hộp tự làm (rau, thịt, cá) không đạt chuẩn thanh trùng; mật ong (có bào tử, nguy hiểm cho trẻ dưới 1 tuổi); thực phẩm đóng gói kín bảo quản ở nhiệt độ thường.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Đặc điểm nhận dạng</h4>
+              <ul>
+                <li><strong>Thực phẩm:</strong> Hộp phồng, rò rỉ, mùi lạ; đồ hộp tự làm không rõ quy trình. Mật ong (không đun nóng đủ để diệt bào tử) cho trẻ nhỏ.</li>
+                <li><strong>Triệu chứng:</strong> Yếu/liệt cơ đối xứng, bắt đầu từ mắt (sụp mi, nhìn đôi), nuốt khó, nói khó, sau đó có thể liệt hô hấp. Thường không sốt. Triệu chứng xuất hiện vài giờ đến vài ngày sau ăn.</li>
+                <li><strong>Chẩn đoán:</strong> Lâm sàng + xét nghiệm độc tố trong máu/phân/thực phẩm; cấy vi khuẩn. Điều trị càng sớm càng tốt (kháng độc tố, hỗ trợ hô hấp).</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Cách ngăn chặn</h4>
+              <ul>
+                <li>Đồ hộp tự làm: tuân thủ quy trình áp suất/nhiệt/acid đúng cho từng loại thực phẩm; không đóng hộp thịt/cá/rau ít acid mà chỉ đun sôi nước.</li>
+                <li>Không dùng hộp phồng, rò rỉ, mùi lạ; đun kỹ trước khi ăn nếu nghi ngờ (độc tố bị phá hủy ở nhiệt độ sôi đủ thời gian, nhưng không nên dùng nếu đã hỏng).</li>
+                <li>Không cho trẻ dưới 1 tuổi dùng mật ong (nguy cơ botulism trẻ nhỏ do bào tử).</li>
+                <li>Khi nghi ngờ ngộ độc botulinum: đến bệnh viện ngay; báo trung tâm chống độc; mang theo mẫu thực phẩm (nếu còn) trong bao bì kín.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 id="detail-drugfood">Chi tiết: Tương tác thuốc–thực phẩm (một số ví dụ)</h3>
+          <div class="type-detail">
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Cơ chế</h4>
+              <p><strong>Bưởi:</strong> Ức chế men CYP3A4 ở ruột/gan → giảm chuyển hóa thuốc → nồng độ thuốc trong máu tăng, dễ quá liều hoặc tác dụng phụ. <strong>Tyramine:</strong> Thực phẩm lên men chứa tyramine; thuốc ức chế MAO làm giảm phân hủy tyramine → tăng huyết áp đột ngột. <strong>Vitamin K:</strong> Warfarin ức chế tác dụng vitamin K; thay đổi đột ngột lượng rau xanh (vitamin K) làm thay đổi hiệu quả chống đông. <strong>Sữa/canxi:</strong> Gắn với một số kháng sinh → giảm hấp thu thuốc.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Đặc điểm nhận dạng</h4>
+              <ul>
+                <li><strong>Bưởi:</strong> Thuốc có cảnh báo “grapefruit” (statin, một số thuốc huyết áp, an thần, ức chế miễn dịch…). Triệu chứng khi tương tác: đau cơ, yếu (statin); hạ huyết áp quá mức; buồn ngủ.</li>
+                <li><strong>Tyramine + IMAO:</strong> Đau đầu dữ dội, tăng huyết áp, có thể xuất huyết não. Thực phẩm: phô mai già, rượu lên men, thịt chế biến, đậu lên men.</li>
+                <li><strong>Warfarin + vitamin K:</strong> INR tăng hoặc giảm bất thường khi chế độ ăn rau xanh thay đổi đột ngột.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Cách ngăn chặn</h4>
+              <ul>
+                <li>Đọc tờ hướng dẫn thuốc và cảnh báo tương tác; hỏi bác sĩ/dược sĩ khi dùng thuốc mới.</li>
+                <li>Bưởi: tránh ăn/uống bưởi khi đang dùng thuốc có cảnh báo; một số thuốc tránh hoàn toàn trong suốt đợt điều trị.</li>
+                <li>IMAO: chế độ ăn hạn chế tyramine theo hướng dẫn; tránh phô mai già, rượu lên men, thực phẩm chế biến không rõ nguồn.</li>
+                <li>Warfarin: ổn định chế độ ăn rau xanh; không tự ý ăn rất nhiều hoặc cắt hẳn; theo dõi INR định kỳ.</li>
+                <li>Kháng sinh (tetracycline, fluoroquinolone): uống cách bữa ăn/sữa theo chỉ dẫn (thường 1–2 giờ trước hoặc sau).</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 id="detail-mushrooms">Chi tiết: Nấm độc</h3>
+          <div class="type-detail">
+            <div class="type-detail-block mechanism">
+              <h4><span class="icon">⚙</span> Nguồn gốc / Đặc điểm</h4>
+              <p>Nấm độc mọc tự nhiên, nhiều loại <strong>rất giống nấm ăn được</strong> (màu sắc, hình dạng). Độc tố khác nhau tùy loài: amatoxin (phá hủy gan), muscarine, ibotenic acid, orellanine… Một số gây ngộ độc chậm (vài ngày sau ăn), khó chẩn đoán kịp. Không có quy tắc dân gian đáng tin (ví dụ “nấm bạc thì an toàn”, “luộc với bạc đổi màu thì độc”) — nhiều nấm độc chết người không đổi màu bạc khi nấu.</p>
+            </div>
+            <div class="type-detail-block identification">
+              <h4><span class="icon">🔍</span> Đặc điểm nhận dạng</h4>
+              <ul>
+                <li><strong>Không nên nhận dạng bằng mắt thường:</strong> Chỉ chuyên gia (nhà nấm học, bác sĩ có kinh nghiệm + ảnh chụp) mới phân biệt an toàn. Nấm độc có thể có vòng (ring), bao gốc (volva), phiến trắng — nhưng một số nấm ăn được cũng có.</li>
+                <li><strong>Triệu chứng:</strong> Tùy loại: nôn, tiêu chảy (sớm hoặc muộn); đau bụng; vàng da, suy gan (amatoxin); ảo giác, co giật (một số loài). Thời gian xuất hiện từ vài phút đến vài ngày — nấm gây suy gan thường có “khoảng lặng” sau giai đoạn nôn/tiêu chảy rồi mới suy gan.</li>
+                <li><strong>Chẩn đoán:</strong> Bệnh sử ăn nấm; mẫu nấm (ảnh, mẫu thật nếu còn) giúp định danh; xét nghiệm chức năng gan, độc tố khi có.</li>
+              </ul>
+            </div>
+            <div class="type-detail-block prevention">
+              <h4><span class="icon">🛡</span> Cách ngăn chặn</h4>
+              <ul>
+                <li><strong>Chỉ ăn nấm mua từ nguồn thương mại/được định danh chắc chắn;</strong> không hái nấm hoang dã để ăn trừ khi do chuyên gia xác định.</li>
+                <li>Không dựa vào mẹo (bạc, thìa, sữa…); không cho trẻ ăn nấm không rõ nguồn gốc.</li>
+                <li>Khi nghi ngờ ngộ độc nấm: gọi cấp cứu/trung tâm chống độc ngay; mang theo mẫu nấm (trong túi/giấy, không bọc kín ướt) và ảnh chụp; không gây nôn trừ khi nhân viên y tế hướng dẫn.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="food-combinations">
+          <h2>Kết hợp thực phẩm cần lưu ý — và giải mã tin đồn “ăn chung là độc”</h2>
+          <p>
+            Ngộ độc do “kết hợp sai” phần lớn đến từ <strong>tương tác thuốc–thực phẩm</strong> hoặc <strong>chế biến/bảo quản sai</strong> — không phải hai thực phẩm lành tính “đụng nhau thành thuốc độc” như nhiều tin đồn. Dưới đây là những trường hợp có căn cứ khoa học và cách tránh.
+          </p>
+          <h3>Kết hợp có thật — cần tránh hoặc thận trọng</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead><tr><th>Kết hợp</th><th>Nguy cơ</th><th>Cách tránh</th></tr></thead>
+              <tbody>
+                <tr><td>Bưởi + một số thuốc (statin, huyết áp, an thần…)</td><td>Ức chế men CYP3A4 → nồng độ thuốc tăng, dễ quá liều.</td><td>Tránh bưởi khi đang dùng thuốc có cảnh báo.</td></tr>
+                <tr><td>Rượu + paracetamol</td><td>Tăng nguy cơ tổn thương gan khi dùng liều cao kéo dài.</td><td>Không uống rượu khi dùng paracetamol liều cao; đọc hướng dẫn.</td></tr>
+                <tr><td>Rượu + metronidazole / một số cephalosporin</td><td>Phản ứng kiểu disulfiram: đỏ mặt, buồn nôn, nhịp nhanh.</td><td>Tránh rượu trong và sau đợt thuốc theo chỉ dẫn bác sĩ.</td></tr>
+                <tr><td>Rượu + thuốc an thần, ngủ, giảm đau opioid</td><td>Ức chế thần kinh cộng hưởng → thở chậm, nguy hiểm.</td><td>Tuyệt đối không phối hợp khi không có chỉ định.</td></tr>
+                <tr><td>Thực phẩm giàu vitamin K (rau xanh đậm) + warfarin</td><td>Thay đổi đột ngột làm mất ổn định hiệu quả chống đông.</td><td>Giữ chế độ rau xanh ổn định; theo dõi INR.</td></tr>
+                <tr><td>Sữa / canxi + tetracycline, fluoroquinolone</td><td>Canxi gắn thuốc → giảm hấp thu.</td><td>Uống thuốc cách sữa/bữa ăn giàu canxi 1–2 giờ.</td></tr>
+                <tr><td>Thực phẩm giàu tyramine (phô mai già, thịt muối) + IMAO</td><td>Tăng huyết áp đột ngột, nguy cơ xuất huyết não.</td><td>Chế độ ăn hạn chế tyramine khi dùng IMAO.</td></tr>
+                <tr><td>Trà / cà phê (tannin) + viên sắt</td><td>Tannin giảm hấp thu sắt.</td><td>Uống sắt cách trà/cà phê 1–2 giờ.</td></tr>
+                <tr><td>Caffeine (trà, cà phê, nước tăng lực) + thuốc kích thích/theophylline</td><td>Nhịp nhanh, bồn chồn, lo âu tăng.</td><td>Giảm caffeine khi dùng thuốc kích thích.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Nguy cơ thật nhưng do chế biến/bảo quản — không phải “kỵ nhau”</h3>
+          <ul>
+            <li><strong>Sắn, măng chưa luộc kỹ:</strong> Glycoside cyanogenic giải phóng HCN khi chưa chế biến đúng. Gọt, ngâm, luộc kỹ, bỏ nước luộc.</li>
+            <li><strong>Cá biển ươn (scrombroid):</strong> Histamine tích tụ khi cá để ở nhiệt độ cao lâu → triệu chứng giống dị ứng. Bảo quản lạnh, không ăn cá ươn.</li>
+            <li><strong>Hải sản có độc theo mùa/loài:</strong> Cá nóc (tetrodotoxin), ốc cối, nghêu/sò nhiễm độc tảo — nguy hiểm do bản thân con vật đã độc, không liên quan kết hợp thực phẩm.</li>
+            <li><strong>Khoai tây mọc mầm/vỏ xanh:</strong> Solanin tăng khi bảo quản sai. Gọt bỏ mầm/phần xanh; không ăn nếu hỏng nhiều.</li>
+          </ul>
+          <h3>Tin đồn “ăn chung là chết” — phần lớn không có bằng chứng</h3>
+          <ul>
+            <li><strong>“Hải sản + vitamin C tạo thạch tín”:</strong> Sai. Asen trong hải sản chủ yếu dạng hữu cơ ít độc; lượng rất nhỏ, không gây ngộ độc khi ăn kèm trái cây.</li>
+            <li><strong>“Trứng + đậu phụ / sữa + cam / mì tôm + sữa là độc”:</strong> Chưa có bằng chứng. Dạ dày vốn đã rất acid; protein đông tụ là bình thường, không sinh độc tố.</li>
+            <li><strong>“Thực phẩm ‘đại kỵ’ nhau gây chết người”:</strong> Hầu hết là truyền miệng thiếu căn cứ; nguy cơ thật nằm ở tương tác thuốc–thực phẩm, thực phẩm hỏng và chế biến sai.</li>
+          </ul>
+          <p>
+            Khi có bệnh nền hoặc đang dùng thuốc, nguồn tin đáng tin nhất là bác sĩ/dược sĩ và tờ hướng dẫn thuốc — không dựa vào danh sách “kỵ nhau” trên mạng xã hội.
+          </p>
+        </section>
+
+        <section id="chemicals-list">
+          <h2>Chất hóa học và dung dịch độc tố nguy hiểm — Nhận diện, đề phòng và bảo quản</h2>
+          <p>
+            Phần này liệt kê một số <strong>chất/dung dịch độc tố nguy hiểm</strong> có thể gặp trong đời sống, công nghiệp hoặc trong bối cảnh điều tra — nhằm giúp sinh viên và cán bộ <strong>nhận diện, đề phòng, bảo quản an toàn</strong> và xử lý khi nghi ngờ phơi nhiễm. <strong>Không cung cấp công thức pha chế hay hướng dẫn chế tạo độc tố;</strong> chỉ mô tả đặc điểm, nguồn gốc thường gặp, mức độ nguy hiểm và cách phòng tránh/bảo quản theo chuẩn an toàn.
+          </p>
+          <div class="callout callout-warning">
+            <h4>Khi phát hiện chất lạ hoặc nghi ngờ độc tố</h4>
+            <p>Không ngửi, nếm, chạm trực tiếp. Cách ly khu vực; thông báo người xung quanh; gọi cấp cứu và trung tâm chống độc. Nếu là hiện trường, bảo vệ hiện trường và chờ chuyên gia hóa học/độc học khi cần. Mang PPE (găng tay, khẩu trang, kính) khi bắt buộc tiếp cận; rửa tay sau khi tháo găng.</p>
+          </div>
+
+          <h3>Bảng tổng hợp một số chất/dung dịch độc tố nguy hiểm</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Chất / nhóm chất</th>
+                  <th>Nơi thường gặp / dạng</th>
+                  <th>Mức độ nguy hiểm & triệu chứng</th>
+                  <th>Nhận diện & đề phòng</th>
+                  <th>Bảo quản & xử lý khi phơi nhiễm</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Cyanide</strong> (KCN, NaCN, HCN, axit cyanhydric)</td>
+                  <td>Công nghiệp (mạ vàng, khai khoáng); một số thuốc diệt chuột; khí HCN từ đốt nhựa/nylon. Có trong tự nhiên (glycoside trong hạt, măng, sắn).</td>
+                  <td>Rất độc. Hít/ nuốt: đau đầu, chóng mặt, khó thở, tím tái, co giật, hôn mê, suy hô hấp. Có thể tử vong nhanh. Mùi đắng hạnh nhân (không phải ai cũng ngửi thấy).</td>
+                  <td>Nhãn “cyanide”, “KCN”, “NaCN”; bình kín, thường dạng bột trắng hoặc viên. Không mở bình trong phòng kín; thông gió; PPE đầy đủ khi làm việc với cyanide.</td>
+                  <td>Bảo quản: kho khóa, thông gió, xa acid (acid giải phóng HCN). Khi phơi nhiễm: ra không khí thoáng ngay; gọi cấp cứu; thuốc giải do bệnh viện (nitrit, thiosulfate). Không gây nôn nếu nuốt.</td>
+                </tr>
+                <tr>
+                  <td><strong>Methanol</strong> (cồn công nghiệp, CH₃OH)</td>
+                  <td>Công nghiệp (dung môi, nhiên liệu); rượu giả/ pha methanol khi uống nhầm. Có trong một số dung dịch rửa kính, chống đông.</td>
+                  <td>Rất độc khi uống. Buồn nôn, nôn, đau bụng; sau vài giờ đến vài ngày: mù, suy thận, toan chuyển hóa, tử vong. Hít/ tiếp xúc da nhiều cũng nguy hiểm.</td>
+                  <td>Chai dán nhãn “methanol”, “cồn công nghiệp”; không màu, mùi tương tự ethanol nhưng nhẹ hơn. Không uống bất kỳ dung dịch nào không rõ nguồn; không đựng đồ uống vào chai hóa chất.</td>
+                  <td>Bảo quản: xa nguồn lửa; để nơi trẻ em không với tới; không để lẫn với đồ uống. Phơi nhiễm: gọi cấp cứu; điều trị tại bệnh viện (ethanol/fomepizole, lọc máu khi cần).</td>
+                </tr>
+                <tr>
+                  <td><strong>Ethylene glycol</strong> (chất chống đông)</td>
+                  <td>Dung dịch chống đông xe; chất làm lạnh. Trẻ em/ động vật có thể uống nhầm do vị ngọt.</td>
+                  <td>Rất độc khi uống. Buồn nôn, nôn; sau đó lú lẫn, co giật, suy thận, tử vong. Liều nhỏ cũng nguy hiểm.</td>
+                  <td>Chai “antifreeze”, “ethylene glycol”; thường màu xanh hoặc vàng xanh, vị ngọt. Để xa tầm tay trẻ em; không đựng đồ uống vào chai chống đông.</td>
+                  <td>Bảo quản: kho/ tủ khóa; không để gần thực phẩm. Phơi nhiễm: gọi cấp cứu; thuốc giải (fomepizole hoặc ethanol) và điều trị hỗ trợ tại bệnh viện.</td>
+                </tr>
+                <tr>
+                  <td><strong>Thuốc trừ sâu nhóm organophosphate / carbamate</strong></td>
+                  <td>Nông nghiệp (Malathion, Parathion, Carbofuran…); một số thuốc diệt côn trùng, thuốc trị ve rận. Dạng lỏng, bột, xịt.</td>
+                  <td>Ức chế cholinesterase → tăng acetylcholine: chảy nước bọt, đồng tử co, nôn, tiêu chảy, co thắt phế quản, yếu cơ, co giật, suy hô hấp. Có thể tử vong nhanh.</td>
+                  <td>Nhãn có cảnh báo độc (đầu lâu); tên hoạt chất trên bao bì. Không ăn uống, hút thuốc khi phun; mặc quần áo bảo hộ, găng, kính, khẩu trang khi phun.</td>
+                  <td>Bảo quản: kho khóa, xa thực phẩm, nguồn nước; không đổ xuống cống. Phơi nhiễm: bỏ quần áo nhiễm, rửa da bằng nước sạch; gọi cấp cứu; atropine và thuốc giải khác do bệnh viện.</td>
+                </tr>
+                <tr>
+                  <td><strong>Arsenic</strong> (asen, As)</td>
+                  <td>Hợp chất asen (asen trioxit, thuốc trừ sâu cũ, thuốc diệt chuột); ô nhiễm nước ngầm; một số đồ gỗ xử lý CCA. Dạng bột, viên, dung dịch.</td>
+                  <td>Rất độc. Nuốt: đau bụng, nôn, tiêu chảy (có thể giống tả); mạch yếu, mất nước. Ngộ độc mạn: da sạm, tê chi, đau bụng kéo dài.</td>
+                  <td>Nhãn “arsenic”, “asen”; bột trắng hoặc xám, không mùi. Không dùng nước giếng nhiễm asen để uống nếu chưa xử lý; không đốt gỗ đã xử lý asen.</td>
+                  <td>Bảo quản: kho khóa; tránh tiếp xúc da, hít bụi. Phơi nhiễm: gọi cấp cứu; rửa da/ mắt; điều trị tại bệnh viện (chelation khi có chỉ định).</td>
+                </tr>
+                <tr>
+                  <td><strong>Thallium</strong> (Tl)</td>
+                  <td>Trước đây dùng trong thuốc diệt chuột, thuốc depilatory; công nghiệp điện tử. Hiện ít phổ biến nhưng vẫn có thể gặp.</td>
+                  <td>Rất độc. Nuốt: nôn, đau bụng, tiêu chảy; rụng tóc (vài ngày sau); tê chi, đau, rối loạn thần kinh; suy đa cơ quan.</td>
+                  <td>Thường dạng bột, không mùi, không vị; khó nhận diện nếu không có nhãn. Nghi ngờ khi có bệnh cảnh đặc trưng (rụng tóc + đau thần kinh) và tiền sử tiếp xúc.</td>
+                  <td>Bảo quản: kho khóa; PPE khi tiếp xúc. Phơi nhiễm: gọi cấp cứu; điều trị tại bệnh viện (chelation, hỗ trợ). Thuốc giải đặc hiệu có giới hạn.</td>
+                </tr>
+                <tr>
+                  <td><strong>Chất ăn mòn</strong> (acid mạnh: H₂SO₄, HCl, HNO₃; base: NaOH, KOH)</td>
+                  <td>Công nghiệp, phòng thí nghiệm; chất tẩy rửa cống, pin. Dạng lỏng đậm đặc.</td>
+                  <td>Bỏng da, mắt; nuốt gây bỏng đường tiêu hóa, thủng, xuất huyết. Hít khí có thể phù phổi.</td>
+                  <td>Nhãn “acid”, “base”, “ăn mòn”; biểu tượng bỏng. Không trộn acid với base hoặc chất khử (có thể sinh khí độc/ nổ). PPE: găng, kính, áo dài tay.</td>
+                  <td>Bảo quản: tủ chuyên dụng, thông gió; xa kim loại, chất khử. Phơi nhiễm: rửa nhiều nước (da, mắt); không gây nôn khi nuốt; gọi cấp cứu. Trung hòa tại chỗ chỉ khi có hướng dẫn chuyên môn.</td>
+                </tr>
+                <tr>
+                  <td><strong>Strychnine</strong> (stricnin)</td>
+                  <td>Trước đây dùng thuốc diệt chuột; một số thuốc thú y (liều rất thấp). Hiện bị hạn chế ở nhiều nước.</td>
+                  <td>Rất độc. Co cứng cơ, co giật (phản ứng với kích thích); suy hô hấp do co thắt cơ hô hấp. Triệu chứng xuất hiện nhanh.</td>
+                  <td>Thường dạng bột trắng, đắng. Nhãn “strychnine” trên lọ/ bao. Không tiếp xúc da, hít; không để gần thực phẩm.</td>
+                  <td>Bảo quản: kho khóa; xa thực phẩm. Phơi nhiễm: gọi cấp cứu; hỗ trợ hô hấp, chống co giật tại bệnh viện. Không có thuốc giải đặc hiệu.</td>
+                </tr>
+                <tr>
+                  <td><strong>Ricin</strong> (độc tố từ hạt thầu dầu)</td>
+                  <td>Chiết từ hạt cây thầu dầu (Ricinus communis). Có thể gặp dạng bột, dung dịch trong bối cảnh đặc biệt (không phổ biến trong đời sống).</td>
+                  <td>Rất độc khi hít, nuốt hoặc tiêm. Nuốt: nôn, tiêu chảy, mất nước; sau đó suy đa cơ quan. Hít: ho, khó thở, sốt; có thể suy hô hấp.</td>
+                  <td>Hạt thầu dầu (có dầu castor dùng công nghiệp) — không nhai/nuốt hạt. Bột/dung dịch ricin không có đặc điểm rõ ràng; nghi ngờ khi có bối cảnh và triệu chứng phù hợp.</td>
+                  <td>Bảo quản hạt thầu dầu: xa trẻ em; không nghiền hạt để ăn/uống. Nghi ngờ phơi nhiễm ricin: cách ly, gọi cấp cứu và cơ quan chức năng; điều trị hỗ trợ tại bệnh viện (không có thuốc giải đặc hiệu thường quy).</td>
+                </tr>
+                <tr>
+                  <td><strong>Carbon monoxide</strong> (CO)</td>
+                  <td>Khí không màu, không mùi; sinh ra khi đốt không đủ oxy (bếp than, máy phát trong nhà, ống xả xe, lò sưởi hỏng). Rất thường gặp trong ngộ độc tại nhà.</td>
+                  <td>Đau đầu, chóng mặt, buồn nôn, mệt; nặng: lú lẫn, ngất, co giật, tử vong. Da có thể hồng (không tím như thiếu oxy thông thường). Nhiều nạn nhân cùng môi trường.</td>
+                  <td>Không nhìn thấy hay ngửi được. Nghi ngờ khi: trong phòng kín có đốt than/xăng; máy phát trong nhà/garage; nhiều người cùng triệu chứng. Máy đo CO để xác định.</td>
+                  <td>Thông gió; đưa nạn nhân ra không khí thoáng; gọi cấp cứu; oxy cao áp tại bệnh viện khi nặng. Phòng ngừa: không đốt than trong phòng kín; máy phát để ngoài, xa cửa.</td>
+                </tr>
+                <tr>
+                  <td><strong>Chlorine / khí clo + chất tẩy</strong></td>
+                  <td>Clo: bể bơi, nước máy (liều thấp); trộn thuốc tẩy (hypochlorite) với acid hoặc ammonia → sinh khí clo hoặc chloramine, rất độc khi hít.</td>
+                  <td>Hít: ho, khó thở, đau ngực, phù phổi; mắt/da bỏng rát. Nuốt chất tẩy: bỏng đường tiêu hóa.</td>
+                  <td>Mùi hắc đặc trưng (clo); thường do trộn nhầm (tẩy + nước cọ toilet/acid). Không trộn bất kỳ chất tẩy với acid hay ammonia.</td>
+                  <td>Bảo quản: tẩy để xa acid, ammonia; nơi thoáng. Phơi nhiễm: ra không khí thoáng; rửa mắt/da bằng nước; gọi cấp cứu; không gây nôn khi nuốt tẩy.</td>
+                </tr>
+                <tr>
+                  <td><strong>Formaldehyde</strong> (formol, HCHO)</td>
+                  <td>Dung dịch formol (bảo quản mẫu, ướp xác); khí từ gỗ ép, vải, sơn. Công nghiệp, phòng thí nghiệm, nhà xác.</td>
+                  <td>Hít: kích ứng mắt, mũi, họng; đau đầu, khó thở; nồng độ cao gây phù phổi. Nuốt: bỏng đường tiêu hóa, toan chuyển hóa. Tiếp xúc da: dị ứng, bỏng.</td>
+                  <td>Mùi hăng, cay; dung dịch trong suốt. Nhãn “formaldehyde”, “formol”. Thông gió khi dùng; PPE (găng, kính, khẩu trang).</td>
+                  <td>Bảo quản: chai kín, thông gió; xa nhiệt. Phơi nhiễm: ra thoáng; rửa da/mắt; nuốt: không gây nôn, gọi cấp cứu.</td>
+                </tr>
+                <tr>
+                  <td><strong>Phosphine</strong> (PH₃)</td>
+                  <td>Khí từ thuốc diệt mối/sâu (nhôm phosphide, kẽm phosphide) khi gặp ẩm; công nghiệp bán dẫn. Rất độc khi hít.</td>
+                  <td>Hít: đau đầu, chóng mặt, nôn, khó thở, phù phổi, rối loạn tim; có thể tử vong nhanh. Mùi tỏi/cá thối (không phải lúc nào cũng ngửi thấy).</td>
+                  <td>Viên/bao thuốc diệt mối (phản ứng với nước/ẩm sinh khí). Không vào kho kín sau khi rải thuốc; đợi thông gió đủ; PPE khi vào.</td>
+                  <td>Bảo quản: khô, kín; không để gần nước/ẩm. Phơi nhiễm: ra thoáng ngay; gọi cấp cứu; hỗ trợ hô hấp tại bệnh viện (không có thuốc giải đặc hiệu).</td>
+                </tr>
+                <tr>
+                  <td><strong>Chì</strong> (lead, Pb)</td>
+                  <td>Sơn cũ (nhà cũ), ống nước, pin, một số đồ gốm/đồ chơi; môi trường ô nhiễm. Hít bụi, nuốt (trẻ em ăn mảnh sơn), nước nhiễm chì.</td>
+                  <td>Ngộ độc mạn: đau bụng, thiếu máu, mệt, tê chi; trẻ em: chậm phát triển, giảm IQ. Cấp tính (hiếm): đau bụng dữ dội, nôn, bệnh não.</td>
+                  <td>Không có đặc điểm rõ; xét nghiệm máu đo chì. Nghi ngờ khi sống trong nhà cũ có sơn bong, hoặc uống nước từ ống chì.</td>
+                  <td>Bảo quản pin/ vật chứa chì: xa trẻ em; tái chế đúng. Phơi nhiễm: ngừng nguồn; gọi bác sĩ; chelation khi có chỉ định.</td>
+                </tr>
+                <tr>
+                  <td><strong>Thủy ngân</strong> (mercury, Hg)</td>
+                  <td>Nhiệt kế/áp kế vỡ (Hg lỏng); amalgam răng (lượng rất thấp); một số thuốc/bột cổ truyền; công nghiệp. Hít hơi thủy ngân rất độc.</td>
+                  <td>Hít hơi: đau đầu, run, thay đổi tâm thần, viêm phổi. Nuốt Hg lỏng (kim loại) ít hấp thu hơn nhưng vẫn nguy hiểm. Muối thủy ngân nuốt: bỏng đường tiêu hóa, suy thận.</td>
+                  <td>Kim loại lỏng màu bạc, lăn tròn; dễ vỡ thành giọt nhỏ. Không hút bụi bằng máy hút thường (lan hơi); thu gom bằng ống tiêm/sheet nhựa theo hướng dẫn.</td>
+                  <td>Bảo quản: nhiệt kế trong hộp chắc. Vỡ: thông gió; thu gom cẩn thận; không dùng máy hút; bỏ vào túi kín, dán nhãn. Phơi nhiễm: gọi trung tâm chống độc; chelation khi cần.</td>
+                </tr>
+                <tr>
+                  <td><strong>Nicotine concentrate</strong> (dung dịch thuốc lá điện tử)</td>
+                  <td>Dung dịch chứa nicotine nồng độ cao để pha cho vaping. Trẻ em uống nhầm hoặc dính da (hấp thu qua da) → ngộ độc nặng.</td>
+                  <td>Buồn nôn, nôn, chảy nước bọt, đau bụng; nhịp nhanh sau đó chậm; co giật, suy hô hấp. Liều cao có thể tử vong.</td>
+                  <td>Chai nhỏ, thường có nhãn mg/ml (nicotine); nhiều mùi. Để xa tầm tay trẻ em; không đựng vào chai đồ uống.</td>
+                  <td>Bảo quản: tủ khóa; chai có nắp an toàn trẻ em. Phơi nhiễm: rửa da ngay nếu dính; không gây nôn khi nuốt; gọi cấp cứu; điều trị hỗ trợ tại bệnh viện.</td>
+                </tr>
+                <tr>
+                  <td><strong>Oxalic acid</strong> / muối oxalat</td>
+                  <td>Có trong một số cây (rau muống, chard, rhubarb lá); dung dịch tẩy rỉ, đánh bóng. Nuốt dung dịch đậm đặc hoặc ăn lượng lớn thực vật giàu oxalat.</td>
+                  <td>Nuốt: bỏng miệng, bụng; co giật, suy thận (kết tủa calcium oxalate). Hít bụi: kích ứng đường hô hấp.</td>
+                  <td>Bột trắng hoặc dung dịch; nhãn “oxalic acid”. Rau có oxalat: nấu bỏ nước, không ăn lá rhubarb.</td>
+                  <td>Bảo quản: xa thực phẩm; PPE khi dùng. Phơi nhiễm: rửa miệng/da; không gây nôn; gọi cấp cứu; điều trị tại bệnh viện.</td>
+                </tr>
+                <tr>
+                  <td><strong>Aconitine</strong> (độc tố từ cây ô đầu, phụ tử)</td>
+                  <td>Cây thuốc Đông y (ô đầu, phụ tử) chưa chế biến đúng; nhầm lẫn với cây ăn được. Rễ/củ chứa aconitine rất độc.</td>
+                  <td>Tê miệng, nôn, đau bụng; rối loạn nhịp tim (chậm hoặc nhanh, có thể tử vong); tê chi, yếu cơ.</td>
+                  <td>Rễ/củ không rõ nguồn; bệnh sử dùng thuốc Đông y hoặc ăn “rễ cây”. Chỉ dùng dược liệu đã bào chế đúng quy trình.</td>
+                  <td>Bảo quản dược liệu: theo hướng dẫn nhà thuốc; không tự hái cây hoang. Phơi nhiễm: gọi cấp cứu ngay; điều trị hỗ trợ tim, tại bệnh viện.</td>
+                </tr>
+                <tr>
+                  <td><strong>Fluoride</strong> (quá liều)</td>
+                  <td>Kem đánh răng (nuốt lượng lớn ở trẻ nhỏ); viên bổ sung fluoride; nước nhiễm fluoride cao. Liều thấp có lợi cho răng; quá liều gây độc.</td>
+                  <td>Nuốt nhiều: nôn, đau bụng, tăng tiết nước bọt; nặng: co giật, rối loạn điện giải, suy tim. Mạn tính: răng ố, xương cứng bất thường.</td>
+                  <td>Kem đánh răng để xa trẻ em; dùng lượng nhỏ (hạt đậu) cho trẻ. Nước giếng kiểm tra hàm lượng fluoride.</td>
+                  <td>Bảo quản: kem đánh răng không để trẻ tự múc. Phơi nhiễm: uống sữa/nước (gắn fluoride); gọi trung tâm chống độc; không gây nôn.</td>
+                </tr>
+                <tr>
+                  <td><strong>Paraquat</strong></td>
+                  <td>Thuốc diệt cỏ (nông nghiệp); rất độc, bị cấm/hạn chế nhiều nước. Dạng lỏng, thường màu xanh/xanh lá; uống nhầm hoặc hít khi phun.</td>
+                  <td>Nuốt: bỏng miệng, nôn, đau bụng; suy thận, suy hô hấp, xơ phổi. Liều nhỏ cũng có thể tử vong. Không có thuốc giải đặc hiệu.</td>
+                  <td>Chai/lọ có nhãn “paraquat”; màu xanh đặc trưng. PPE đầy đủ khi phun; không đựng vào chai đồ uống; để xa trẻ em.</td>
+                  <td>Bảo quản: kho khóa, xa thực phẩm. Phơi nhiễm: không gây nôn; gọi cấp cứu ngay; điều trị hỗ trợ tại bệnh viện (rửa dạ dày có thể làm tổn thương thêm).</td>
+                </tr>
+                <tr>
+                  <td><strong>Glyphosate</strong> (thuốc diệt cỏ — liều rất cao)</td>
+                  <td>Thuốc diệt cỏ phổ biến; uống dung dịch đậm đặc (tự tử hoặc nhầm). Liều thấp theo hướng dẫn ít độc; uống lượng lớn mới nguy hiểm.</td>
+                  <td>Nuốt nhiều: buồn nôn, nôn, đau bụng; suy thận, rối loạn điện giải; nặng có thể tử vong. Có thể gây kích ứng da/mắt khi tiếp xúc.</td>
+                  <td>Chai “glyphosate”, “Roundup” (hoặc tên thương mại khác). Không uống; PPE khi phun; không trộn với thuốc khác tùy tiện.</td>
+                  <td>Bảo quản: xa thực phẩm, nguồn nước. Phơi nhiễm: rửa da/mắt; nuốt: gọi trung tâm chống độc; điều trị hỗ trợ (không có thuốc giải đặc hiệu).</td>
+                </tr>
+                <tr>
+                  <td><strong>Ammonia</strong> (NH₃, dung dịch amoniac)</td>
+                  <td>Chất tẩy rửa, phân bón, làm lạnh; khí ammonia từ trộn ammonia với bleach. Hít khí rất kích ứng; nuốt dung dịch đậm đặc gây bỏng.</td>
+                  <td>Hít: ho, khó thở, phù phổi; mắt/da bỏng rát. Nuốt: bỏng đường tiêu hóa, phù đường thở. Không trộn với bleach (sinh khí độc).</td>
+                  <td>Mùi khai đặc trưng; chai “ammonia”, “ammoniac”. Thông gió; PPE khi dùng. Không trộn với chất tẩy clo.</td>
+                  <td>Bảo quản: xa acid, bleach; nơi thoáng. Phơi nhiễm: ra thoáng; rửa mắt/da nhiều nước; nuốt: không gây nôn; gọi cấp cứu.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sodium nitrite</strong> (nitrit natri)</td>
+                  <td>Dùng trong thực phẩm (muối diêm, bảo quản thịt) với liều rất thấp; uống nhầm dung dịch/bột nồng độ cao (tự tử hoặc nhầm) → ngộ độc methemoglobin.</td>
+                  <td>Da/môi tím; đau đầu, chóng mặt, khó thở; nặng: co giật, hôn mê. Liều cao có thể tử vong nhanh.</td>
+                  <td>Bột trắng hoặc dung dịch; nhãn “sodium nitrite”. Để xa thực phẩm ăn trực tiếp; không đựng vào chai nước/uống.</td>
+                  <td>Bảo quản: kho khóa. Phơi nhiễm: gọi cấp cứu ngay; methylene blue tại bệnh viện (thuốc giải methemoglobin).</td>
+                </tr>
+                <tr>
+                  <td><strong>Thuốc diệt chuột chống đông</strong> (warfarin, superwarfarin)</td>
+                  <td>Bả chuột chứa warfarin/superwarfarin; trẻ em hoặc vật nuôi ăn nhầm. Superwarfarin tác dụng rất dài (tuần đến tháng).</td>
+                  <td>Chảy máu (chảy máu nướu, tiểu máu, bầm tím) sau vài ngày; có thể xuất huyết nội. Vitamin K1 là thuốc giải; superwarfarin cần dùng K1 lâu dài.</td>
+                  <td>Bả dạng viên/khối; nhãn “warfarin”, “brodifacoum”, “bromadiolone”. Để xa trẻ em, vật nuôi; không để gần thực phẩm.</td>
+                  <td>Bảo quản: hộp kín, nơi chuột không vào nhưng trẻ không với. Phơi nhiễm: gọi trung tâm chống độc; vitamin K1 tại bệnh viện; không gây nôn tùy tiện.</td>
+                </tr>
+                <tr>
+                  <td><strong>Hydrogen peroxide</strong> nồng độ cao (&gt;10%)</td>
+                  <td>Dung dịch tẩy, làm tóc, công nghiệp; nồng độ thấp (3%) ít nguy hiểm. Nồng độ cao nuốt hoặc hít hơi gây bỏng, tắc mạch khí.</td>
+                  <td>Nuốt: bỏng đường tiêu hóa, đau bụng; có thể sinh khí gây tắc mạch. Dính mắt: bỏng giác mạc. Hít hơi đậm đặc: kích ứng đường hô hấp.</td>
+                  <td>Chai “hydrogen peroxide”, “H₂O₂”; nồng độ ghi trên nhãn. Không uống; không trộn với chất khác tùy tiện (có thể sinh khí/ nổ).</td>
+                  <td>Bảo quản: tránh nhiệt, ánh sáng; xa chất cháy. Phơi nhiễm: rửa mắt/da nhiều nước; nuốt: không gây nôn; gọi cấp cứu.</td>
+                </tr>
+                <tr>
+                  <td><strong>Benzene, toluene</strong> (dung môi)</td>
+                  <td>Công nghiệp (sơn, keo, xăng); hít hơi hoặc dính da. Benzene gây ung thư khi phơi nhiễm mạn tính; toluene ảnh hưởng thần kinh.</td>
+                  <td>Hít: chóng mặt, đau đầu, buồn nôn; nồng độ cao: lú lẫn, hôn mê. Da: khô, nứt. Nuốt: kích ứng đường tiêu hóa, ức chế thần kinh.</td>
+                  <td>Mùi đặc trưng (dầu/ xăng); chai “benzene”, “toluene”. Thông gió; PPE; không hút thuốc gần.</td>
+                  <td>Bảo quản: nơi thoáng, xa nguồn lửa. Phơi nhiễm: ra thoáng; rửa da; nuốt: không gây nôn; gọi cấp cứu.</td>
+                </tr>
+                <tr>
+                  <td><strong>Datura / cà độc dược</strong> (atropine, scopolamine)</td>
+                  <td>Cây hoa trắng/hồng, quả gai; hạt/ lá chứa alkaloid (atropine, scopolamine). Ăn nhầm (trẻ, nhầm với rau) hoặc cố ý (ma túy, mưu đồ).</td>
+                  <td>Đồng tử giãn, mờ mắt; khô miệng, bí tiểu; nhịp nhanh; lú lẫn, ảo giác, co giật. Có thể tử vong do rối loạn nhịp, hôn mê.</td>
+                  <td>Cây có hoa hình loa, quả gai; hạt nhỏ. Không ăn cây/ quả lạ; không dùng “thuốc” không rõ nguồn gốc.</td>
+                  <td>Bảo quản: không trồng trong vườn gia đình nếu có trẻ. Phơi nhiễm: gọi cấp cứu; physostigmine khi có chỉ định tại bệnh viện.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cây độc cần (hemlock)</strong></td>
+                  <td>Cây hoang dại; nhầm với cây ăn được (cà rốt, mùi tây). Chứa coniine và alkaloid — rất độc khi ăn.</td>
+                  <td>Tê miệng, nôn, đau bụng; yếu cơ, liệt cơ dần; suy hô hấp. Có thể tử vong.</td>
+                  <td>Lá giống mùi tây; rễ giống cà rốt nhưng mùi khác (khó chịu). Không hái rau/củ hoang để ăn nếu không chắc chắn.</td>
+                  <td>Phơi nhiễm: gọi cấp cứu ngay; hỗ trợ hô hấp tại bệnh viện (không có thuốc giải đặc hiệu).</td>
+                </tr>
+                <tr>
+                  <td><strong>Cadmium</strong> (Cd)</td>
+                  <td>Pin, mạ kim loại, khói thuốc lá, ô nhiễm công nghiệp. Hít khói bụi cadmium (hàn, đốt) rất độc; nuốt qua nước/ thực phẩm ô nhiễm.</td>
+                  <td>Hít cấp tính: sốt, đau ngực, khó thở, phù phổi. Mạn tính: suy thận, loãng xương, tổn thương phổi. Nuốt: nôn, đau bụng.</td>
+                  <td>Không có đặc điểm rõ; xét nghiệm máu/nước tiểu. Nghi ngờ khi làm việc với pin, mạ, hàn trong môi trường kém thông gió.</td>
+                  <td>Bảo quản pin: tái chế đúng. PPE khi làm việc (khẩu trang, thông gió). Phơi nhiễm: ra thoáng; gọi cấp cứu; chelation khi có chỉ định.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="tox-plants">Độc tố thực vật thường gặp — Nhận diện nhanh</h3>
+          <ul>
+            <li><strong>Ô đầu / phụ tử (aconitine):</strong> Rễ củ Đông y chưa chế biến → tê miệng, rối loạn nhịp tim. Chỉ dùng dược liệu đã bào chế.</li>
+            <li><strong>Cà độc dược (datura):</strong> Hoa trắng/hồng, quả gai → đồng tử giãn, khô miệng, ảo giác. Không ăn cây/quả lạ.</li>
+            <li><strong>Cây độc cần (hemlock):</strong> Nhầm với cà rốt/mùi tây → tê, yếu cơ, suy hô hấp. Không hái rau hoang.</li>
+            <li><strong>Hạt thầu dầu (ricin):</strong> Không nhai/nuốt hạt; ricin chiết xuất rất độc. Xa trẻ em.</li>
+            <li><strong>Lá khoai tây, khoai tây mọc mầm (solanine):</strong> Đau bụng, nôn. Gọt bỏ phần xanh, mầm; không ăn lá.</li>
+            <li><strong>Hạt táo/mận/đào (cyanogenic):</strong> Nhai nhiều hạt → cyanide. Không ăn hạt.</li>
+          </ul>
+
+          <h3 id="tox-household">Hóa chất gia dụng dễ gây ngộ độc — Đề phòng</h3>
+          <ul>
+            <li><strong>Thuốc tẩy (hypochlorite):</strong> Không trộn với acid (nước cọ toilet) hay ammonia → khí độc. Để xa tầm tay trẻ.</li>
+            <li><strong>Nước cọ toilet (acid):</strong> Bỏng da/mắt; không trộn với tẩy. Đậy nắp, để xa tầm trẻ.</li>
+            <li><strong>Chất chống đông (ethylene glycol):</strong> Vị ngọt, trẻ uống nhầm → suy thận. Để xa trẻ, không đựng đồ uống.</li>
+            <li><strong>Methanol (cồn công nghiệp):</strong> Không uống; không đựng rượu vào chai hóa chất.</li>
+            <li><strong>Thuốc diệt côn trùng/ chuột:</strong> Đọc nhãn; PPE khi phun; bả chuột để nơi trẻ/vật nuôi không với. Gọi chống độc khi nghi ngờ ăn nhầm.</li>
+          </ul>
+
+          <h3>Khí độc và môi trường kín — Nhận diện nhanh</h3>
+          <ul>
+            <li><strong>CO (carbon monoxide):</strong> Đốt than/xăng trong phòng kín, máy phát trong nhà → đau đầu, chóng mặt, nhiều người cùng triệu chứng. Xử lý: mở cửa, đưa nạn nhân ra, gọi cấp cứu.</li>
+            <li><strong>Clo / chloramine:</strong> Trộn thuốc tẩy với acid hoặc nước cọ toilet → mùi hắc, khó thở. Xử lý: ra thoáng, rửa mắt/mũi, gọi cấp cứu.</li>
+            <li><strong>Phosphine:</strong> Thuốc diệt mối/sâu (phosphide) trong kho kín, ẩm → mùi tỏi/cá, khó thở. Xử lý: không vào nếu chưa thông gió; PPE; gọi cấp cứu khi có người ngộ độc.</li>
+            <li><strong>H₂S (hydro sulfide):</strong> Cống rãnh, hầm, bể phân; mùi trứng thối. Rất độc khi nồng độ cao (mất khứu giác nhanh). Xử lý: không xuống hầm thiếu thiết bị; gọi cứu hộ chuyên dụng.</li>
+          </ul>
+
+          <h3>Nguyên tắc chung khi tiếp cận hiện trường có nghi ngờ chất độc</h3>
+          <ul>
+            <li><strong>An toàn cá nhân:</strong> Không vào khu vực kín, thiếu khí khi có khí độc; dùng PPE phù hợp (găng nitrile, N95 hoặc cao hơn khi có khí/bụi; kính bảo hộ).</li>
+            <li><strong>Bảo vệ hiện trường:</strong> Hạn chế người vào; không di chuyển/chạm vào bình lọ, đồ đựng nếu chưa có chuyên gia; chụp ảnh, ghi chép vị trí, nhãn (nếu có).</li>
+            <li><strong>Thu thập mẫu:</strong> Do nhân sự được đào tạo (hóa học/forensics); đựng trong túi/hộp kín, dán nhãn; không trộn lẫn mẫu; bảo quản theo quy định để phân tích.</li>
+            <li><strong>Bảo quản chứng cứ:</strong> Kho khóa, thông gió; chất dễ cháy/nổ xa nguồn nhiệt; acid/base để riêng. Ghi sổ theo dõi người tiếp cận, thời gian.</li>
+            <li><strong>Khi nạn nhân nghi ngờ ngộ độc:</strong> Đưa ra khỏi vùng phơi nhiễm; gọi cấp cứu và trung tâm chống độc; mang theo thông tin chất nghi ngờ (nhãn, ảnh) khi đưa đến bệnh viện.</li>
+          </ul>
+        </section>
+
+        <section id="first-aid">
+          <h2>Sơ cứu ngộ độc — Nguyên tắc chung</h2>
+          <p>
+            Sơ cứu đúng giúp giảm hấp thu và hạn chế tổn thương trước khi nạn nhân đến cơ sở y tế. Nội dung dưới đây chỉ là <strong>nguyên tắc chung mang tính giáo dục</strong>, không thay thế chỉ định của nhân viên y tế hoặc trung tâm chống độc.
+          </p>
+          <div class="callout callout-warning">
+            <h4>Ưu tiên hàng đầu</h4>
+            <p>Gọi cấp cứu / trung tâm chống độc ngay; cung cấp thông tin chất nghi ngờ (tên, lượng, thời gian, triệu chứng). Không tự gây nôn trừ khi có hướng dẫn chuyên môn — một số chất (ăn mòn, dung môi, chất tạo bọt) khi gây nôn sẽ làm tổn thương nặng hơn.</p>
+          </div>
+          <h3>Các bước cơ bản</h3>
+          <ol>
+            <li><strong>Đưa nạn nhân khỏi nguồn phơi nhiễm:</strong> Ra không khí thoáng nếu hít khí độc; cởi bỏ quần áo dính hóa chất.</li>
+            <li><strong>Kiểm tra an toàn bản thân:</strong> Không vào khu vực kín có khí độc khi chưa có thiết bị bảo hộ; tránh trở thành nạn nhân thứ hai.</li>
+            <li><strong>Rửa vùng tiếp xúc:</strong> Da/mắt dính hóa chất → rửa bằng nước sạch nhiều và liên tục (mắt ít nhất 15 phút).</li>
+            <li><strong>Ghi nhận thông tin:</strong> Thời điểm phơi nhiễm, chất nghi ngờ (giữ nhãn/chai nếu có), triệu chứng diễn tiến.</li>
+            <li><strong>Không cho ăn/uống tùy tiện:</strong> Không cho nạn nhân bất tỉnh uống; không dùng “mẹo” dân gian (sữa, trứng…) trừ khi được hướng dẫn.</li>
+          </ol>
+          <h3>Khi nào KHÔNG nên gây nôn</h3>
+          <ul>
+            <li>Nuốt chất ăn mòn (acid, base, thuốc tẩy) hoặc dung môi, xăng dầu — nguy cơ bỏng đường hô hấp/tiêu hóa.</li>
+            <li>Nạn nhân lơ mơ, co giật, mất phản xạ hầu họng — nguy cơ sặc vào phổi.</li>
+            <li>Nuốt chất tạo bọt mạnh (xà phòng, chất tẩy rửa) — nguy cơ sặc bọt.</li>
+          </ul>
+          <p>
+            Mọi trường hợp nghi ngờ ngộ độc đều cần được đánh giá tại cơ sở y tế; một số chất có “khoảng lặng” (triệu chứng nhẹ rồi nặng đột ngột, ví dụ nấm amatoxin, methanol) nên không được chủ quan.
+          </p>
+        </section>
+
+        <section id="antidote-table">
+          <h2>Bảng thuốc giải độc thường gặp (Antidotes)</h2>
+          <p>
+            Thuốc giải (antidote) chỉ được dùng tại cơ sở y tế theo chỉ định chuyên môn. Bảng dưới đây giúp sinh viên và cán bộ <strong>nhận diện nhanh</strong> để báo cáo và điều động hỗ trợ phù hợp — không phải hướng dẫn tự điều trị.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr><th>Chất độc</th><th>Thuốc giải / điều trị đặc hiệu</th><th>Ghi chú</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Opioid (morphine, heroin, fentanyl…)</td><td>Naloxone</td><td>Có thể cần lặp liều; hỗ trợ hô hấp.</td></tr>
+                <tr><td>Paracetamol quá liều</td><td>N-acetylcysteine (NAC)</td><td>Hiệu quả cao nhất khi dùng sớm.</td></tr>
+                <tr><td>Methanol, ethylene glycol</td><td>Fomepizole (hoặc ethanol trong bệnh viện)</td><td>Kèm lọc máu nếu cần.</td></tr>
+                <tr><td>Cyanide</td><td>Hydroxocobalamin; (nitrit + thiosulfate)</td><td>Dùng ở cơ sở có điều kiện; oxy hỗ trợ.</td></tr>
+                <tr><td>Organophosphate / carbamate</td><td>Atropine + pralidoxime (2-PAM)</td><td>Kiểm soát triệu chứng cholinergic.</td></tr>
+                <tr><td>Methemoglobin (nitrit, một số thuốc)</td><td>Methylene blue</td><td>Thận trọng ở người thiếu men G6PD.</td></tr>
+                <tr><td>Warfarin / superwarfarin (diệt chuột)</td><td>Vitamin K1 (phytomenadione)</td><td>Superwarfarin cần điều trị kéo dài.</td></tr>
+                <tr><td>Kim loại nặng (chì, thủy ngân, asen…)</td><td>Thuốc gắp kim loại (chelation): BAL, DMSA, EDTA…</td><td>Chỉ định theo từng kim loại và mức độ.</td></tr>
+                <tr><td>Carbon monoxide</td><td>Oxy 100%; oxy cao áp khi nặng</td><td>Đưa nạn nhân ra khỏi nguồn khí ngay.</td></tr>
+                <tr><td>Botulinum</td><td>Kháng độc tố botulinum (antitoxin)</td><td>Hỗ trợ hô hấp; càng sớm càng tốt.</td></tr>
+                <tr><td>Độc tố nấm (amatoxin)</td><td>Không có thuốc giải đặc hiệu; điều trị hỗ trợ, than hoạt, bảo vệ gan</td><td>Phát hiện sớm rất quan trọng.</td></tr>
+                <tr><td>Atropine / anticholinergic (datura)</td><td>Physostigmine (khi có chỉ định)</td><td>Dùng thận trọng tại bệnh viện.</td></tr>
+                <tr><td>Benzodiazepine quá liều</td><td>Flumazenil</td><td>Cân nhắc nguy cơ co giật khi lệ thuộc thuốc.</td></tr>
+                <tr><td>Heparin</td><td>Protamine sulfate</td><td>Theo dõi đông máu.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Danh sách chỉ mang tính tham khảo học thuật; liều lượng và chỉ định phải tuân theo phác đồ của cơ sở y tế và trung tâm chống độc.
+          </p>
+        </section>
+
+        <section id="advanced-tox">
+          <h2>Vụ án khó — Độc tố ít phổ biến & độc học pháp y</h2>
+          <p>
+            Phần này dành cho các <strong>vụ án phức tạp</strong> mà thám tử và cảnh sát có thể gặp: độc tố ít phổ biến hơn, triệu chứng khởi phát chậm hoặc giống bệnh tự nhiên, và góc nhìn độc học pháp y (mẫu, thời gian, nhận diện). Nội dung chỉ phục vụ nhận diện và điều tra, không cung cấp công thức pha chế hay hướng dẫn chế tạo.
+          </p>
+          <div class="callout callout-info">
+            <h4>Phối hợp chuyên gia</h4>
+            <p>Vụ án ngộ độc phức tạp cần phối hợp với trung tâm chống độc, pháp y, và phòng xét nghiệm độc chất. Học liệu giúp nhận diện sớm để thu thập mẫu đúng và yêu cầu xét nghiệm phù hợp.</p>
+          </div>
+
+          <h3>Độc tố khởi phát chậm — dễ nhầm với bệnh thông thường</h3>
+          <ul>
+            <li><strong>Thallium:</strong> Triệu chứng có thể xuất hiện vài ngày sau phơi nhiễm: đau bụng, nôn, tiêu chảy; sau đó rụng tóc (đặc trưng), tê chi, đau thần kinh. Dễ nhầm với bệnh thần kinh, cúm, rối loạn tiêu hóa. <em>Điều tra:</em> hỏi tiền sử tiếp xúc (thuốc diệt chuột cũ, nghề nghiệp); xét nghiệm thallium trong nước tiểu/máu; mẫu tóc.</li>
+            <li><strong>Arsenic mạn tính:</strong> Đau bụng kéo dài, tiêu chảy, sạm da, tê chi, mạch yếu. Có thể nhầm với bệnh đường ruột, bệnh da, bệnh thần kinh. <em>Điều tra:</em> nguồn nước, thuốc, thực phẩm; xét nghiệm asen trong máu/nước tiểu/tóc/móng.</li>
+            <li><strong>Một số nấm độc (amatoxin):</strong> Giai đoạn đầu nôn, tiêu chảy; sau đó “khoảng lặng” vài ngày rồi suy gan. Dễ bỏ qua hoặc nhầm với viêm dạ dày. <em>Điều tra:</em> bệnh sử ăn nấm; mẫu nấm (ảnh, mẫu thật); xét nghiệm chức năng gan, amatoxin.</li>
+          </ul>
+
+          <h3>Chất “bắt chước” bệnh tự nhiên</h3>
+          <p>Một số độc tố gây triệu chứng rất giống bệnh nội khoa — nếu không nghĩ đến ngộ độc sẽ khó chẩn đoán và điều tra.</p>
+          <ul>
+            <li><strong>Arsenic cấp:</strong> Nôn, tiêu chảy, đau bụng dữ dội — giống viêm dạ dày ruột hoặc tả. Phân biệt: tiền sử tiếp xúc; xét nghiệm asen.</li>
+            <li><strong>Thallium:</strong> Rụng tóc + đau thần kinh — có thể nhầm bệnh tự miễn, bệnh thần kinh. Rụng tóc toàn thân sau vài ngày là gợi ý.</li>
+            <li><strong>Colchicine (cây tỏi độc, autumn crocus):</strong> Nôn, tiêu chảy, sau đó suy đa cơ quan — giống nhiễm trùng nặng. Bệnh sử ăn cây/ củ lạ hoặc thuốc chứa colchicine.</li>
+            <li><strong>Digitalis / glycoside tim (cây trúc đào, foxglove):</strong> Buồn nôn, rối loạn nhịp tim, nhìn vàng/xanh — giống bệnh tim. Xét nghiệm digoxin (cross-react với glycoside thực vật).</li>
+          </ul>
+
+          <h3>Thực vật và độc tố ít phổ biến</h3>
+          <ul>
+            <li><strong>Oleander (trúc đào):</strong> Toàn cây độc; chứa glycoside tim. Nuốt lá/hoa/hạt: nôn, rối loạn nhịp, có thể tử vong. Hay trồng làm cảnh — trẻ hoặc động vật ăn nhầm.</li>
+            <li><strong>Foxglove (digitalis):</strong> Hoa hình ống, lá chứa digitalis glycoside. Triệu chứng giống ngộ độc digitalis (buồn nôn, nhịp chậm hoặc loạn nhịp, nhìn vàng/xanh).</li>
+            <li><strong>Monkshood (ô đầu hoang, aconitum):</strong> Chứa aconitine (tương tự ô đầu Đông y). Tê miệng, nôn, rối loạn nhịp tim; có thể tử vong nhanh. Không nhầm với cây ăn được.</li>
+            <li><strong>Colchicine (cây tỏi độc, Colchicum):</strong> Củ/hạt chứa colchicine; ăn nhầm gây nôn, tiêu chảy, sau đó suy tủy, suy đa cơ quan. Dùng trong thuốc (gout) với liều kiểm soát.</li>
+          </ul>
+
+          <h3>Hóa chất ít gặp — nhận diện trong vụ án</h3>
+          <ul>
+            <li><strong>Dimethylmercury:</strong> Rất độc; hấp thu qua da, hít. Chỉ vài giọt có thể gây tử vong sau vài tuần (chậm). Dùng trong lab chuyên biệt; gần như không gặp ngoài phòng thí nghiệm. <em>Nhận diện:</em> bệnh sử nghề nghiệp; xét nghiệm thủy ngân; triệu chứng thần kinh chậm.</li>
+            <li><strong>Polonium-210:</strong> Chất phóng xạ; cực độc khi nuốt/hít. Triệu chứng ban đầu không đặc hiệu; sau đó suy đa cơ quan. Chỉ gặp trong bối cảnh đặc biệt (điều tra phóng xạ). <em>Nhận diện:</em> đo phóng xạ; mẫu sinh phẩm; cơ quan năng lượng nguyên tử.</li>
+            <li><strong>Fluoracetate (1080):</strong> Thuốc diệt động vật gây hại; rất độc, bị cấm/hạn chế nhiều nơi. Nuốt hoặc hít: co giật, suy tim, tử vong. <em>Nhận diện:</em> bệnh sử tiếp xúc; xét nghiệm fluoracetate (chuyên biệt).</li>
+          </ul>
+
+          <h3>Tội phạm dùng thuốc (drug-facilitated) — nhận diện, không công thức</h3>
+          <p>Một số vụ án liên quan chất gây mê/gây quên được cho vào đồ uống (GHB, flunitrazepam, benzodiazepine khác, một số antihistamine liều cao). Nạn nhân mất ý thức hoặc không nhớ; có thể bị trộm cắp, tấn công tình dục. <strong>Không cung cấp công thức hay liều;</strong> chỉ mô tả góc nhận diện và thu thập chứng cứ.</p>
+          <ul>
+            <li><strong>Nhận diện:</strong> Nạn nhân tỉnh dậy không nhớ khoảng thời gian; đồ uống bị bỏ lại; xét nghiệm máu/nước tiểu càng sớm càng tốt (một số chất thải trừ nhanh).</li>
+            <li><strong>Thu thập mẫu:</strong> Máu, nước tiểu trong vòng vài giờ đến 24–72 giờ tùy chất; mẫu đồ uống còn lại (nếu có); chai, ly — không rửa, bảo quản trong túi kín.</li>
+            <li><strong>Chất thường được nhắc trong bối cảnh này (chỉ tên, để nhận diện):</strong> GHB (thải trừ rất nhanh), flunitrazepam (Rohypnol), benzodiazepine khác, ketamine, một số antihistamine. Xét nghiệm do phòng lab độc chất/ pháp y thực hiện.</li>
+          </ul>
+
+          <h3>Độc học sau tử vong — mẫu và thời gian</h3>
+          <ul>
+            <li><strong>Mẫu cần thu:</strong> Máu (từ tim hoặc ngoại vi — ghi rõ vị trí), nước tiểu, dịch dạ dày, mẫu gan/thận nếu mổ; trong vụ nghi ngờ độc: tóc, móng (phơi nhiễm mạn tính). Mẫu phải đựng đúng loại tube, bảo quản lạnh theo hướng dẫn pháp y.</li>
+            <li><strong>Thời gian:</strong> Một số chất phân hủy hoặc giảm nồng độ sau chết; thu thập càng sớm càng tốt. Mẫu tóc/móng phản ánh phơi nhiễm vài tuần đến vài tháng trước.</li>
+            <li><strong>Ghi chép:</strong> Thời gian tử vong (ước lượng), thời gian lấy mẫu, vị trí lấy máu; thuốc/ hóa chất nghi ngờ tìm thấy tại hiện trường; bệnh sử nạn nhân (thuốc đang dùng, bệnh nền).</li>
+          </ul>
+
+          <h3>Đường tiếp xúc bất thường</h3>
+          <p>Trong vụ án, độc tố có thể được đưa vào qua đường ít gặp trong tai nạn: tiêm, bôi qua da (dimethylmercury), nhỏ mắt, đặt vào đường sinh dục. Triệu chứng có thể không điển hình; vị trí tiêm/ tổn thương da cần được ghi nhận và chụp ảnh. Xét nghiệm mẫu từ vùng nghi ngờ (ví dụ mô quanh vết tiêm) có thể cần thiết.</p>
+
+          <h3>Sản phẩm thảo dược/ “thực phẩm chức năng” bị pha tạp</h3>
+          <p>Một số sản phẩm bán trên mạng hoặc không qua kiểm định bị pha thêm thuốc Tây (steroid, NSAID, sildenafil, thuốc hạ đường huyết) hoặc kim loại nặng (chì, thủy ngân, asen) để “tăng hiệu quả”. Người dùng bị tác dụng phụ hoặc ngộ độc mà không biết nguồn. <em>Điều tra:</em> thu thập sản phẩm còn lại, bao bì, nguồn mua; gửi lab phân tích thành phần; đối chiếu với bệnh sử và xét nghiệm máu/nước tiểu.</p>
+
+          <h3>Thuốc giải hiếm / khu vực</h3>
+          <p>Một số thuốc giải (antidote) không có sẵn tại mọi bệnh viện hoặc chỉ có tại trung tâm chống độc: ví dụ chelation cho kim loại nặng, kháng độc tố botulinum, thuốc giải cyanide, N-acetylcysteine (paracetamol), fomepizole (methanol, ethylene glycol). Trong vụ án xa trung tâm lớn, cần xác định sớm loại độc để chuyển viện hoặc điều động thuốc giải. Trung tâm chống độc quốc gia/ khu vực là nguồn tư vấn.</p>
+
+          <h3>Checklist vụ án ngộ độc phức tạp — khi nào cần chuyên gia</h3>
+          <ul>
+            <li>Triệu chứng chậm, không rõ nguyên nhân → nghĩ đến thallium, asen mạn, amatoxin (nấm).</li>
+            <li>Triệu chứng giống bệnh nội khoa → hỏi kỹ tiền sử tiếp xúc; yêu cầu xét nghiệm độc chất phù hợp.</li>
+            <li>Nghi ngờ drug-facilitated → thu máu/nước tiểu sớm; thu đồ uống, chai, ly; không rửa.</li>
+            <li>Tử vong nghi ngờ ngộ độc → thu thập mẫu pháp y đúng quy trình; ghi rõ thời gian, vị trí lấy mẫu.</li>
+            <li>Chất hiếm (dimethylmercury, polonium, fluoracetate) → liên hệ trung tâm chống độc, pháp y, hoặc cơ quan chuyên ngành.</li>
+          </ul>
+        </section>
+
+        <section id="history-antidotes">
+          <h2>Lịch sử chất độc và sự phát triển thuốc giải (Antidotes)</h2>
+          <p>
+            Lịch sử nhân loại gắn với việc nhận biết chất độc trong tự nhiên (động thực vật, khoáng chất) và dần phát triển 
+            các biện pháp điều trị — từ kinh nghiệm dân gian đến y học dựa trên bằng chứng.
+          </p>
+          <h3>Một số mốc và khái niệm (giáo dục)</h3>
+          <ul>
+            <li><strong>Thuốc giải:</strong> Chất có tác dụng chống lại hoặc giảm độc tính (ví dụ: naloxone với opioid, N-acetylcysteine với paracetamol quá liều, atropine trong một số ngộ độc thuốc trừ sâu). Việc sử dụng phải do cơ sở y tế thực hiện.</li>
+            <li><strong>Nguyên tắc điều trị ngộ độc:</strong> Hỗ trợ hô hấp/tuần hoàn, ngăn hấp thu (nếu phù hợp), tăng thải trừ, thuốc giải khi có chỉ định, điều trị triệu chứng.</li>
+            <li><strong>Trung tâm chống độc:</strong> Nhiều quốc gia có hotline và trung tâm chống độc để tư vấn cấp cứu ngộ độc; đây là nguồn tham khảo quan trọng cho bác sĩ và cộng đồng.</li>
+          </ul>
+          <p>
+            Học liệu không liệt kê công thức hay hướng dẫn chế tạo độc tố hay thuốc giải tại nhà; 
+            mọi điều trị ngộ độc cần được thực hiện tại cơ sở y tế với chuyên môn và thuốc được quản lý.
+          </p>
+        </section>
+
+        <section id="never-do">
+          <h2>Những việc tuyệt đối tránh — để không vô tình tạo ra nguy hiểm</h2>
+          <p>
+            Nhiều tai nạn ngộ độc, cháy nổ bắt nguồn từ những thao tác tưởng như vô hại. Danh sách dưới đây là <strong>các hành động cần tránh</strong> cùng lý do — hoàn toàn theo hướng phòng ngừa, không kèm bất kỳ hướng dẫn chế tạo nào.
+          </p>
+          <ul>
+            <li><strong>Không trộn thuốc tẩy (chlorine) với acid</strong> (nước cọ toilet, giấm đậm đặc…) → sinh khí clo gây phù phổi. Không bao giờ pha trộn để “tẩy mạnh hơn”.</li>
+            <li><strong>Không trộn thuốc tẩy với ammonia</strong> (nước lau kính, nước tẩy có ammonia) → sinh chloramine, rất độc khi hít.</li>
+            <li><strong>Không đốt than, củi, xăng hay chạy máy phát trong phòng kín</strong> → khí CO không màu, không mùi gây tử vong thầm lặng.</li>
+            <li><strong>Không dùng chai lọ hóa chất để đựng đồ uống/thực phẩm</strong>, và ngược lại không đựng hóa chất vào chai nước — dễ uống nhầm.</li>
+            <li><strong>Không nếm, ngửi trực tiếp hay chạm tay vào chất lạ</strong>; không tự ý “trung hòa” hóa chất bị đổ tràn ngoài hướng dẫn chuyên môn.</li>
+            <li><strong>Không tự chế pháo hay trộn các chất dễ cháy/nổ tại nhà</strong> — xăng, cồn, bột kim loại, thuốc nổ tự pha đều có thể gây nổ, bỏng, tàn phế. Đây là ranh giới tuyệt đối không vượt.</li>
+            <li><strong>Không để bả chuột, thuốc diệt côn trùng gần thực phẩm</strong> hoặc trong tầm tay trẻ em, vật nuôi.</li>
+            <li><strong>Không uống cồn công nghiệp (methanol)</strong> và không đốt cồn trong phòng kín — một ngụm nhỏ methanol có thể gây mù.</li>
+            <li><strong>Không chặn lỗ thông gió bình gas; không để bình gas gần lửa/nhiệt</strong>; kiểm tra dây dẫn và van định kỳ.</li>
+            <li><strong>Không ăn nấm, cây, hạt hoang dã không xác định được</strong>; không nhai nhiều hạt quả (mận, đào, táo…).</li>
+            <li><strong>Không đun sắn/măng sơ sài</strong> và không ăn khoai tây mọc mầm/vỏ xanh chưa gọt bỏ kỹ.</li>
+            <li><strong>Không để thuốc, vitamin, dung dịch nicotine trong tầm tay trẻ</strong> — dùng nắp an toàn, tủ khóa.</li>
+            <li><strong>Không tự gây nôn khi nuốt chất ăn mòn, dung môi hoặc chất tạo bọt</strong> — gọi trung tâm chống độc và làm theo hướng dẫn.</li>
+          </ul>
+          <div class="callout callout-warning">
+            <h4>Quy tắc đơn giản</h4>
+            <p>Nếu một thao tác làm bạn nghĩ “có nên thử không?” — nhất là trộn hóa chất, đốt thứ gì đó trong nhà, hay tự chế một thiết bị — thì đừng làm. Gọi chuyên gia, đọc nhãn an toàn, và giữ mọi chất nguy hiểm xa tầm tay trẻ em.</p>
+          </div>
+        </section>
+
+        <section id="daily-safety">
+          <h2>Nhận biết và phòng tránh độc tố trong đời sống thường ngày</h2>
+          <p>
+            Mục tiêu là nâng cao ý thức an toàn: nhận biết nguồn có thể gây hại và cách phòng tránh để giảm rủi ro cho bản thân và gia đình.
+          </p>
+          <h3>Gợi ý phòng ngừa (không thay thế tư vấn y tế)</h3>
+          <ul>
+            <li><strong>Thực phẩm:</strong> Bảo quản đúng cách, tránh ăn thực phẩm ôi thiu, mọc mầm (khoai tây), hạt/trái chưa chế biến đúng cách khi có cảnh báo (ví dụ một số loại đậu cần nấu kỹ). Rửa tay và vệ sinh bếp.</li>
+            <li><strong>Thuốc và hóa chất gia dụng:</strong> Để xa tầm tay trẻ em, đọc nhãn và hướng dẫn sử dụng, không trộn chất tẩy rửa tùy tiện (có thể sinh khí độc).</li>
+            <li><strong>Nấm và thực vật hoang dã:</strong> Không tự hái nấm hoặc cây lạ để ăn nếu không chắc chắn an toàn; nhiều loại rất giống nấm/cây ăn được nhưng độc.</li>
+            <li><strong>Khi nghi ngờ ngộ độc:</strong> Gọi cấp cứu hoặc trung tâm chống độc, không tự gây nôn trừ khi có hướng dẫn chuyên môn, mang theo thuốc/hóa chất nghi ngờ (trong bao bì) khi đến bệnh viện.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <strong>Bách Khoa Toàn Thư về Bảo Mật và Khoa Học Độc Học</strong> — Học liệu giáo dục. 
+      <a href="index.html">Về trang chủ</a>
+    </p>
+  </footer>
+<script src="js/app.js"></script>
+</body>
+</html>

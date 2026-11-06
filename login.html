@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Đăng nhập — Bách Khoa Bảo Mật &amp; Độc Học</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/v2.css">
+  <script src="js/static-auth.js"></script>
+</head>
+<body class="v2 login-gate">
+  <main class="v2-login v2-login--gate">
+    <section class="v2-login__main">
+      <div class="v2-login__card">
+        <div class="v2-brand v2-login__brand">
+          <span class="v2-brand__mark">🛡</span>
+          <span>Bách Khoa Bảo Mật<small>Security &amp; Toxicology</small></span>
+        </div>
+
+        <span class="v2-login__eyebrow">Khu vực được bảo vệ</span>
+        <h2>Đăng nhập</h2>
+        <p class="sub">Nhập tài khoản được cấp quyền để mở thư viện và dữ liệu.</p>
+
+        <form id="login-form" novalidate>
+          <div class="v2-field">
+            <label for="username">Tên đăng nhập</label>
+            <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required autofocus>
+          </div>
+          <div class="v2-field">
+            <label for="password">Mật khẩu</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+          </div>
+          <div class="v2-field" id="otp-field" hidden>
+            <label for="otp">Mã xác thực TOTP</label>
+            <input id="otp" name="otp" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" placeholder="6 chữ số">
+          </div>
+          <div id="login-error" class="v2-alert v2-alert--error" hidden></div>
+          <button class="v2-btn v2-btn--primary" type="submit" id="login-submit">Đăng nhập</button>
+        </form>
+
+        <p class="v2-password-note">Bản chạy server xác thực bằng bcrypt; bản tĩnh kiểm tra bằng digest trong trình duyệt.</p>
+        <p class="v2-login__security">Mỗi lần mở site từ ngoài, bạn cần đăng nhập lại. Bản server bảo vệ nội dung/API; bản tĩnh chỉ là cổng giao diện.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
